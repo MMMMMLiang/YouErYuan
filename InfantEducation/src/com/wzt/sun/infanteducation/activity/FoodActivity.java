@@ -1,13 +1,11 @@
 package com.wzt.sun.infanteducation.activity;
 
-import com.wzt.sun.infanteducation.MainActivity;
-import com.wzt.sun.infanteducation.R;
-
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
+
+import com.wzt.sun.infanteducation.R;
 
 /**
  * 这是今日食谱页面
@@ -29,8 +27,7 @@ public class FoodActivity extends BaseActivity {
 			@Override
 			public void onClick(View v) {
 				
-				Intent mIntent = new Intent(FoodActivity.this, MainActivity.class);
-				startActivity(mIntent);
+				FoodActivity.this.finish();
 				
 			}
 		});

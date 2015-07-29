@@ -155,7 +155,7 @@ public class MainActivity extends FragmentActivity {
 			}
 		}
 	}
-
+	
 	@Override
 	public void onBackPressed() {
 		long secondTime = System.currentTimeMillis();

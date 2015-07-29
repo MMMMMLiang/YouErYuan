@@ -3,6 +3,7 @@ package com.wzt.sun.infanteducation.fragment;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -25,6 +26,15 @@ import android.widget.SimpleAdapter;
 
 import com.wzt.sun.infanteducation.BaseApp;
 import com.wzt.sun.infanteducation.R;
+import com.wzt.sun.infanteducation.activity.ConsultActivity;
+import com.wzt.sun.infanteducation.activity.CourseActivity;
+import com.wzt.sun.infanteducation.activity.DynamicActivity;
+import com.wzt.sun.infanteducation.activity.EvaluateActivity;
+import com.wzt.sun.infanteducation.activity.FeedbackActivity;
+import com.wzt.sun.infanteducation.activity.FoodActivity;
+import com.wzt.sun.infanteducation.activity.IntroductionActivity;
+import com.wzt.sun.infanteducation.activity.PlanActivity;
+import com.wzt.sun.infanteducation.activity.StarActivity;
 import com.wzt.sun.infanteducation.constans.ConstantsConfig;
 
 public class KindergartenFragment extends Fragment implements
@@ -198,8 +208,58 @@ public class KindergartenFragment extends Fragment implements
 	@Override
 	public void onItemClick(AdapterView<?> parent, View view, int position,
 			long id) {
-		// TODO Auto-generated method stub
-		BaseApp.getInstance().showToast("你点击了"+position);
+		//BaseApp.getInstance().showToast("你点击了" + position);
+		Intent mIntent = new Intent();
+		switch (position) {
+		case 0:
+			// 校园简介
+			mIntent.setClass(this.getActivity(), IntroductionActivity.class);
+			startActivity(mIntent);
+			break;
+		case 1:
+			// 课程安排
+			mIntent.setClass(this.getActivity(), CourseActivity.class);
+			startActivity(mIntent);
+			break;
+		case 2:
+			// 学生动态
+			mIntent.setClass(this.getActivity(), DynamicActivity.class);
+			startActivity(mIntent);
+			break;
+		case 3:
+			// 评价图标
+			mIntent.setClass(this.getActivity(), EvaluateActivity.class);
+			startActivity(mIntent);
+			break;
+		case 4:
+			// 明星宝宝
+			mIntent.setClass(this.getActivity(), StarActivity.class);
+			startActivity(mIntent);
+			break;
+		case 5:
+			// 今日食谱
+			mIntent.setClass(getActivity(), FoodActivity.class);
+			startActivity(mIntent);
+			break;
+		case 6:
+			// 教育咨询
+			mIntent.setClass(this.getActivity(), ConsultActivity.class);
+			startActivity(mIntent);
+			break;
+		case 7:
+			// 教学计划
+			mIntent.setClass(this.getActivity(), PlanActivity.class);
+			startActivity(mIntent);
+			break;
+		case 8:
+			// 教学计划
+			mIntent.setClass(this.getActivity(), FeedbackActivity.class);
+			startActivity(mIntent);
+			break;
+
+		default:
+			break;
+		}
 	}
 
 }

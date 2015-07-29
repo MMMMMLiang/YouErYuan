@@ -2,8 +2,6 @@ package com.wzt.sun.infanteducation.constans;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 import com.wzt.sun.infanteducation.R;
 
@@ -37,5 +35,5 @@ public class ConstantsConfig {
 
 		return id1Lists;
 	}
-
+	
 }

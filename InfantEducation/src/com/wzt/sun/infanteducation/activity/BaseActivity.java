@@ -29,6 +29,6 @@ public class BaseActivity extends Activity {
 	public void onBackPressed() {
 		// TODO Auto-generated method stub
 		super.onBackPressed();
-		AppManager.getAppManager().finishActivity(this);
 	}
+	
 }
