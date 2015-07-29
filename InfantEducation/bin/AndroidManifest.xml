@@ -31,6 +31,7 @@
         </activity>
         <activity android:name="com.wzt.sun.infanteducation.activity.BaseActivity"></activity>
         <activity android:name="com.wzt.sun.infanteducation.activity.LoginActivity"></activity>
+        <activity android:name="com.wzt.sun.infanteducation.activity.FoodActivity"></activity>
     </application>
 
 </manifest>
