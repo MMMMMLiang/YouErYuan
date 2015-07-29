@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_login" >
+
+    <TextView
+        android:id="@+id/tv_titlename"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30sp"
+        android:gravity="center_horizontal"
+        android:text="@string/titlebar_name"
+        android:textColor="@color/white"
+        android:textSize="30sp" />
+
+    <ImageView
+        android:id="@+id/iv_titleimage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_titlename"
+        android:layout_centerHorizontal="true"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/title_image" />
+
+    <EditText
+        android:id="@+id/et_login_username"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:layout_below="@+id/iv_titleimage"
+        android:layout_marginLeft="20sp"
+        android:layout_marginRight="20sp"
+        android:layout_marginTop="10sp"
+        android:background="@drawable/bg_edittext"
+        android:hint="@string/ev_username"
+        android:inputType="phone" />
+
+    <EditText
+        android:id="@+id/et_login_password"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:layout_below="@+id/et_login_username"
+        android:layout_marginLeft="20sp"
+        android:layout_marginRight="20sp"
+        android:layout_marginTop="10sp"
+        android:background="@drawable/bg_edittext"
+        android:hint="@string/ev_password"
+        android:inputType="textPassword" />
+
+    <LinearLayout
+        android:id="@+id/ll_login_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_login_password"
+        android:layout_marginTop="10sp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="20sp"
+            android:text="@string/spinner_title"
+            android:textSize="20sp" />
+
+        <com.wzt.kindergarten.view.CustomerSpinner
+            android:id="@+id/login_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:layout_marginEnd="20sp"
+            android:layout_marginStart="5sp"
+            android:background="@drawable/bg_spinner" >
+        </com.wzt.kindergarten.view.CustomerSpinner>
+    </LinearLayout>
+    
+    <Button
+        android:id="@+id/btn_login_login"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:layout_below="@+id/ll_login_spinner"
+        android:layout_marginTop="20sp"
+        android:layout_marginLeft="20sp"
+        android:layout_marginRight="20sp"
+        android:onClick="btnClick"
+        android:background="#3FB7A8"
+        android:textSize="20sp"
+        android:text="@string/btn_login" />
+
+</RelativeLayout>

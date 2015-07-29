@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">InfantEducation</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="tv_username">账号</string>
+    <string name="tv_password">密码</string>
+    <string name="btn_registered">注  册</string>
+    <string name="btn_login">登  录</string>
+    <string name="ev_username">请输入手机号</string>
+    <string name="ev_password">请输入密码</string>
+    <string name="spinner_title">请选择身份</string>
+    <string name="bottom_btn_kindergarten">幼儿园</string>
+    <string name="bottom_btn_me">我</string>
+    <string name="bottom_btn_inform">通知</string>
+    <string name="bottom_btn_paradise">乐园</string>
+    <string name="bottom_btn_activity">互动</string>
+    <string name="titlebar_name">苏桥实验幼儿园</string>
+    <string name="today_food">今日食谱</string>
+    <string name="food_zaocan">早餐</string>
+    <string name="food_zaocan_time">(7:00–8:30)</string>
+    <string name="food_zaodiann">早点</string>
+    <string name="food_zaodian_time">(10:00–10:30)</string>
+    <string name="food_wucan">午餐</string>
+    <string name="food_wucan_time">(11:30–12:30)</string>
+    <string name="food_wudian">午点</string>
+    <string name="food_wudian_time">(15:00–15:30)</string>
+    <string name="food_wancan">晚餐</string>
+    <string name="food_wancan_time">(18:00–18:30)</string>
+    
+    <string name="fragment_activity">这是互动fragment</string>
+    <string name="fragment_inform">这是通知fragment</string>
+    <string name="fragment_kindergarten">这是幼儿园fragment</string>
+    <string name="fragment_me">这是我的fragment</string>
+    <string name="fragment_paradise">这是乐园fragment</string>
+    <string name="test_textview1">测试1</string>
+
+</resources>

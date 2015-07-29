@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+    
+    <!-- 幼儿园 -->
+    <RadioButton
+        android:id="@+id/bottom_rb_kindergarten"
+        style="@style/bottom_rg_style"
+        android:checked="true"
+        android:drawableTop="@drawable/rb_bottom_menu_kindergaretn"
+        android:text="@string/bottom_btn_kindergarten"
+        android:onClick="rbClick"
+        android:textColor="@color/bottom_text_color_selector" />
+    
+    <!-- 通知 -->
+    <RadioButton
+        android:id="@+id/bottom_rb_inform"
+        style="@style/bottom_rg_style"
+        android:drawableTop="@drawable/rb_bottom_menu_inform"
+        android:text="@string/bottom_btn_inform"
+        android:onClick="rbClick"
+        android:textColor="@color/bottom_text_color_selector" />
+    
+    <!-- 互动 -->
+    <RadioButton
+        android:id="@+id/bottom_rb_interaction"
+        style="@style/bottom_rg_style"
+        android:drawableTop="@drawable/rb_bottom_menu_interaction"
+        android:text="@string/bottom_btn_activity"
+        android:onClick="rbClick"
+        android:textColor="@color/bottom_text_color_selector" />
+    
+    <!-- 乐园 -->
+    <RadioButton
+        android:id="@+id/bottom_rb_paradise"
+        style="@style/bottom_rg_style"
+        android:drawableTop="@drawable/rb_bottom_menu_paradise"
+        android:text="@string/bottom_btn_paradise"
+        android:onClick="rbClick"
+        android:textColor="@color/bottom_text_color_selector" />
+    
+    <!-- 乐园 -->
+    <RadioButton
+        android:id="@+id/bottom_rb_me"
+        style="@style/bottom_rg_style"
+        android:drawableTop="@drawable/rb_bottom_menu_me"
+        android:text="@string/bottom_btn_me"
+        android:onClick="rbClick"
+        android:textColor="@color/bottom_text_color_selector" />
+
+</RadioGroup>

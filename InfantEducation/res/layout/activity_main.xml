@@ -1,0 +1,40 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+    <TextView
+        android:id="@+id/main_titlename"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="@string/titlebar_name"
+        android:textSize="24sp"
+        android:gravity="center"
+        android:background="#2EB976"
+        android:textColor="@color/white" />
+
+    <LinearLayout
+        android:id="@+id/linear_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/main_titlename"
+        android:layout_above="@+id/main_rgs"
+        android:orientation="vertical" >
+    </LinearLayout>
+    
+    <!-- 分割线 -->
+    <View
+        android:layout_below="@+id/linear_container"
+        android:layout_width="fill_parent"
+        android:layout_height="1px"
+        android:background="@color/black" />
+
+    <include
+        android:id="@+id/main_rgs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        layout="@layout/widiget_bottom_layout" >
+    </include>
+
+</RelativeLayout>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewPager_banner"
+            android:layout_width="match_parent"
+            android:layout_height="150dp" />
+
+        <!-- 绘制小圆点容器,需定位 -->
+
+        <LinearLayout
+            android:id="@+id/ll_dots"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="20dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal" >
+        </LinearLayout>
+    </FrameLayout>
+    
+    <include
+        android:id="@+id/kg_fm_gridview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        layout="@layout/kindergarten_girdview" >
+    </include>
+
+</LinearLayout>
