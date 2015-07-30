@@ -29,6 +29,23 @@
     <string name="food_wancan">晚餐</string>
     <string name="food_wancan_time">(18:00–18:30)</string>
     
+    <string name="activity_consult">教育咨询</string>
+    <string name="activity_course">课程安排</string>
+    <string name="activity_dynamic">学生动态</string>
+    <string name="activity_evaluate">评价图标</string>
+    <string name="activity_feed">反馈院长</string>
+    <string name="activity_introduction">校园简介</string>
+    <string name="activity_plan">教学计划</string>
+    <string name="activity_star">明星宝宝</string>
+    
+    <string name="dy_stu">学生信息</string>
+    <string name="dy_qingjia">请假申明</string>
+    <string name="dy_kaoqin">考勤统计</string>
+    
+    <string name="btn_sure">确定</string>
+    
+    <string name="feet_et_fankui">请输入您的意见和建议…</string>
+    
     <string name="fragment_activity">这是互动fragment</string>
     <string name="fragment_inform">这是通知fragment</string>
     <string name="fragment_kindergarten">这是幼儿园fragment</string>

@@ -2,7 +2,133 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#EAEAEA"
     android:orientation="vertical" >
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#2EB976" >
+        
+        <ImageView
+            android:id="@+id/titlebar_dynamic_btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="6dp"
+            android:src="@drawable/btn_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/activity_dynamic"
+            android:textColor="@color/white"
+            android:textSize="24sp" />
+    </RelativeLayout>
+    
+    <RelativeLayout
+        android:id="@+id/dy_stu_information"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:onClick="rlClick"
+        android:padding="6dp"
+        android:background="@drawable/btn_selector" >
+        
+        <ImageView
+            android:id="@+id/dy_image_stu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:src="@drawable/dy_stu" />
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dy_stu"
+            android:layout_toEndOf="@+id/dy_image_stu"
+            android:layout_marginStart="10dp"
+            android:layout_centerVertical="true"
+            android:textSize="20sp" />
+        
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/btn_advance" />
+        
+    </RelativeLayout>
+    
+    <RelativeLayout
+        android:id="@+id/dy_qingjia_information"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:onClick="rlClick"
+        android:padding="6dp"
+        android:background="@drawable/btn_selector" >
+        
+        <ImageView
+            android:id="@+id/dy_image_qingjia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:src="@drawable/dy_qingjia" />
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dy_qingjia"
+            android:layout_toEndOf="@+id/dy_image_qingjia"
+            android:layout_marginStart="10dp"
+            android:layout_centerVertical="true"
+            android:textSize="20sp" />
+        
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/btn_advance" />
+        
+    </RelativeLayout>
+    
+    <RelativeLayout
+        android:id="@+id/dy_kaoqin_information"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:onClick="rlClick"
+        android:padding="6dp"
+        android:background="@drawable/btn_selector" >
+        
+        <ImageView
+            android:id="@+id/dy_image_kaoqin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:src="@drawable/dy_kaoqin" />
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dy_kaoqin"
+            android:layout_toEndOf="@+id/dy_image_kaoqin"
+            android:layout_marginStart="10dp"
+            android:layout_centerVertical="true"
+            android:textSize="20sp" />
+        
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/btn_advance" />
+        
+    </RelativeLayout>
     
 
 </LinearLayout>

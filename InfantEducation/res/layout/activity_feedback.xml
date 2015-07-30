@@ -3,6 +3,55 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
-    
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#2EB976" >
+
+        <ImageView
+            android:id="@+id/titlebar_feet_btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="6dp"
+            android:onClick="btnClick"
+            android:src="@drawable/btn_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/activity_feed"
+            android:textColor="@color/white"
+            android:textSize="24sp" />
+        
+        <Button
+            android:id="@+id/feed_bar_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:text="@string/btn_sure"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="6dp"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:onClick="btnClick"
+            android:background="@drawable/btn_titlebar_shape" />
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/feed_et_text"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:enabled="true"
+        android:gravity="top"
+        android:hint="@string/feet_et_fankui"
+        android:inputType="textMultiLine"
+        android:background="@null"
+        android:textSize="18sp"
+        android:maxLines="10"
+        android:scrollbars="vertical" />
 
 </LinearLayout>
