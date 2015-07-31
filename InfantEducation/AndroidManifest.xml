@@ -40,6 +40,7 @@
         <activity android:name="com.wzt.sun.infanteducation.activity.IntroductionActivity"></activity>
         <activity android:name="com.wzt.sun.infanteducation.activity.PlanActivity"></activity>
         <activity android:name="com.wzt.sun.infanteducation.activity.StarActivity"></activity>
+        <activity android:name="com.wzt.sun.infanteducation.activity.DynamicInfoActivity"></activity>
     </application>
 
 </manifest>

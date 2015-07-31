@@ -170,5 +170,5 @@ public class MainActivity extends FragmentActivity {
 					.getInstance());
 		}
 	}
-
+	
 }

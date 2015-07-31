@@ -25,6 +25,7 @@ public class DynamicInfoActivity extends FragmentActivity {
 		setContentView(R.layout.activity_dynamicinfo);
 		Bundle bundle = getIntent().getExtras();
 		num = bundle.getInt("Fragment");
+		fm = getSupportFragmentManager();
 		
 		loadFragment();
 	}

@@ -39,8 +39,8 @@
         
         <ImageView
             android:id="@+id/dy_image_stu"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
             android:layout_alignParentStart="true"
             android:src="@drawable/dy_stu" />
         
@@ -51,7 +51,7 @@
             android:layout_toEndOf="@+id/dy_image_stu"
             android:layout_marginStart="10dp"
             android:layout_centerVertical="true"
-            android:textSize="20sp" />
+            android:textSize="16sp" />
         
         <ImageView
             android:layout_width="wrap_content"
@@ -73,8 +73,8 @@
         
         <ImageView
             android:id="@+id/dy_image_qingjia"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
             android:layout_alignParentStart="true"
             android:src="@drawable/dy_qingjia" />
         
@@ -85,7 +85,7 @@
             android:layout_toEndOf="@+id/dy_image_qingjia"
             android:layout_marginStart="10dp"
             android:layout_centerVertical="true"
-            android:textSize="20sp" />
+            android:textSize="16sp" />
         
         <ImageView
             android:layout_width="wrap_content"
@@ -107,8 +107,8 @@
         
         <ImageView
             android:id="@+id/dy_image_kaoqin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
             android:layout_alignParentStart="true"
             android:src="@drawable/dy_kaoqin" />
         
@@ -119,7 +119,7 @@
             android:layout_toEndOf="@+id/dy_image_kaoqin"
             android:layout_marginStart="10dp"
             android:layout_centerVertical="true"
-            android:textSize="20sp" />
+            android:textSize="16sp" />
         
         <ImageView
             android:layout_width="wrap_content"
