@@ -21,7 +21,7 @@ import android.widget.Toast;
  * @author sun
  *
  */
-public class CourseActivity extends Activity implements OnItemClickListener{
+public class CourseActivity extends BaseActivity implements OnItemClickListener{
 	
 	//自定义日历控件
 	private CalendarView mCalView;
