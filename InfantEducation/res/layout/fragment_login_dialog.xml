@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/appbg"
+    android:orientation="vertical" >
+    
+    <TextView  
+        android:layout_width="match_parent"  
+        android:layout_height="wrap_content"  
+        android:background="#2EB976"  
+        android:text="@string/title_tishi"
+        android:textSize="24sp"
+        android:gravity="center"
+        android:textColor="@color/white"  
+        android:scaleType="center" />
+    
+    <TextView  
+        android:layout_width="match_parent"  
+        android:layout_height="wrap_content"  
+        android:text="@string/dialog_text"
+        android:textSize="18sp"
+        android:paddingStart="50dp"
+        android:paddingEnd="50dp"
+        android:gravity="center"  
+        android:scaleType="center" />
+    
+</LinearLayout>

@@ -3,10 +3,16 @@ package com.wzt.sun.infanteducation.fragment;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.app.AlertDialog;
+import android.app.AlertDialog.Builder;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -25,6 +31,7 @@ import android.widget.LinearLayout;
 import android.widget.SimpleAdapter;
 
 import com.wzt.sun.infanteducation.BaseApp;
+import com.wzt.sun.infanteducation.MainActivity;
 import com.wzt.sun.infanteducation.R;
 import com.wzt.sun.infanteducation.activity.ConsultActivity;
 import com.wzt.sun.infanteducation.activity.CourseActivity;
@@ -37,7 +44,7 @@ import com.wzt.sun.infanteducation.activity.PlanActivity;
 import com.wzt.sun.infanteducation.activity.StarActivity;
 import com.wzt.sun.infanteducation.constans.ConstantsConfig;
 
-public class KindergartenFragment extends Fragment implements
+public class KindergartenFragment extends DialogFragment implements
 		OnPageChangeListener, OnItemClickListener {
 
 	// 广告
@@ -51,16 +58,23 @@ public class KindergartenFragment extends Fragment implements
 	// 加载功能模块
 	private GridView mGridView;
 	private SimpleAdapter smAdapter;
-
+	
+	private SharedPreferences loginSp = null;
+	private boolean isLogin = false;
+	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
 		View view = inflater
 				.inflate(R.layout.fragment_first_kindergarten, null);
-
+		isLogin();
 		initView(view);
 		return view;
+	}
+	
+	private void isLogin() {
+		loginSp = getActivity().getSharedPreferences(ConstantsConfig.SHAREDPREFERENCES_LOGIN, Context.MODE_PRIVATE);
+		isLogin = loginSp.getBoolean("isLogin", false);
 	}
 
 	private void initView(View view) {
@@ -194,6 +208,7 @@ public class KindergartenFragment extends Fragment implements
 	@Override
 	public void onPageSelected(int position) {
 		// TODO Auto-generated method stub
+		
 		// 动态更改选中的小圆点
 		for (int i = 0; i < ll_dos.getChildCount(); i++) {
 			ImageView iv = (ImageView) ll_dos.getChildAt(i);
@@ -209,57 +224,67 @@ public class KindergartenFragment extends Fragment implements
 	public void onItemClick(AdapterView<?> parent, View view, int position,
 			long id) {
 		//BaseApp.getInstance().showToast("你点击了" + position);
-		Intent mIntent = new Intent();
-		switch (position) {
-		case 0:
-			// 校园简介
-			mIntent.setClass(this.getActivity(), IntroductionActivity.class);
-			startActivity(mIntent);
-			break;
-		case 1:
-			// 课程安排
-			mIntent.setClass(this.getActivity(), CourseActivity.class);
-			startActivity(mIntent);
-			break;
-		case 2:
-			// 学生动态
-			mIntent.setClass(this.getActivity(), DynamicActivity.class);
-			startActivity(mIntent);
-			break;
-		case 3:
-			// 评价图标
-			mIntent.setClass(this.getActivity(), EvaluateActivity.class);
-			startActivity(mIntent);
-			break;
-		case 4:
-			// 明星宝宝
-			mIntent.setClass(this.getActivity(), StarActivity.class);
-			startActivity(mIntent);
-			break;
-		case 5:
-			// 今日食谱
-			mIntent.setClass(getActivity(), FoodActivity.class);
-			startActivity(mIntent);
-			break;
-		case 6:
-			// 教育咨询
-			mIntent.setClass(this.getActivity(), ConsultActivity.class);
-			startActivity(mIntent);
-			break;
-		case 7:
-			// 教学计划
-			mIntent.setClass(this.getActivity(), PlanActivity.class);
-			startActivity(mIntent);
-			break;
-		case 8:
-			// 教学计划
-			mIntent.setClass(this.getActivity(), FeedbackActivity.class);
-			startActivity(mIntent);
-			break;
+		//判断登陆状态 
+		if(!isLogin){
+			dialogShow();
+		}else{
+			Intent mIntent = new Intent();
+			switch (position) {
+			case 0:
+				// 校园简介
+				mIntent.setClass(this.getActivity(), IntroductionActivity.class);
+				startActivity(mIntent);
+				break;
+			case 1:
+				// 课程安排
+				mIntent.setClass(this.getActivity(), CourseActivity.class);
+				startActivity(mIntent);
+				break;
+			case 2:
+				// 学生动态
+				mIntent.setClass(this.getActivity(), DynamicActivity.class);
+				startActivity(mIntent);
+				break;
+			case 3:
+				// 评价图标
+				mIntent.setClass(this.getActivity(), EvaluateActivity.class);
+				startActivity(mIntent);
+				break;
+			case 4:
+				// 明星宝宝
+				mIntent.setClass(this.getActivity(), StarActivity.class);
+				startActivity(mIntent);
+				break;
+			case 5:
+				// 今日食谱
+				mIntent.setClass(getActivity(), FoodActivity.class);
+				startActivity(mIntent);
+				break;
+			case 6:
+				// 教育咨询
+				mIntent.setClass(this.getActivity(), ConsultActivity.class);
+				startActivity(mIntent);
+				break;
+			case 7:
+				// 教学计划
+				mIntent.setClass(this.getActivity(), PlanActivity.class);
+				startActivity(mIntent);
+				break;
+			case 8:
+				// 教学计划
+				mIntent.setClass(this.getActivity(), FeedbackActivity.class);
+				startActivity(mIntent);
+				break;
 
-		default:
-			break;
+			default:
+				break;
+			}
 		}
+	}
+
+	private void dialogShow() {
+		DialogFragment newFragment = new MyAlertDialogFragment();
+		newFragment.show(getFragmentManager(), "dialog");
 	}
 
 }

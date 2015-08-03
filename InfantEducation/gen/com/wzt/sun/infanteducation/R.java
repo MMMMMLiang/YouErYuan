@@ -622,13 +622,14 @@ public final class R {
         public static final int fragment_first_paradise=0x7f030014;
         public static final int fragment_leave=0x7f030015;
         public static final int fragment_logbook=0x7f030016;
-        public static final int fragment_stu_information=0x7f030017;
-        public static final int kgf_girdview_item=0x7f030018;
-        public static final int kindergarten_girdview=0x7f030019;
-        public static final int welcome_tv1=0x7f03001a;
-        public static final int welcome_tv2=0x7f03001b;
-        public static final int welcome_tv3=0x7f03001c;
-        public static final int widiget_bottom_layout=0x7f03001d;
+        public static final int fragment_login_dialog=0x7f030017;
+        public static final int fragment_stu_information=0x7f030018;
+        public static final int kgf_girdview_item=0x7f030019;
+        public static final int kindergarten_girdview=0x7f03001a;
+        public static final int welcome_tv1=0x7f03001b;
+        public static final int welcome_tv2=0x7f03001c;
+        public static final int welcome_tv3=0x7f03001d;
+        public static final int widiget_bottom_layout=0x7f03001e;
     }
     public static final class menu {
         public static final int main=0x7f090000;
@@ -652,12 +653,13 @@ public final class R {
         public static final int btn_login=0x7f070006;
         public static final int btn_registered=0x7f070005;
         public static final int btn_sure=0x7f070026;
+        public static final int dialog_text=0x7f070028;
         public static final int dy_kaoqin=0x7f070025;
         public static final int dy_qingjia=0x7f070024;
         public static final int dy_stu=0x7f070023;
         public static final int ev_password=0x7f070008;
         public static final int ev_username=0x7f070007;
-        public static final int feet_et_fankui=0x7f070027;
+        public static final int feet_et_fankui=0x7f070029;
         public static final int food_wancan=0x7f070019;
         public static final int food_wancan_time=0x7f07001a;
         public static final int food_wucan=0x7f070015;
@@ -668,14 +670,15 @@ public final class R {
         public static final int food_zaocan_time=0x7f070012;
         public static final int food_zaodian_time=0x7f070014;
         public static final int food_zaodiann=0x7f070013;
-        public static final int fragment_activity=0x7f070028;
-        public static final int fragment_inform=0x7f070029;
-        public static final int fragment_kindergarten=0x7f07002a;
-        public static final int fragment_me=0x7f07002b;
-        public static final int fragment_paradise=0x7f07002c;
+        public static final int fragment_activity=0x7f07002a;
+        public static final int fragment_inform=0x7f07002b;
+        public static final int fragment_kindergarten=0x7f07002c;
+        public static final int fragment_me=0x7f07002d;
+        public static final int fragment_paradise=0x7f07002e;
         public static final int hello_world=0x7f070002;
         public static final int spinner_title=0x7f070009;
-        public static final int test_textview1=0x7f07002d;
+        public static final int test_textview1=0x7f07002f;
+        public static final int title_tishi=0x7f070027;
         public static final int titlebar_name=0x7f07000f;
         public static final int today_food=0x7f070010;
         public static final int tv_password=0x7f070004;
@@ -685,11 +688,15 @@ public final class R {
         /** 
         Base application theme, dependent on API level. This theme is replaced
         by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+
+
     
 
             Theme customizations available in newer API levels can go in
             res/values-vXX/styles.xml, while customizations related to
             backward-compatibility can go here.
+
+
         
 
         Base application theme for API 11+. This theme completely replaces
@@ -709,8 +716,9 @@ public final class R {
          */
         public static final int AppTheme=0x7f080001;
         public static final int bottom_rg_style=0x7f080002;
-        /** 模糊
+        /**  模糊 
          */
         public static final int dialog=0x7f080003;
+        public static final int dialog_no_border=0x7f080004;
     }
 }

@@ -43,6 +43,8 @@
     <string name="dy_kaoqin">考勤统计</string>
     
     <string name="btn_sure">确定</string>
+    <string name="title_tishi">提示</string>
+    <string name="dialog_text">您还没有登录!</string>
     
     <string name="feet_et_fankui">请输入您的意见和建议…</string>
     

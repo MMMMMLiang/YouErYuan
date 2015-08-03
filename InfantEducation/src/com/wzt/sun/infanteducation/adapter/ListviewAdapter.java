@@ -13,7 +13,7 @@ import com.wzt.sun.infanteducation.R;
 
 public class ListviewAdapter extends BaseAdapter {
 	private Context context;
-	private ArrayList<String> list;
+	private ArrayList<String> list = new ArrayList<String>();
 	public ListviewAdapter(Context context,ArrayList<String> list){
 		this.context = context;
 		this.list = list;
