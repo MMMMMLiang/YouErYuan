@@ -8,7 +8,7 @@
         android:id="@+id/tv_titlename"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30sp"
+        android:layout_marginTop="20sp"
         android:gravity="center_horizontal"
         android:text="@string/titlebar_name"
         android:textColor="@color/white"
@@ -61,16 +61,17 @@
             android:layout_gravity="center_vertical"
             android:layout_marginStart="20sp"
             android:text="@string/spinner_title"
+            android:textColor="@color/white"
             android:textSize="20sp" />
 
-        <com.wzt.kindergarten.view.CustomerSpinner
+        <com.wzt.sun.infanteducation.view.CustomerSpinner
             android:id="@+id/login_spinner"
             android:layout_width="match_parent"
             android:layout_height="36dp"
             android:layout_marginEnd="20sp"
             android:layout_marginStart="5sp"
             android:background="@drawable/bg_spinner" >
-        </com.wzt.kindergarten.view.CustomerSpinner>
+        </com.wzt.sun.infanteducation.view.CustomerSpinner>
     </LinearLayout>
     
     <Button
@@ -84,6 +85,7 @@
         android:onClick="btnClick"
         android:background="#3FB7A8"
         android:textSize="20sp"
+        android:textColor="@color/white"
         android:text="@string/btn_login" />
 
 </RelativeLayout>

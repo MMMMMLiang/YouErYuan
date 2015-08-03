@@ -9,7 +9,11 @@ public class ConstantsConfig {
 	public static final String APP_CACHE = "kindergarten";
 	public static final String SYS_CACHE = "com.wzt.kindergarten";
 	public static final String IMAGE_CACHE = "image";
-
+	// 判断是否第一次运行
+	public static final String SHAREDPREFERENCES_NAME = "prefs_firstrun";
+	// 判断登录状态
+	public static final String SHAREDPREFERENCES_LOGIN = "prefs_login";
+	
 	// 身份1加载的功能模块
 	// "反馈园长","教学计划","教育咨询","今日食谱","课程安排","明星宝宝","评价图标","校园简介","学生动态"
 	public static final ArrayList<HashMap<String, Object>> loadId1Lists() {

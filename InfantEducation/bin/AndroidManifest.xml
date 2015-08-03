@@ -23,6 +23,13 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name" >
+            <!-- <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter> -->
+        </activity>
+        <activity android:name="com.wzt.sun.infanteducation.activity.WelcomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -41,6 +48,7 @@
         <activity android:name="com.wzt.sun.infanteducation.activity.PlanActivity"></activity>
         <activity android:name="com.wzt.sun.infanteducation.activity.StarActivity"></activity>
         <activity android:name="com.wzt.sun.infanteducation.activity.DynamicInfoActivity"></activity>
+        <activity android:name="com.wzt.sun.infanteducation.activity.GuideActivity"></activity>
     </application>
 
 </manifest>
