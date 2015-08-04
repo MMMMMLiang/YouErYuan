@@ -3,11 +3,123 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
     
-    <TextView
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:id="@+id/stu_info_title"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#2EB976" >
+        
+        <ImageView
+            android:id="@+id/titlebar_btn_stuback"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="6dp"
+            android:src="@drawable/btn_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/dy_stu"
+            android:textColor="@color/white"
+            android:textSize="24sp" />
+    </RelativeLayout>
+    
+    <LinearLayout
+        android:id="@+id/stu_info_low1"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="24sp"
-        android:text="学生信息" />
+        android:layout_below="@id/stu_info_title"
+        android:orientation="horizontal" >
+        
+        <ImageView
+            android:id="@+id/stu_info_low1_image"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:src="@drawable/head_icon" />
+        
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+            
+            <TextView
+                android:id="@+id/stu_info_name"
+                style="@style/stu_info_style"
+                android:layout_marginTop="10dp"
+                android:text="@string/stu_name" />
+            
+            <TextView
+                android:id="@+id/stu_info_sex"
+                style="@style/stu_info_style"
+                android:layout_marginTop="9dp"
+                android:text="@string/stu_sex" />
+            
+            <TextView
+                android:id="@+id/stu_info_age"
+                style="@style/stu_info_style"
+                android:layout_marginTop="9dp"
+                android:text="@string/stu_age" />
+            
+            <TextView
+                android:id="@+id/stu_info_class"
+                style="@style/stu_info_style"
+                android:layout_marginTop="9dp"
+                android:text="@string/stu_class" />
+            
+            <TextView
+                android:id="@+id/stu_info_num"
+                style="@style/stu_info_style"
+                android:layout_marginTop="9dp"
+                android:text="@string/stu_num" />
+            
+        </LinearLayout>
+        
+    </LinearLayout>
+    
+    <LinearLayout
+        android:id="@+id/stu_info_low2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/stu_info_low1"
+        android:orientation="vertical" >
+        
+        <TextView
+                android:id="@+id/stu_info_birthday"
+                style="@style/stu_info_style"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/stu_birthday" />
+        
+        <TextView
+                android:id="@+id/stu_info_parents"
+                style="@style/stu_info_style"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/stu_parents" />
+        
+        <TextView
+                android:id="@+id/stu_info_parentsphone"
+                style="@style/stu_info_style"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/stu_parentsphone" />
+        
+        <TextView
+                android:id="@+id/stu_info_speciality"
+                style="@style/stu_info_style"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/stu_speciality" />
+        
+    </LinearLayout>
     
 
 </RelativeLayout>

@@ -49,6 +49,9 @@
         <activity android:name="com.wzt.sun.infanteducation.activity.StarActivity"></activity>
         <activity android:name="com.wzt.sun.infanteducation.activity.DynamicInfoActivity"></activity>
         <activity android:name="com.wzt.sun.infanteducation.activity.GuideActivity"></activity>
+        <activity android:name="com.wzt.sun.infanteducation.activity.StudentInformationActivity"></activity>
+        <activity android:name="com.wzt.sun.infanteducation.activity.LeaveActivity"></activity>
+        <activity android:name="com.wzt.sun.infanteducation.activity.LogBookActivity"></activity>
     </application>
 
 </manifest>

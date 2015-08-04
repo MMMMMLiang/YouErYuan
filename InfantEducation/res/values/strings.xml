@@ -32,7 +32,7 @@
     <string name="activity_consult">教育咨询</string>
     <string name="activity_course">课程安排</string>
     <string name="activity_dynamic">学生动态</string>
-    <string name="activity_evaluate">评价图标</string>
+    <string name="activity_evaluate">评价老师</string>
     <string name="activity_feed">反馈院长</string>
     <string name="activity_introduction">校园简介</string>
     <string name="activity_plan">教学计划</string>
@@ -45,6 +45,8 @@
     <string name="btn_sure">确定</string>
     <string name="title_tishi">提示</string>
     <string name="dialog_text">您还没有登录!</string>
+    <string name="btn_dialog_login">登录</string>
+    <string name="btn_dialog_dismiss">取消</string>
     
     <string name="feet_et_fankui">请输入您的意见和建议…</string>
     
@@ -54,5 +56,15 @@
     <string name="fragment_me">这是我的fragment</string>
     <string name="fragment_paradise">这是乐园fragment</string>
     <string name="test_textview1">测试1</string>
+    
+    <string name="stu_name">姓名：xxx</string>
+    <string name="stu_sex">性别：女</string>
+    <string name="stu_age">年龄：4岁</string>
+    <string name="stu_birthday">出生年月：xxxx-xx-xx</string>
+    <string name="stu_class">班级：小班</string>
+    <string name="stu_num">学号：xxxxxxx</string>
+    <string name="stu_parents">家长：xxx</string>
+    <string name="stu_parentsphone">联系电话：xxxxxxxxxxxxx</string>
+    <string name="stu_speciality">特长：xxxxxxxxxxxxxxxxxx</string>
 
 </resources>

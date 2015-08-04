@@ -225,9 +225,9 @@ public class KindergartenFragment extends DialogFragment implements
 			long id) {
 		//BaseApp.getInstance().showToast("你点击了" + position);
 		//判断登陆状态 
-		if(!isLogin){
+		/*if(!isLogin){
 			dialogShow();
-		}else{
+		}else{*/
 			Intent mIntent = new Intent();
 			switch (position) {
 			case 0:
@@ -279,7 +279,7 @@ public class KindergartenFragment extends DialogFragment implements
 			default:
 				break;
 			}
-		}
+		//}
 	}
 
 	private void dialogShow() {
