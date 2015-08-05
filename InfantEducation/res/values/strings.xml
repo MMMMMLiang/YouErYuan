@@ -66,5 +66,12 @@
     <string name="stu_parents">家长：xxx</string>
     <string name="stu_parentsphone">联系电话：xxxxxxxxxxxxx</string>
     <string name="stu_speciality">特长：xxxxxxxxxxxxxxxxxx</string>
+    
+    <string name="title_interaction_info">通知</string>
+    <string name="leave_name">请假条</string>
+    <string name="leave_enter_lei_name">请选择请假类型</string>
+    <string name="leave_enter_time">请输入请假时间</string>
+    <string name="leave_enter_data">请输入请假详细内容</string>
+    <string name="leave_btn_sure">立即提交</string>
 
 </resources>

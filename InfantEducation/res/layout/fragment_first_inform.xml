@@ -1,13 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:background="@color/appbg" >
     
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="24sp"
-        android:text="@string/fragment_inform" />
+    <RelativeLayout
+        android:id="@+id/imteraction_rl1"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/white" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:text="关于XXXXX的通知"
+            android:textSize="18sp" />
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:text="2015-07-21" />
+        
+        
+    </RelativeLayout>
+    
+    <RelativeLayout
+        android:id="@+id/imteraction_rl2"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@id/imteraction_rl1"
+        android:layout_marginTop="20dp"
+        android:background="@color/white" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:text="XXXXXXXX的通知"
+            android:textSize="18sp" />
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:text="2015-07-22" />
+        
+        
+    </RelativeLayout>
     
 
 </RelativeLayout>

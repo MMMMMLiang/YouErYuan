@@ -52,6 +52,7 @@
         <activity android:name="com.wzt.sun.infanteducation.activity.StudentInformationActivity"></activity>
         <activity android:name="com.wzt.sun.infanteducation.activity.LeaveActivity"></activity>
         <activity android:name="com.wzt.sun.infanteducation.activity.LogBookActivity"></activity>
+        <activity android:name="com.wzt.sun.infanteducation.activity.InteractionFragmentActivity"></activity>
     </application>
 
 </manifest>

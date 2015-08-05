@@ -3,11 +3,123 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
     
-    <TextView
+    <RelativeLayout
+        android:id="@+id/leave_title"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#2EB976" >
+        
+        <ImageView
+            android:id="@+id/titlebar_leave_btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="6dp"
+            android:src="@drawable/btn_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/leave_name"
+            android:textColor="@color/white"
+            android:textSize="24sp" />
+    </RelativeLayout>
+    
+    <LinearLayout
+        android:id="@+id/leave_ll_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/leave_title"
+        android:layout_marginTop="6dp"
+        android:orientation="horizontal" >
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_gravity="center_vertical"
+            android:text="@string/leave_enter_lei_name"
+            android:textSize="18sp" />
+        
+        <com.wzt.sun.infanteducation.view.CustomerSpinner
+            android:id="@+id/leave_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:layout_marginEnd="20sp"
+            android:layout_marginStart="5sp"
+            android:background="@drawable/bg_spinner" >
+        </com.wzt.sun.infanteducation.view.CustomerSpinner>
+        
+    </LinearLayout>
+    
+    <LinearLayout
+        android:id="@+id/leave_ll_edittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/leave_ll_spinner"
+        android:layout_marginTop="6dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="10dp"
+            android:text="@string/leave_enter_time"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/leave_et_time"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5sp"
+            android:layout_weight="0.73"
+            android:inputType="number" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="20sp"
+            android:text="天"
+            android:textSize="18sp" />
+    </LinearLayout>
+    
+    <LinearLayout
+        android:id="@+id/leave_ll_editdata"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="6dp"
+        android:layout_below="@id/leave_ll_edittext"
+        android:orientation="vertical" >
+        
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/leave_enter_data"
+            android:textSize="18sp"
+            android:gravity="center_horizontal" />
+        
+        <EditText
+            android:id="@+id/leave_et_data"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10sp"
+            android:layout_marginEnd="10dp"
+            android:inputType="text" />
+    </LinearLayout>
+    
+    <Button
+        android:id="@+id/leave_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="24sp"
-        android:text="请假申明" />
-    
+        android:layout_marginTop="6dp"
+        android:layout_below="@id/leave_ll_editdata"
+        android:text="@string/leave_btn_sure"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/btn_selector" />
 
 </RelativeLayout>

@@ -13,6 +13,8 @@ import com.wzt.sun.infanteducation.view.CalendarView.OnItemClickListener;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,6 +32,8 @@ public class CourseActivity extends BaseActivity implements OnItemClickListener{
 	private Calendar c;
 	private int mDay;
 	
+	private ImageView iv;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -39,6 +43,8 @@ public class CourseActivity extends BaseActivity implements OnItemClickListener{
 	}
 	
 	public void initView() {
+		iv = (ImageView) findViewById(R.id.titlebar_course_btn_back);
+		
 		format = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
 
 		//获取日历控件对象
@@ -62,6 +68,14 @@ public class CourseActivity extends BaseActivity implements OnItemClickListener{
 		String[] ya = mCalView.getYearAndmonth().split("-");
 		calendarCenter.setText(ya[0]+"年"+ya[1]+"月"+mDay+"日");
 		mCalView.setOnItemClickListener(this);
+		
+		iv.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				CourseActivity.this.finish();
+			}
+		});
 	}
 	
 	public void ivClick(View view){

@@ -7,12 +7,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
 
-/**
- * 明星宝宝页面
- * @author sun
- *
- */
-public class StarActivity extends BaseActivity {
+public class InteractionFragmentActivity extends BaseActivity {
 	
 	private ImageView iv;
 	
@@ -20,15 +15,15 @@ public class StarActivity extends BaseActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_star);
+		setContentView(R.layout.activity_interaction_info);
 		
-		iv = (ImageView) findViewById(R.id.titlebar_star_btn_back);
+		iv = (ImageView) findViewById(R.id.titlebar_interaction_btn_back);
 		
 		iv.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View arg0) {
-				StarActivity.this.finish();
+				InteractionFragmentActivity.this.finish();
 			}
 		});
 	}

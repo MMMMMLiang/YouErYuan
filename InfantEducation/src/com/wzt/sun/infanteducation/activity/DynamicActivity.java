@@ -21,7 +21,6 @@ public class DynamicActivity extends FragmentActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_dynamic);
 		
@@ -53,7 +52,7 @@ public class DynamicActivity extends FragmentActivity {
 			break;
 		// 考勤统计
 		case R.id.dy_kaoqin_information:
-			intent.setClass(this, StudentInformationActivity.class);
+			intent.setClass(this, LogBookActivity.class);
 			startActivity(intent);
 			break;
 
