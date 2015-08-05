@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.wzt.sun.infanteducation"
-    android:versionCode="1"
+    android:versionCode="2"
     android:versionName="1.0" >
 
     <uses-sdk
@@ -53,6 +53,7 @@
         <activity android:name="com.wzt.sun.infanteducation.activity.LeaveActivity"></activity>
         <activity android:name="com.wzt.sun.infanteducation.activity.LogBookActivity"></activity>
         <activity android:name="com.wzt.sun.infanteducation.activity.InteractionFragmentActivity"></activity>
+        <activity android:name="com.wzt.sun.infanteducation.activity.FaviconActivity"></activity>
     </application>
 
 </manifest>

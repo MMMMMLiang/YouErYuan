@@ -73,5 +73,8 @@
     <string name="leave_enter_time">请输入请假时间</string>
     <string name="leave_enter_data">请输入请假详细内容</string>
     <string name="leave_btn_sure">立即提交</string>
+    
+    <string name="favicon_btn">更换头像</string>
+    <string name="favicon_btn_save">保存头像</string>
 
 </resources>

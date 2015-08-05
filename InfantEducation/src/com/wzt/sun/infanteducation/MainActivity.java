@@ -1,18 +1,18 @@
 package com.wzt.sun.infanteducation;
 
-import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.view.View;
-
 import com.wzt.sun.infanteducation.fragment.InformFragment;
 import com.wzt.sun.infanteducation.fragment.InteractionFragment;
 import com.wzt.sun.infanteducation.fragment.KindergartenFragment;
 import com.wzt.sun.infanteducation.fragment.MeFragment;
 import com.wzt.sun.infanteducation.fragment.ParadiseFragment;
 import com.wzt.sun.infanteducation.netstate.NetworkStateReceiver;
+
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
+import android.view.View;
 
 public class MainActivity extends FragmentActivity {
 	// 第一次点击返回键的时间
@@ -170,5 +170,5 @@ public class MainActivity extends FragmentActivity {
 					.getInstance());
 		}
 	}
-	
 }
+	

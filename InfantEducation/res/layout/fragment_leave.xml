@@ -2,13 +2,13 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
-    
+
     <RelativeLayout
         android:id="@+id/leave_title"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:background="#2EB976" >
-        
+
         <ImageView
             android:id="@+id/titlebar_leave_btn_back"
             android:layout_width="wrap_content"
@@ -26,7 +26,7 @@
             android:textColor="@color/white"
             android:textSize="24sp" />
     </RelativeLayout>
-    
+
     <LinearLayout
         android:id="@+id/leave_ll_spinner"
         android:layout_width="match_parent"
@@ -34,15 +34,15 @@
         android:layout_below="@id/leave_title"
         android:layout_marginTop="6dp"
         android:orientation="horizontal" >
-        
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
             android:layout_gravity="center_vertical"
+            android:layout_marginStart="10dp"
             android:text="@string/leave_enter_lei_name"
             android:textSize="18sp" />
-        
+
         <com.wzt.sun.infanteducation.view.CustomerSpinner
             android:id="@+id/leave_spinner"
             android:layout_width="match_parent"
@@ -51,9 +51,8 @@
             android:layout_marginStart="5sp"
             android:background="@drawable/bg_spinner" >
         </com.wzt.sun.infanteducation.view.CustomerSpinner>
-        
     </LinearLayout>
-    
+
     <LinearLayout
         android:id="@+id/leave_ll_edittext"
         android:layout_width="match_parent"
@@ -86,40 +85,45 @@
             android:text="天"
             android:textSize="18sp" />
     </LinearLayout>
-    
+
     <LinearLayout
         android:id="@+id/leave_ll_editdata"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:layout_marginTop="6dp"
         android:layout_below="@id/leave_ll_edittext"
+        android:layout_marginTop="6dp"
         android:orientation="vertical" >
-        
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
             android:text="@string/leave_enter_data"
-            android:textSize="18sp"
-            android:gravity="center_horizontal" />
-        
+            android:textSize="18sp" />
+
         <EditText
             android:id="@+id/leave_et_data"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginStart="10sp"
             android:layout_marginEnd="10dp"
-            android:inputType="text" />
+            android:layout_marginStart="10sp"
+            android:enabled="true"
+            android:gravity="top"
+            android:inputType="text"
+            android:maxLines="10"
+            android:scrollbars="vertical"
+            android:textSize="18sp" />
     </LinearLayout>
-    
+
     <Button
         android:id="@+id/leave_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
-        android:layout_below="@id/leave_ll_editdata"
-        android:text="@string/leave_btn_sure"
         android:layout_alignParentEnd="true"
+        android:layout_below="@id/leave_ll_editdata"
         android:layout_marginEnd="20dp"
-        android:background="@drawable/btn_selector" />
+        android:layout_marginTop="6dp"
+        android:background="@drawable/btn_selector"
+        android:text="@string/leave_btn_sure" />
 
 </RelativeLayout>

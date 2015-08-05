@@ -3,9 +3,11 @@ package com.wzt.sun.infanteducation.fragment;
 import com.squareup.picasso.Picasso;
 import com.wzt.sun.infanteducation.BaseApp;
 import com.wzt.sun.infanteducation.R;
+import com.wzt.sun.infanteducation.activity.FaviconActivity;
 import com.wzt.sun.infanteducation.constans.ConstantsConfig;
 import com.wzt.sun.infanteducation.utils.CircleTransform;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -44,7 +46,8 @@ public class MeFragment extends Fragment implements OnItemClickListener{
 			@Override
 			public void onClick(View arg0) {
 				// TODO Auto-generated method stub
-				BaseApp.getInstance().showToast("点击了头像");
+				Intent intent = new Intent(getActivity(), FaviconActivity.class);
+				startActivity(intent);
 			}
 		});
 		Picasso.with(getActivity()).load(R.drawable.head_icon).transform(new CircleTransform()).into(iv);

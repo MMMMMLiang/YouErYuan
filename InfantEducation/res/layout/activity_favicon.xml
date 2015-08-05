@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+    <ImageView
+        android:id="@+id/favicon_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_launcher"
+        android:layout_centerHorizontal="true" />
+    
+    <RelativeLayout
+        android:layout_below="@id/favicon_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+        
+        <Button
+            android:id="@+id/favicon_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/favicon_btn"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:background="@color/green"
+            android:paddingStart="40dp"
+            android:paddingEnd="40dp"
+            android:paddingTop="10dp"
+            android:onClick="btnClick"
+            android:paddingBottom="10dp" />
+        
+        <Button
+            android:layout_below="@id/favicon_btn"
+            android:layout_marginTop="10dp"
+            android:id="@+id/favicon_btn_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/favicon_btn_save"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:background="@color/green"
+            android:paddingStart="40dp"
+            android:paddingEnd="40dp"
+            android:paddingTop="10dp"
+            android:onClick="btnClick"
+            android:paddingBottom="10dp" />
+        
+    </RelativeLayout>
+    
+    
+    
+
+</RelativeLayout>

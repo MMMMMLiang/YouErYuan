@@ -64,11 +64,11 @@ public class LeaveActivity extends Activity {
 	/**
 	 * 加载spinner下拉框数据
 	 */
-	public void initStr(){
+	public void initStr(){ 
 		lists = new ArrayList<String>();
-    	lists.add("病假");
-    	lists.add("事假");
-    	lists.add("其他");
-    }
+    	lists.add("教师");
+    	lists.add("家长");
+    	lists.add("园长");
+	}
 
 }
