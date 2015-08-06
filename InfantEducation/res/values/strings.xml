@@ -76,5 +76,10 @@
     
     <string name="favicon_btn">更换头像</string>
     <string name="favicon_btn_save">保存头像</string>
+    
+    <string name="today_syll">今日课程信息</string>
+    <string name="today_syll_no">无</string>
+    <string name="today_syll_am">上午:</string>
+    <string name="today_syll_pm">下午:</string>
 
 </resources>

@@ -33,44 +33,103 @@
         android:layout_height="wrap_content"
         android:background="#EAEAEA"
         android:visibility="visible" >
-        
+
         <TextView
-        android:id="@+id/course_datetitle_center"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true" />
+            android:id="@+id/course_datetitle_center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
 
-    <ImageButton
-        android:id="@+id/course_datetitle_left"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:background="@null"
-        android:contentDescription="@null"
-        android:padding="6dp"
-        android:onClick="ivClick"
-        android:src="@drawable/preview_arrowleft_icon" />
+        <ImageButton
+            android:id="@+id/course_datetitle_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:background="@null"
+            android:contentDescription="@null"
+            android:onClick="ivClick"
+            android:padding="6dp"
+            android:src="@drawable/preview_arrowleft_icon" />
 
-    <ImageButton
-        android:id="@+id/course_datetitle_right"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:background="@null"
-        android:contentDescription="@null"
-        android:padding="6dp"
-        android:onClick="ivClick"
-        android:src="@drawable/preview_arrowright_icon" />
-        
+        <ImageButton
+            android:id="@+id/course_datetitle_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:background="@null"
+            android:contentDescription="@null"
+            android:onClick="ivClick"
+            android:padding="6dp"
+            android:src="@drawable/preview_arrowright_icon" />
     </RelativeLayout>
-    
+
     <com.wzt.sun.infanteducation.view.CalendarView
         android:id="@+id/course_calendarview"
         android:layout_width="fill_parent"
         android:layout_height="match_parent" >
-        
     </com.wzt.sun.infanteducation.view.CalendarView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#2EB976"
+        android:gravity="center_horizontal"
+        android:paddingBottom="6dp"
+        android:paddingTop="6dp"
+        android:text="@string/today_syll"
+        android:textColor="@color/white" />
+
+    <TextView
+        android:id="@+id/today_syll_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="@string/today_syll_no" />
+
+    <LinearLayout
+        android:id="@+id/today_syll_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/today_syll_am" />
+
+            <TextView
+                android:id="@+id/today_syll_am"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="am"
+                android:layout_marginStart="10dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/today_syll_pm" />
+
+            <TextView
+                android:id="@+id/today_syll_pm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="pm"
+                android:layout_marginStart="10dp" />
+        </LinearLayout>
+    </LinearLayout>
 
 </LinearLayout>
