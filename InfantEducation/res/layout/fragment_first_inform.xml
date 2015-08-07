@@ -4,56 +4,11 @@
     android:layout_height="match_parent"
     android:background="@color/appbg" >
     
-    <RelativeLayout
-        android:id="@+id/imteraction_rl1"
+    <com.handmark.pulltorefresh.library.PullToRefreshListView
+        android:id="@+id/inform_ptrListView"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginTop="20dp"
-        android:background="@color/white" >
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginStart="10dp"
-            android:text="关于XXXXX的通知"
-            android:textSize="18sp" />
+        android:layout_height="match_parent" >
         
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:text="2015-07-21" />
-        
-        
-    </RelativeLayout>
+    </com.handmark.pulltorefresh.library.PullToRefreshListView>
     
-    <RelativeLayout
-        android:id="@+id/imteraction_rl2"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_below="@id/imteraction_rl1"
-        android:layout_marginTop="20dp"
-        android:background="@color/white" >
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginStart="10dp"
-            android:text="XXXXXXXX的通知"
-            android:textSize="18sp" />
-        
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:text="2015-07-22" />
-        
-        
-    </RelativeLayout>
-    
-
 </RelativeLayout>

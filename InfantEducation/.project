@@ -3,6 +3,7 @@
 	<name>InfantEducation</name>
 	<comment></comment>
 	<projects>
+		<project>library</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

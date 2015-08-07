@@ -1,6 +1,6 @@
 package com.wzt.sun.infanteducation;
 
-import com.wzt.sun.infanteducation.fragment.InformFragment;
+import com.wzt.sun.infanteducation.fragment.InformmFragment;
 import com.wzt.sun.infanteducation.fragment.InteractionFragment;
 import com.wzt.sun.infanteducation.fragment.KindergartenFragment;
 import com.wzt.sun.infanteducation.fragment.MeFragment;
@@ -100,7 +100,7 @@ public class MainActivity extends FragmentActivity {
 		case 1:
 			// 通知
 			if (fragments[1] == null) {
-				fragments[1] = new InformFragment();
+				fragments[1] = new InformmFragment();
 				ft.add(R.id.linear_container, fragments[1]);
 			} else {
 				ft.show(fragments[1]);

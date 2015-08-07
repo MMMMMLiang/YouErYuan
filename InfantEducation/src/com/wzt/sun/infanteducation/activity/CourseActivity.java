@@ -15,17 +15,14 @@ import com.lidroid.xutils.exception.HttpException;
 import com.lidroid.xutils.http.ResponseInfo;
 import com.lidroid.xutils.http.callback.RequestCallBack;
 import com.lidroid.xutils.http.client.HttpRequest.HttpMethod;
-import com.wzt.sun.infanteducation.BaseApp;
 import com.wzt.sun.infanteducation.R;
 import com.wzt.sun.infanteducation.bean.Syllabus;
 import com.wzt.sun.infanteducation.constans.ConstansUrl;
 import com.wzt.sun.infanteducation.utils.JsonParseUtils;
 import com.wzt.sun.infanteducation.view.CalendarView;
-import com.wzt.sun.infanteducation.view.CustomProgressDialog;
 import com.wzt.sun.infanteducation.view.CalendarView.OnItemClickListener;
+import com.wzt.sun.infanteducation.view.CustomProgressDialog;
 
-import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;

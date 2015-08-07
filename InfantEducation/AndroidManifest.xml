@@ -54,6 +54,7 @@
         <activity android:name="com.wzt.sun.infanteducation.activity.LogBookActivity"></activity>
         <activity android:name="com.wzt.sun.infanteducation.activity.InteractionFragmentActivity"></activity>
         <activity android:name="com.wzt.sun.infanteducation.activity.FaviconActivity"></activity>
+        <activity android:name="com.wzt.sun.infanteducation.activity.InformInfoActivity"></activity>
     </application>
 
 </manifest>

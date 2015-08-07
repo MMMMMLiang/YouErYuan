@@ -68,6 +68,7 @@
     <string name="stu_speciality">特长：xxxxxxxxxxxxxxxxxx</string>
     
     <string name="title_interaction_info">通知</string>
+    <string name="title_interaction_infos">通知通告</string>
     <string name="leave_name">请假条</string>
     <string name="leave_enter_lei_name">请选择请假类型</string>
     <string name="leave_enter_time">请输入请假时间</string>

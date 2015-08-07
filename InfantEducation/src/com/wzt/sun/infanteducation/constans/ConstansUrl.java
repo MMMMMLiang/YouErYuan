@@ -13,6 +13,11 @@ public class ConstansUrl {
 	 * 请求课程表的URL
 	 */
 	public static final String SYLLURL = "http://192.168.1.120:8080/SchoolManage/Syll/getJsyll?cid=";
+	
+	/**
+	 * 请求通知通告的URL
+	 */
+	public static final String INFORMURL = "http://192.168.1.120:8080/SchoolManage/Notice/gettypebyNoc?type=";
 		
 
 }
