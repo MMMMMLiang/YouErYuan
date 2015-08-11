@@ -27,60 +27,12 @@
             android:textSize="24sp" />
     </RelativeLayout>
     
-    <LinearLayout
-        android:id="@+id/star_info_low1"
+    <ListView
+        android:id="@+id/star_listview"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal" >
+        android:layout_height="match_parent" >
         
-        <ImageView
-            android:id="@+id/star_info_low1_image"
-            android:layout_width="0dp"
-            android:layout_weight="2"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="10dp"
-            android:src="@drawable/head_icon" />
-        
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_weight="3"
-            android:layout_height="match_parent"
-            android:orientation="vertical" >
-            
-            <TextView
-                android:id="@+id/star_info_name"
-                style="@style/stu_info_style"
-                android:layout_marginTop="10dp"
-                android:text="@string/stu_name" />
-            
-            <TextView
-                android:id="@+id/star_info_sex"
-                style="@style/stu_info_style"
-                android:layout_marginTop="9dp"
-                android:text="@string/stu_sex" />
-            
-            <TextView
-                android:id="@+id/star_info_age"
-                style="@style/stu_info_style"
-                android:layout_marginTop="9dp"
-                android:text="@string/stu_age" />
-            
-            <TextView
-                android:id="@+id/star_info_class"
-                style="@style/stu_info_style"
-                android:layout_marginTop="9dp"
-                android:text="@string/stu_class" />
-            
-            <TextView
-                android:id="@+id/star_info_num"
-                style="@style/stu_info_style"
-                android:layout_marginTop="9dp"
-                android:text="@string/stu_num" />
-            
-        </LinearLayout>
-        
-    </LinearLayout>
+    </ListView>
     
 
 </LinearLayout>

@@ -1,15 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:background="@drawable/welecome3" >
     
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="引导页面3"
-        android:textSize="24sp"
-        android:layout_centerInParent="true" />
-
     <Button
         android:id="@+id/welcome_btn"
         android:layout_width="wrap_content"
@@ -17,12 +11,14 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="50dp"
-        android:background="@color/red"
-        android:paddingEnd="12dp"
-        android:paddingStart="12dp"
+        android:background="@color/green"
+        android:paddingEnd="36dp"
+        android:paddingStart="36dp"
+        android:paddingTop="6dp"
+        android:paddingBottom="6dp"
         android:text="开始"
         android:textColor="@color/white"
-        android:textSize="20sp"
+        android:textSize="18sp"
         android:onClick="welcomeClick" />
 
 </RelativeLayout>

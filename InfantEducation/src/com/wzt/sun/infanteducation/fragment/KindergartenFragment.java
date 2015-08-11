@@ -246,7 +246,7 @@ public class KindergartenFragment extends DialogFragment implements
 				startActivity(mIntent);
 				break;
 			case 3:
-				// 评价图标
+				// 评价教师
 				mIntent.setClass(this.getActivity(), EvaluateActivity.class);
 				startActivity(mIntent);
 				break;
@@ -261,12 +261,12 @@ public class KindergartenFragment extends DialogFragment implements
 				startActivity(mIntent);
 				break;
 			case 6:
-				// 教育咨询
+				// 教育教学
 				mIntent.setClass(this.getActivity(), ConsultActivity.class);
 				startActivity(mIntent);
 				break;
 			case 7:
-				// 教学计划
+				// 课时作业
 				mIntent.setClass(this.getActivity(), PlanActivity.class);
 				startActivity(mIntent);
 				break;

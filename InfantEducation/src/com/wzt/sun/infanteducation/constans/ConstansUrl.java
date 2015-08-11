@@ -18,6 +18,16 @@ public class ConstansUrl {
 	 * 请求通知通告的URL
 	 */
 	public static final String INFORMURL = "http://192.168.1.120:8080/SchoolManage/Notice/gettypebyNoc?type=";
+	
+	/**
+	 * 上传请假条的URL
+	 */
+	public static final String POSTLEAVE = "http://192.168.1.118:8080/SchoolManage/Lev/addLv";
+	
+	/**
+	 * 请求明星宝宝的URL
+	 */
+	public static final String GETSTAR = "http://192.168.1.118:8080/SchoolManage/Str/getstr";
 		
 
 }

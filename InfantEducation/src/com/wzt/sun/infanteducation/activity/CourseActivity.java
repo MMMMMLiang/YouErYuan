@@ -106,6 +106,9 @@ public class CourseActivity extends BaseActivity implements OnItemClickListener{
 		loadData();
 	}
 	
+	/**
+	 * 初始化控件
+	 */
 	public void initView() {
 		iv = (ImageView) findViewById(R.id.titlebar_course_btn_back);
 		
@@ -239,6 +242,9 @@ public class CourseActivity extends BaseActivity implements OnItemClickListener{
 	
 	}
 	
+	/**
+	 * 提示框开启
+	 */
 	private void startProgressDialog(){
         if (progressDialog == null){
             progressDialog = CustomProgressDialog.createDialog(this);
@@ -249,6 +255,9 @@ public class CourseActivity extends BaseActivity implements OnItemClickListener{
         progressDialog.show();
     }
 	
+	/**
+	 * 提示框关闭
+	 */
 	private void stopProgressDialog(){
         if (progressDialog != null){
             progressDialog.dismiss();
@@ -256,6 +265,10 @@ public class CourseActivity extends BaseActivity implements OnItemClickListener{
         }
     }
 	
+	/**
+	 * 加载今天课程信息
+	 * @param date
+	 */
 	private void todayInfo(String date){
 		for (int i = 0; i < classLists.size(); i++) {
 			String classDate = classLists.get(i);

@@ -123,6 +123,7 @@
         android:layout_below="@id/leave_ll_editdata"
         android:layout_marginEnd="20dp"
         android:layout_marginTop="6dp"
+        android:onClick="btnClick"
         android:background="@drawable/btn_selector"
         android:text="@string/leave_btn_sure" />
 

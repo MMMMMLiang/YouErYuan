@@ -3,7 +3,7 @@ package com.wzt.sun.infanteducation.fragment;
 import com.squareup.picasso.Picasso;
 import com.wzt.sun.infanteducation.BaseApp;
 import com.wzt.sun.infanteducation.R;
-import com.wzt.sun.infanteducation.activity.FaviconActivity;
+import com.wzt.sun.infanteducation.activity.PersonalInfoActivity;
 import com.wzt.sun.infanteducation.constans.ConstantsConfig;
 import com.wzt.sun.infanteducation.utils.CircleTransform;
 
@@ -46,7 +46,7 @@ public class MeFragment extends Fragment implements OnItemClickListener{
 			@Override
 			public void onClick(View arg0) {
 				// TODO Auto-generated method stub
-				Intent intent = new Intent(getActivity(), FaviconActivity.class);
+				Intent intent = new Intent(getActivity(), PersonalInfoActivity.class);
 				startActivity(intent);
 			}
 		});

@@ -2,6 +2,11 @@ package com.wzt.sun.infanteducation.bean;
 
 import java.io.Serializable;
 
+/**
+ * 通知通告 
+ * @author sun
+ *
+ */
 public class Inform implements Serializable{
 
 	private int n_author;

@@ -45,6 +45,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
+import com.wzt.sun.infanteducation.R;
+import com.wzt.sun.infanteducation.utils.CircleTransform;
 import com.wzt.sun.infanteducation.utils.ViewFinder;
 
 /**
@@ -152,6 +154,19 @@ public class CommonViewHolder {
     	 ImageView imageView = ViewFinder.findViewById(mContentView, imageViewId);
     	 if(imageView != null){
     		 Picasso.with(context).load(url).into(imageView);
+    	 }
+    }
+    
+    /**
+     * 为ImageView设置圆形图片
+     * @param context
+     * @param imageViewId
+     * @param url
+     */
+    public void setCircleImageForView(Context context, int imageViewId, String url) {
+    	 ImageView imageView = ViewFinder.findViewById(mContentView, imageViewId);
+    	 if(imageView != null){
+    		 Picasso.with(context).load(url).placeholder(R.drawable.message_placeholder_picture).error(R.drawable.message_placeholder_picture).transform(new CircleTransform()).into(imageView);
     	 }
     }
 

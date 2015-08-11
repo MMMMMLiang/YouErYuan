@@ -8,6 +8,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.wzt.sun.infanteducation.bean.Inform;
+import com.wzt.sun.infanteducation.bean.StarBaby;
 import com.wzt.sun.infanteducation.bean.Syllabus;
 
 public class JsonParseUtils {
@@ -70,6 +71,36 @@ public class JsonParseUtils {
 				mInform.setN_type(mObject.optString("n_type"));
 				
 				lists.add(mInform);
+			}
+			return lists;
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+	/**
+	 * JSON解析明星宝宝
+	 * @param data
+	 * @return
+	 */
+	public static List<StarBaby> parseJsonStarBaby(String data){
+		List<StarBaby> lists = new ArrayList<StarBaby>();
+		
+		try {
+			JSONArray mArray = new JSONArray(data);
+			for (int i = 0; i < mArray.length(); i++) {
+				JSONObject mObject = mArray.optJSONObject(i);
+				StarBaby mStarBaby = new StarBaby();
+				
+				mStarBaby.setSb_authr(mObject.optString("sb_authr"));
+				mStarBaby.setSb_content(mObject.optString("sb_content"));
+				mStarBaby.setSb_date(mObject.optString("sb_date"));
+				mStarBaby.setSb_id(mObject.optString("sb_id"));
+				mStarBaby.setSb_img(mObject.optString("sb_img"));
+				
+				lists.add(mStarBaby);
 			}
 			return lists;
 		} catch (JSONException e) {
