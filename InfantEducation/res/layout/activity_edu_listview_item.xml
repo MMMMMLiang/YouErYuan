@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginStart="10dp"
+    android:layout_marginEnd="10dp"
+    android:background="@drawable/education_listview_item" >
+    
+    <ImageView
+        android:id="@+id/edu_listview_item_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:src="@drawable/head_icon" />
+    
+    <LinearLayout
+        android:id="@+id/edu_listview_item_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="10dp"
+        android:orientation="vertical"
+        android:layout_toEndOf="@id/edu_listview_item_icon" >
+        
+        <TextView
+            android:id="@+id/edu_listview_item_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:text="ssssss" />
+        
+        <TextView
+            android:id="@+id/edu_listview_item_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="@color/gray"
+            android:text="2015-08-12" />
+        
+        <TextView
+            android:id="@+id/edu_listview_item_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="xxxxxxxxxxxx" />
+        
+    </LinearLayout>
+    
+    
+
+</RelativeLayout>

@@ -3,17 +3,26 @@ package com.wzt.sun.infanteducation.fragment;
 import java.util.ArrayList;
 import java.util.List;
 
-import android.app.AlertDialog;
-import android.app.AlertDialog.Builder;
+import com.wzt.sun.infanteducation.BaseApp;
+import com.wzt.sun.infanteducation.R;
+import com.wzt.sun.infanteducation.activity.ConsultActivity;
+import com.wzt.sun.infanteducation.activity.CourseActivity;
+import com.wzt.sun.infanteducation.activity.DynamicActivity;
+import com.wzt.sun.infanteducation.activity.EvaluateActivity;
+import com.wzt.sun.infanteducation.activity.FeedbackActivity;
+import com.wzt.sun.infanteducation.activity.FoodActivity;
+import com.wzt.sun.infanteducation.activity.IntroductionActivity;
+import com.wzt.sun.infanteducation.activity.PlanActivity;
+import com.wzt.sun.infanteducation.activity.StarActivity;
+import com.wzt.sun.infanteducation.constans.ConstantsConfig;
+
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
-import android.support.v4.app.Fragment;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
@@ -29,20 +38,6 @@ import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
 import android.widget.LinearLayout;
 import android.widget.SimpleAdapter;
-
-import com.wzt.sun.infanteducation.BaseApp;
-import com.wzt.sun.infanteducation.MainActivity;
-import com.wzt.sun.infanteducation.R;
-import com.wzt.sun.infanteducation.activity.ConsultActivity;
-import com.wzt.sun.infanteducation.activity.CourseActivity;
-import com.wzt.sun.infanteducation.activity.DynamicActivity;
-import com.wzt.sun.infanteducation.activity.EvaluateActivity;
-import com.wzt.sun.infanteducation.activity.FeedbackActivity;
-import com.wzt.sun.infanteducation.activity.FoodActivity;
-import com.wzt.sun.infanteducation.activity.IntroductionActivity;
-import com.wzt.sun.infanteducation.activity.PlanActivity;
-import com.wzt.sun.infanteducation.activity.StarActivity;
-import com.wzt.sun.infanteducation.constans.ConstantsConfig;
 
 public class KindergartenFragment extends DialogFragment implements
 		OnPageChangeListener, OnItemClickListener {

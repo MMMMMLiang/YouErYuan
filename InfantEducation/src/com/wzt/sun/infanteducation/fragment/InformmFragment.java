@@ -49,7 +49,7 @@ public class InformmFragment extends Fragment implements OnRefreshListener2<List
 		@Override
 		public void handleMessage(Message msg) {
 			if (msg.what == 0x0005) {
-				//ptrListView.onRefreshComplete();
+				ptrListView.onRefreshComplete();
 				adapter.notifyDataSetChanged();
 			}
 		}
@@ -90,7 +90,7 @@ public class InformmFragment extends Fragment implements OnRefreshListener2<List
 			public void onItemClick(AdapterView<?> arg0, View arg1, int position, long arg3) {
 				Intent intent = new Intent(getActivity(), InformInfoActivity.class);
 				Bundle bundle = new Bundle();
-		        bundle.putSerializable("InformInfo1", lists.get(position));
+		        bundle.putSerializable("InformInfo1", lists.get(position-1));
 		        intent.putExtras(bundle);
 		        startActivity(intent);
 			}
@@ -112,6 +112,7 @@ public class InformmFragment extends Fragment implements OnRefreshListener2<List
 					public void onSuccess(ResponseInfo<String> response) {
 						String data = response.result;
 						List<Inform> informs = JsonParseUtils.parseJsonInform(data);
+						lists.clear();
 						lists.addAll(informs);
 						mHandle.sendEmptyMessage(0x0005);
 					}

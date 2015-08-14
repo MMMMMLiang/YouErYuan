@@ -3,6 +3,7 @@ package com.wzt.sun.infanteducation.fragment;
 import com.squareup.picasso.Picasso;
 import com.wzt.sun.infanteducation.BaseApp;
 import com.wzt.sun.infanteducation.R;
+import com.wzt.sun.infanteducation.activity.PersonSettingActivity;
 import com.wzt.sun.infanteducation.activity.PersonalInfoActivity;
 import com.wzt.sun.infanteducation.constans.ConstantsConfig;
 import com.wzt.sun.infanteducation.utils.CircleTransform;
@@ -56,7 +57,25 @@ public class MeFragment extends Fragment implements OnItemClickListener{
 
 	@Override
 	public void onItemClick(AdapterView<?> arg0, View arg1, int position, long arg3) {
-		BaseApp.getInstance().showToast("你点击了："+position);
+		Intent mIntent = new Intent();
+		switch (position) {
+		case 0:
+			mIntent.setClass(getActivity(), PersonSettingActivity.class);
+			break;
+		case 1:
+			mIntent.setClass(getActivity(), PersonSettingActivity.class);
+			break;
+		case 2:
+			mIntent.setClass(getActivity(), PersonSettingActivity.class);
+			break;
+		case 3:
+			mIntent.setClass(getActivity(), PersonSettingActivity.class);
+			break;
+
+		default:
+			break;
+		}
+		startActivity(mIntent);
 	}
 
 }

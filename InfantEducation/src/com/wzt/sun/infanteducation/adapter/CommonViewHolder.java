@@ -32,9 +32,15 @@
 
 package com.wzt.sun.infanteducation.adapter;
 
+import com.squareup.picasso.Picasso;
+import com.wzt.sun.infanteducation.R;
+import com.wzt.sun.infanteducation.utils.CircleTransform;
+import com.wzt.sun.infanteducation.utils.ViewFinder;
+
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -43,11 +49,6 @@ import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.squareup.picasso.Picasso;
-import com.wzt.sun.infanteducation.R;
-import com.wzt.sun.infanteducation.utils.CircleTransform;
-import com.wzt.sun.infanteducation.utils.ViewFinder;
 
 /**
  * 这是一个通用的ViewHolder, 将会装载AbsListView子类的item View, 并且将item
@@ -166,7 +167,20 @@ public class CommonViewHolder {
     public void setCircleImageForView(Context context, int imageViewId, String url) {
     	 ImageView imageView = ViewFinder.findViewById(mContentView, imageViewId);
     	 if(imageView != null){
-    		 Picasso.with(context).load(url).placeholder(R.drawable.message_placeholder_picture).error(R.drawable.message_placeholder_picture).transform(new CircleTransform()).into(imageView);
+    		 Picasso.with(context).load(url).resize(120, 120).centerCrop().placeholder(R.drawable.message_placeholder_picture).error(R.drawable.message_placeholder_picture).transform(new CircleTransform()).into(imageView);
+    	 }
+    }
+    
+    /**
+     * 为ImageView设置圆形图片
+     * @param context
+     * @param imageViewId
+     * @param url
+     */
+    public void setImageForFoodView(Context context, int imageViewId, String url) {
+    	 ImageView imageView = ViewFinder.findViewById(mContentView, imageViewId);
+    	 if(imageView != null){
+    		 Picasso.with(context).load(url).resize(100, 100).centerCrop().placeholder(R.drawable.message_placeholder_picture).error(R.drawable.message_placeholder_picture).into(imageView);
     	 }
     }
 

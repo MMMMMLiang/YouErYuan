@@ -7,7 +7,10 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.wzt.sun.infanteducation.bean.Education;
+import com.wzt.sun.infanteducation.bean.Food;
 import com.wzt.sun.infanteducation.bean.Inform;
+import com.wzt.sun.infanteducation.bean.Recipe;
 import com.wzt.sun.infanteducation.bean.StarBaby;
 import com.wzt.sun.infanteducation.bean.Syllabus;
 
@@ -101,6 +104,109 @@ public class JsonParseUtils {
 				mStarBaby.setSb_img(mObject.optString("sb_img"));
 				
 				lists.add(mStarBaby);
+			}
+			return lists;
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+	/**
+	 * JSON解析食物
+	 * @param data
+	 * @return
+	 */
+	public static List<Food> parseJsonFood(String data){
+		List<Food> lists = new ArrayList<Food>();
+		
+		try {
+			JSONArray mArray = new JSONArray(data);
+			for (int i = 0; i < mArray.length(); i++) {
+				JSONObject mObject = mArray.optJSONObject(i);
+				Food mFood = new Food();
+				
+				mFood.setFo_authr(mObject.optInt("fo_authr"));
+				mFood.setFo_date(mObject.optString("fo_date"));
+				mFood.setFo_id(mObject.optInt("fo_id"));
+				mFood.setFo_img(mObject.optString("fo_img"));
+				mFood.setFo_name(mObject.optString("fo_name"));
+				
+				lists.add(mFood);
+			}
+			return lists;
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+	/**
+	 * JSON解析食谱
+	 * @param data
+	 * @return
+	 */
+	public static List<Recipe> parseJsonRecipe(String data){
+		List<Recipe> lists = new ArrayList<Recipe>();
+		
+		try {
+			JSONArray mArray = new JSONArray(data);
+			for (int i = 0; i < mArray.length(); i++) {
+				JSONObject mObject = mArray.optJSONObject(i);
+				Recipe mRecipe = new Recipe();
+				
+				// 中午食谱
+				mRecipe.setRe_af(mObject.optString("re_af"));
+				// 下午加餐
+				mRecipe.setRe_afdown(mObject.optString("re_afdown"));
+				/*// 午餐
+				mRecipe.setRe_am(mObject.optString("re_am"));*/
+				// 上午加餐
+				mRecipe.setRe_amup(mObject.optString("re_amup"));
+				mRecipe.setRe_authr(mObject.optInt("re_authr"));
+				mRecipe.setRe_date(mObject.optString("re_date"));
+				mRecipe.setRe_id(mObject.optInt("re_id"));
+				// 早餐
+				mRecipe.setRe_mr(mObject.optString("re_mr"));
+				// 晚餐
+				mRecipe.setRe_ni(mObject.optString("re_ni"));
+				mRecipe.setRe_uploaddate(mObject.optString("re_uploaddate"));
+				mRecipe.setRe_week(mObject.optString("re_week"));
+				
+				lists.add(mRecipe);
+			}
+			return lists;
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+	/**
+	 * JSON解析教育教学
+	 * @param data
+	 * @return
+	 */
+	public static List<Education> parseJsonEdu(String data){
+		List<Education> lists = new ArrayList<Education>();
+		
+		try {
+			JSONArray mArray = new JSONArray(data);
+			for (int i = 0; i < mArray.length(); i++) {
+				JSONObject mObject = mArray.optJSONObject(i);
+				Education mEducation = new Education();
+				
+				mEducation.setSy_content(mObject.optString("sy_content"));
+				mEducation.setSy_date(mObject.optString("sy_date"));
+				mEducation.setSy_id(mObject.optInt("sy_id"));
+				mEducation.setSy_img(mObject.optString("sy_img"));
+				mEducation.setSy_title(mObject.optString("sy_title"));
+				mEducation.setSy_type(mObject.optInt("sy_type"));
+				
+				lists.add(mEducation);
 			}
 			return lists;
 		} catch (JSONException e) {

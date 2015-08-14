@@ -2,6 +2,9 @@ package com.wzt.sun.infanteducation.activity;
 
 import java.util.ArrayList;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import com.lidroid.xutils.HttpUtils;
 import com.lidroid.xutils.exception.HttpException;
 import com.lidroid.xutils.http.RequestParams;
@@ -99,14 +102,14 @@ public class LeaveActivity extends Activity {
 		switch (view.getId()) {
 		case R.id.leave_btn:
 			startProgressDialog();
-			RequestParams params = new RequestParams("GBK");
+			RequestParams params = new RequestParams();
 			//HttpEntity bodyEntity = new UrlEncodedFormEntity(str_time,HTTP.UTF_8);
 			str_time = et_time.getText().toString();
 			str_text = et_text.getText().toString();
 			
-			params.addQueryStringParameter("L_type", str_type);
-			params.addQueryStringParameter("L_day", str_time);
-			params.addQueryStringParameter("L_cause", str_text);
+			params.addBodyParameter("L_type", str_type);
+			params.addBodyParameter("L_day", str_time);
+			params.addBodyParameter("L_cause", str_text);
 			mHttpUtils.send(HttpMethod.POST, ConstansUrl.POSTLEAVE, params, new RequestCallBack<String>() {
 
 				@Override

@@ -3,15 +3,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
     
+    <RelativeLayout
+        android:id="@+id/favicon_head"
+        android:layout_width="match_parent"
+        android:layout_height="320dp" >
+    
     <ImageView
         android:id="@+id/favicon_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_launcher"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerInParent="true" />
+    
+   </RelativeLayout>
     
     <RelativeLayout
-        android:layout_below="@id/favicon_image"
+        android:layout_below="@id/favicon_head"
+        android:layout_marginTop="30dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent" >
         
@@ -19,7 +27,7 @@
             android:id="@+id/favicon_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
             android:text="@string/favicon_btn"
             android:textColor="@color/white"
             android:textSize="18sp"
@@ -36,7 +44,7 @@
             android:id="@+id/favicon_btn_save"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
             android:text="@string/favicon_btn_save"
             android:textColor="@color/white"
             android:textSize="18sp"

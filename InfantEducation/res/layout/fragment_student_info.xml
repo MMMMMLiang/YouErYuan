@@ -27,26 +27,28 @@
             android:textSize="24sp" />
     </RelativeLayout>
     
-    <LinearLayout
-        android:id="@+id/stu_info_low1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+    <RelativeLayout
+        android:id="@+id/stu_info_row2"
         android:layout_below="@id/stu_info_title"
-        android:orientation="horizontal" >
-        
-        <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    
+    <ImageView
             android:id="@+id/stu_info_low1_image"
-            android:layout_width="0dp"
-            android:layout_weight="2"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_centerHorizontal="true"
             android:src="@drawable/head_icon" />
-        
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_weight="3"
+    
+    </RelativeLayout>
+    
+    <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_below="@id/stu_info_row2"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
             android:orientation="vertical" >
             
             <TextView
@@ -79,47 +81,31 @@
                 android:layout_marginTop="9dp"
                 android:text="@string/stu_num" />
             
-        </LinearLayout>
-        
-    </LinearLayout>
-    
-    <LinearLayout
-        android:id="@+id/stu_info_low2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_below="@id/stu_info_low1"
-        android:orientation="vertical" >
-        
-        <TextView
+            <TextView
                 android:id="@+id/stu_info_birthday"
                 style="@style/stu_info_style"
-                android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:text="@string/stu_birthday" />
         
         <TextView
                 android:id="@+id/stu_info_parents"
                 style="@style/stu_info_style"
-                android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:text="@string/stu_parents" />
         
         <TextView
                 android:id="@+id/stu_info_parentsphone"
                 style="@style/stu_info_style"
-                android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:text="@string/stu_parentsphone" />
         
         <TextView
                 android:id="@+id/stu_info_speciality"
                 style="@style/stu_info_style"
-                android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:text="@string/stu_speciality" />
-        
-    </LinearLayout>
+            
+        </LinearLayout>
     
 
 </RelativeLayout>

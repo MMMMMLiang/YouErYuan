@@ -3,12 +3,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
-    
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:background="#2EB976" >
-        
+
         <ImageView
             android:id="@+id/titlebar_consult_btn_back"
             android:layout_width="wrap_content"
@@ -26,6 +26,22 @@
             android:textColor="@color/white"
             android:textSize="24sp" />
     </RelativeLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:src="@drawable/main_banner2"
+        android:scaleType="fitXY" />
     
+    <GridView
+        android:id="@+id/consult_edu_gridview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:numColumns="2"
+        android:horizontalSpacing="10dp"
+        android:verticalSpacing="10dp" >
+        
+    </GridView>
 
 </LinearLayout>

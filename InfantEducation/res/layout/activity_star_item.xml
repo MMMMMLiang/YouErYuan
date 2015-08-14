@@ -5,7 +5,7 @@
     android:orientation="horizontal" >
     
     <ImageView
-        android:id="@+id/star_item_icon"
+        android:id="@+id/star_item_icon1"
         android:layout_width="0dp"
         android:layout_weight="1"
         android:layout_height="120dp"

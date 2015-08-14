@@ -51,7 +51,7 @@ public class ListviewAdapter extends BaseAdapter {
 		return arg1;
 	}
 	
-	class ViewHolder {
+	private class ViewHolder {
 		public TextView textView;
 	}
 

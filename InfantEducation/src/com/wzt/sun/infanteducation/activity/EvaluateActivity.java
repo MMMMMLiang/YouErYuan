@@ -7,6 +7,7 @@ import com.wzt.sun.infanteducation.R;
 import com.wzt.sun.infanteducation.view.CustomerSpinner;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
@@ -19,7 +20,7 @@ import android.widget.ImageView;
  * @author sun
  *
  */
-public class EvaluateActivity extends BaseActivity implements OnItemSelectedListener{
+public class EvaluateActivity extends BaseActivity{
 
 	private ImageView iv;
 	
@@ -62,38 +63,38 @@ public class EvaluateActivity extends BaseActivity implements OnItemSelectedList
 		eAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, elists);
 		evaSpinner.setAdapter(eAdapter);
 		
-		teaSpinner.setOnItemSelectedListener(this);
-		evaSpinner.setOnItemSelectedListener(this);
-		
-	}
+		teaSpinner.setOnItemSelectedListener(new OnItemSelectedListener() {
 
-	@Override
-	public void onItemSelected(AdapterView<?> arg0, View view, int position, long id) {
-		// TODO Auto-generated method stub
-		switch (view.getId()) {
-		case R.id.evaluate_spinner_teacher:
-			BaseApp.getInstance().showToast(tlists.get(position));
-			if(chooseTeacher == tlists.get(position)){
-				isChoose = true;
-			}else {
-				chooseTeacher = tlists.get(position);
+			@Override
+			public void onItemSelected(AdapterView<?> arg0, View arg1, int position, long arg3) {
+				// TODO Auto-generated method stub
+				BaseApp.getInstance().showToast(tlists.get(position));
+				chooseTeacher = tlists.get(position).toString();
 			}
-			break;
-		case R.id.evaluate_spinner_star:
-			BaseApp.getInstance().showToast(elists.get(position));
-			break;
 
-		default:
-			break;
-		}
-	}
+			@Override
+			public void onNothingSelected(AdapterView<?> arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
+		evaSpinner.setOnItemSelectedListener(new OnItemSelectedListener() {
 
-	@Override
-	public void onNothingSelected(AdapterView<?> arg0) {
-		// TODO Auto-generated method stub
+			@Override
+			public void onItemSelected(AdapterView<?> arg0, View arg1, int position, long arg3) {
+				// TODO Auto-generated method stub
+				BaseApp.getInstance().showToast(elists.get(position));
+			}
+
+			@Override
+			public void onNothingSelected(AdapterView<?> arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
 		
 	}
-	
+
 	/**
 	 * 加载spinner下拉框数据
 	 */
@@ -110,11 +111,14 @@ public class EvaluateActivity extends BaseActivity implements OnItemSelectedList
 	
 	public void btnClick(View view){
 		if(view.getId() == R.id.btn_present){
-			
+			String str = chooseTeacher;
 			if(isChoose){
 				BaseApp.getInstance().showToast("您已经提交过了");
 			}else{
 				BaseApp.getInstance().showToast("点击了btn");
+				if(str.equals(chooseTeacher)){
+					isChoose = true;
+				}
 			}
 		}
 	}

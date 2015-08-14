@@ -515,7 +515,7 @@ public class CalendarView extends View implements View.OnTouchListener {
 		//点击选中颜色
 		public int cellSelectedColor = Color.parseColor("#99CCFF");
 		//有课日期字体颜色
-		private int classTextColor = Color.parseColor("#F0E68C");
+		private int classTextColor = Color.parseColor("#3CC457");
 		public Paint borderPaint;
 		public Paint monthPaint;
 		public Paint weekPaint;
