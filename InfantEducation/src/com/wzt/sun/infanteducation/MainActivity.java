@@ -1,13 +1,18 @@
 package com.wzt.sun.infanteducation;
 
+import com.wzt.sun.infanteducation.constans.ConstantsConfig;
 import com.wzt.sun.infanteducation.fragment.InformmFragment;
 import com.wzt.sun.infanteducation.fragment.InteractionFragment;
 import com.wzt.sun.infanteducation.fragment.KindergartenFragment;
 import com.wzt.sun.infanteducation.fragment.MeFragment;
+import com.wzt.sun.infanteducation.fragment.MyAlertDialogFragment;
 import com.wzt.sun.infanteducation.fragment.ParadiseFragment;
 import com.wzt.sun.infanteducation.netstate.NetworkStateReceiver;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
@@ -21,6 +26,9 @@ public class MainActivity extends FragmentActivity {
 	private FragmentManager fm;
 	// 五个Fragment界面
 	private Fragment[] fragments = new Fragment[5];
+	
+	private SharedPreferences loginSp = null;
+	private boolean isLogin = false;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +36,7 @@ public class MainActivity extends FragmentActivity {
 		setContentView(R.layout.activity_main);
 		// 动画效果淡入淡出
 		overridePendingTransition(R.anim.alpha_in, R.anim.alpha_out);
+		isLogin();
 		initView();
 
 	}
@@ -47,35 +56,39 @@ public class MainActivity extends FragmentActivity {
 
 	// radiogroup点击事件
 	public void rbClick(View view) {
-		switch (view.getId()) {
-		case R.id.bottom_rb_kindergarten:
-			// 幼儿园
-			showFragment(0);
-			hideOtherFragment(0);
-			break;
-		case R.id.bottom_rb_inform:
-			// 通知
-			showFragment(1);
-			hideOtherFragment(1);
-			break;
-		case R.id.bottom_rb_interaction:
-			// 互动
-			showFragment(2);
-			hideOtherFragment(2);
-			break;
-		case R.id.bottom_rb_paradise:
-			// 乐园
-			showFragment(3);
-			hideOtherFragment(3);
-			break;
-		// 我
-		case R.id.bottom_rb_me:
-			showFragment(4);
-			hideOtherFragment(4);
-			break;
+		if(!isLogin){
+			dialogShow();
+		}else{
+			switch (view.getId()) {
+			case R.id.bottom_rb_kindergarten:
+				// 幼儿园
+				showFragment(0);
+				hideOtherFragment(0);
+				break;
+			case R.id.bottom_rb_inform:
+				// 通知
+				showFragment(1);
+				hideOtherFragment(1);
+				break;
+			case R.id.bottom_rb_interaction:
+				// 互动
+				showFragment(2);
+				hideOtherFragment(2);
+				break;
+			case R.id.bottom_rb_paradise:
+				// 乐园
+				showFragment(3);
+				hideOtherFragment(3);
+				break;
+				// 我
+			case R.id.bottom_rb_me:
+				showFragment(4);
+				hideOtherFragment(4);
+				break;
 
-		default:
-			break;
+			default:
+				break;
+			}
 		}
 	}
 
@@ -154,6 +167,16 @@ public class MainActivity extends FragmentActivity {
 				ft.commit();
 			}
 		}
+	}
+	
+	private void isLogin() {
+		loginSp = this.getSharedPreferences(ConstantsConfig.SHAREDPREFERENCES_LOGIN, Context.MODE_PRIVATE);
+		isLogin = loginSp.getBoolean("isLogin", false);
+	}
+	
+	private void dialogShow() {
+		DialogFragment newFragment = new MyAlertDialogFragment();
+		newFragment.show(getSupportFragmentManager(), "dialog");
 	}
 	
 	@Override

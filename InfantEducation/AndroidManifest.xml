@@ -58,6 +58,8 @@
         <activity android:name="com.wzt.sun.infanteducation.activity.PersonalInfoActivity"></activity>
         <activity android:name="com.wzt.sun.infanteducation.activity.ConsultInfoActivity"></activity>
         <activity android:name="com.wzt.sun.infanteducation.activity.PersonSettingActivity"></activity>
+        <activity android:name="com.wzt.sun.infanteducation.activity.SettingUserActivity"></activity>
+        <activity android:name="com.wzt.sun.infanteducation.activity.SettingStuActivity"></activity>
     </application>
 
 </manifest>

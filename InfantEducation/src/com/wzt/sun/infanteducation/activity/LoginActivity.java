@@ -13,7 +13,6 @@ import com.wzt.sun.infanteducation.MainActivity;
 import com.wzt.sun.infanteducation.R;
 import com.wzt.sun.infanteducation.constans.ConstansUrl;
 import com.wzt.sun.infanteducation.constans.ConstantsConfig;
-import com.wzt.sun.infanteducation.view.CustomerSpinner;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -24,18 +23,13 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemSelectedListener;
-import android.widget.ArrayAdapter;
 import android.widget.EditText;
 
 public class LoginActivity extends Activity {
 	private EditText et_login_username;
 	private EditText et_login_password;
-	private CustomerSpinner mSpinner;
 	
 	private static ArrayList<String> lists;
-	private ArrayAdapter<String> adapter;
 	
 	private String str;
 	private HttpUtils mHttpUtils;
@@ -47,41 +41,14 @@ public class LoginActivity extends Activity {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_login);
-		initStr();
 		initView();
 	}
 	
 	public void initView() {
 		et_login_username = (EditText) findViewById(R.id.et_login_username);
 		et_login_password = (EditText) findViewById(R.id.et_login_password);
-		mSpinner = (CustomerSpinner) findViewById(R.id.login_spinner);
-		mSpinner.setList(lists);
-		adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, lists);
-		mSpinner.setAdapter(adapter);
 		mHttpUtils = new HttpUtils();
-		mSpinner.setOnItemSelectedListener(new OnItemSelectedListener() {
-
-			@Override
-			public void onItemSelected(AdapterView<?> parent, View view,
-					int position, long id) {
-				str = lists.get(position);
-			}
-
-			@Override
-			public void onNothingSelected(AdapterView<?> parent) {
-				
-			}
-		});
 	}
-	/**
-	 * 加载spinner下拉框数据
-	 */
-	public void initStr(){
-		lists = new ArrayList<String>();
-    	lists.add("教师");
-    	lists.add("家长");
-    	lists.add("园长");
-    }
 	
 	public void btnClick(View view){
 		switch (view.getId()) {
@@ -92,8 +59,6 @@ public class LoginActivity extends Activity {
 			Log.i("TEST", userName+","+passWord);
 			if(TextUtils.isEmpty(userName) || TextUtils.isEmpty(passWord)){
 				BaseApp.getInstance().showToast("用户名、密码不能为空！");
-			}else if (str.equals("")) {
-				BaseApp.getInstance().showToast("请选择身份！");
 			}else {
 				RequestParams params = new RequestParams();
 				params.addQueryStringParameter("user", userName);

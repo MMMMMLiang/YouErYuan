@@ -3,6 +3,7 @@ package com.wzt.sun.infanteducation.fragment;
 import com.squareup.picasso.Picasso;
 import com.wzt.sun.infanteducation.BaseApp;
 import com.wzt.sun.infanteducation.R;
+import com.wzt.sun.infanteducation.activity.FeedbackActivity;
 import com.wzt.sun.infanteducation.activity.PersonSettingActivity;
 import com.wzt.sun.infanteducation.activity.PersonalInfoActivity;
 import com.wzt.sun.infanteducation.constans.ConstantsConfig;
@@ -69,7 +70,7 @@ public class MeFragment extends Fragment implements OnItemClickListener{
 			mIntent.setClass(getActivity(), PersonSettingActivity.class);
 			break;
 		case 3:
-			mIntent.setClass(getActivity(), PersonSettingActivity.class);
+			mIntent.setClass(getActivity(), FeedbackActivity.class);
 			break;
 
 		default:

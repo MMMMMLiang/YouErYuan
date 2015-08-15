@@ -7,7 +7,6 @@ import com.wzt.sun.infanteducation.R;
 import com.wzt.sun.infanteducation.view.CustomerSpinner;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
@@ -100,9 +99,9 @@ public class EvaluateActivity extends BaseActivity{
 	 */
 	public void initStr(){ 
 		tlists = new ArrayList<String>();
-    	tlists.add("事假");
-    	tlists.add("病假");
-    	tlists.add("其他");
+    	tlists.add("教师1");
+    	tlists.add("教师2");
+    	tlists.add("教师3");
     	
     	elists = new ArrayList<String>();
     	elists.add("满意");

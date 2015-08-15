@@ -47,7 +47,7 @@
         android:hint="@string/ev_password"
         android:inputType="textPassword" />
 
-    <LinearLayout
+    <!-- <LinearLayout
         android:id="@+id/ll_login_spinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -72,13 +72,13 @@
             android:layout_marginStart="5sp"
             android:background="@drawable/bg_spinner" >
         </com.wzt.sun.infanteducation.view.CustomerSpinner>
-    </LinearLayout>
+    </LinearLayout> -->
     
     <Button
         android:id="@+id/btn_login_login"
         android:layout_width="match_parent"
         android:layout_height="36dp"
-        android:layout_below="@+id/ll_login_spinner"
+        android:layout_below="@+id/et_login_password"
         android:layout_marginTop="20sp"
         android:layout_marginLeft="20sp"
         android:layout_marginRight="20sp"
