@@ -90,5 +90,6 @@
     <string name="person_setting_title">个人设置</string>
     <string name="setting_user_title">账号设置</string>
     <string name="setting_stu_title">学生设置</string>
+    <string name="activity_home_work_title">课时作业</string>
 
 </resources>

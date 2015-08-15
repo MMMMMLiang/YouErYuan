@@ -25,7 +25,23 @@
             android:text="@string/activity_plan"
             android:textColor="@color/white"
             android:textSize="24sp" />
+        
+        <ImageView
+            android:id="@+id/titlebar_plant_btn_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="6dp"
+            android:src="@drawable/gwe" />
     </RelativeLayout>
+    
+    <com.handmark.pulltorefresh.library.PullToRefreshListView
+        android:id="@+id/plan_ptrListView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+        
+    </com.handmark.pulltorefresh.library.PullToRefreshListView>
     
 
 </LinearLayout>

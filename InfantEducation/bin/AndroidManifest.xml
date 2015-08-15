@@ -60,6 +60,7 @@
         <activity android:name="com.wzt.sun.infanteducation.activity.PersonSettingActivity"></activity>
         <activity android:name="com.wzt.sun.infanteducation.activity.SettingUserActivity"></activity>
         <activity android:name="com.wzt.sun.infanteducation.activity.SettingStuActivity"></activity>
+        <activity android:name="com.wzt.sun.infanteducation.activity.HomeWorkInfoActivity"></activity>
     </application>
 
 </manifest>

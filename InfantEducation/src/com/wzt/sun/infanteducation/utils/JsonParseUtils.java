@@ -9,6 +9,7 @@ import org.json.JSONObject;
 
 import com.wzt.sun.infanteducation.bean.Education;
 import com.wzt.sun.infanteducation.bean.Food;
+import com.wzt.sun.infanteducation.bean.Homework;
 import com.wzt.sun.infanteducation.bean.Inform;
 import com.wzt.sun.infanteducation.bean.Recipe;
 import com.wzt.sun.infanteducation.bean.StarBaby;
@@ -207,6 +208,43 @@ public class JsonParseUtils {
 				mEducation.setSy_type(mObject.optInt("sy_type"));
 				
 				lists.add(mEducation);
+			}
+			return lists;
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+	/**
+	 * JSON解析家庭作业
+	 * @param data
+	 * @return
+	 */
+	public static List<Homework> parseJsonHomeWork(String data){
+		List<Homework> lists = new ArrayList<Homework>();
+		
+		try {
+			JSONArray mArray = new JSONArray(data);
+			for (int i = 0; i < mArray.length(); i++) {
+				JSONObject mObject = mArray.optJSONObject(i);
+				Homework mHomework = new Homework();
+				/*private int h_id; 
+				private String h_title;
+				private int h_authr;
+				private String h_content;
+				private String h_date;
+				private int c_id;*/
+				
+				mHomework.setC_id(mObject.optInt("c_id"));
+				mHomework.setH_authr(mObject.optInt("sy_date"));
+				mHomework.setH_content(mObject.optString("h_content"));
+				mHomework.setH_date(mObject.optString("h_date"));
+				mHomework.setH_id(mObject.optInt("h_id"));
+				mHomework.setH_title(mObject.optString("h_title"));
+				
+				lists.add(mHomework);
 			}
 			return lists;
 		} catch (JSONException e) {
