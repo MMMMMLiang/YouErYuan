@@ -5,9 +5,13 @@ public class ConstansUrl {
 
 	//登录的URL
 	public static final String loginUrl(){
-		String url = "http://"+IP+"/SchoolManage/admin/login";
+		String url = "http://"+IP+"/SchoolManage/vipuser/login";
 		return url;
 	}
+	/**
+	 * 请求学生信息的URL
+	 */
+	public static final String GETSTUINFO = "http://"+IP+"/SchoolManage/student/listjson";
 
 	/**
 	 * 请求课程表的URL
@@ -43,5 +47,20 @@ public class ConstansUrl {
 	 * 请求教育教学的URL
 	 */
 	public static final String GETEDUCATION = "http://"+IP+"/SchoolManage/Sty/getSty";
+	
+	/**
+	 * 请求教育教学的URL
+	 */
+	public static final String GETHOMEWORK = "http://"+IP+"/SchoolManage/Home/getHomewk?id=";
+	
+	/**
+	 * 请求学生考勤的URL
+	 */
+	public static final String GETSTUATTEND = "http://"+IP+"/SchoolManage/Atted/getAte?sid=";
+	
+	/**
+	 * 请求学生考勤的URL
+	 */
+	public static final String POSTYIJIAN = "http://"+IP+"/SchoolManage/Feed/AddFb";
 
 }

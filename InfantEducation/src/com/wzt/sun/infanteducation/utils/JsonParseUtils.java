@@ -7,13 +7,17 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.wzt.sun.infanteducation.bean.Attendance;
 import com.wzt.sun.infanteducation.bean.Education;
 import com.wzt.sun.infanteducation.bean.Food;
 import com.wzt.sun.infanteducation.bean.Homework;
 import com.wzt.sun.infanteducation.bean.Inform;
 import com.wzt.sun.infanteducation.bean.Recipe;
 import com.wzt.sun.infanteducation.bean.StarBaby;
+import com.wzt.sun.infanteducation.bean.Student;
 import com.wzt.sun.infanteducation.bean.Syllabus;
+import com.wzt.sun.infanteducation.bean.Teacher;
+import com.wzt.sun.infanteducation.bean.User;
 
 public class JsonParseUtils {
 	
@@ -230,12 +234,6 @@ public class JsonParseUtils {
 			for (int i = 0; i < mArray.length(); i++) {
 				JSONObject mObject = mArray.optJSONObject(i);
 				Homework mHomework = new Homework();
-				/*private int h_id; 
-				private String h_title;
-				private int h_authr;
-				private String h_content;
-				private String h_date;
-				private int c_id;*/
 				
 				mHomework.setC_id(mObject.optInt("c_id"));
 				mHomework.setH_authr(mObject.optInt("sy_date"));
@@ -245,6 +243,164 @@ public class JsonParseUtils {
 				mHomework.setH_title(mObject.optString("h_title"));
 				
 				lists.add(mHomework);
+			}
+			return lists;
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+	/**
+	 * JSON解析考勤表
+	 * @param data
+	 * @return
+	 */
+	public static List<Attendance> parseJsonAttendance(String data){
+		List<Attendance> lists = new ArrayList<Attendance>();
+		
+		try {
+			JSONArray mArray = new JSONArray(data);
+			for (int i = 0; i < mArray.length(); i++) {
+				JSONObject mObject = mArray.optJSONObject(i);
+				Attendance mAttendance = new Attendance();
+				mAttendance.setC_id(mObject.optInt("c_id"));
+				mAttendance.setA_date(mObject.optString("a_date"));
+				mAttendance.setA_am(mObject.optString("a_am"));
+				mAttendance.setA_ID(mObject.optInt("a_ID"));
+				mAttendance.setA_pm(mObject.optString("a_pm"));
+				mAttendance.setA_rate(mObject.optString("a_rate"));
+				mAttendance.setA_type(mObject.optString("a_type"));
+				mAttendance.setSt_id(mObject.optInt("st_id"));
+				
+				lists.add(mAttendance);
+			}
+			return lists;
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+	/**
+	 * JSON解析学生表
+	 * @param data
+	 * @return
+	 */
+	public static List<Student> parseJsonStudents(String data){
+		List<Student> lists = new ArrayList<Student>();
+		
+		try {
+			JSONArray mArray = new JSONArray(data);
+			for (int i = 0; i < mArray.length(); i++) {
+				JSONObject mObject = mArray.optJSONObject(i);
+				Student mStudent = new Student();
+				
+				mStudent.setSt_id(mObject.optInt("st_id"));
+				mStudent.setC_id(mObject.optInt("c_id"));
+				mStudent.setSt_sex(mObject.optString("st_sex"));
+				mStudent.setSt_volk(mObject.optString("st_volk"));
+				mStudent.setSt_birthday(mObject.optString("st_birthday"));
+				mStudent.setSt_date(mObject.optString("st_date"));
+				mStudent.setSt_card(mObject.optString("st_card"));
+				mStudent.setSt_address(mObject.optString("st_address"));
+				mStudent.setSt_father(mObject.optString("st_father"));
+				mStudent.setSt_fcard(mObject.optString("st_fcard"));
+				mStudent.setSt_mother(mObject.optString("st_mother"));
+				mStudent.setSt_mcard(mObject.optString("st_mcard"));
+				mStudent.setSt_health(mObject.optString("st_health"));
+				mStudent.setSt_hremarks(mObject.optString("st_hremarks"));
+				mStudent.setSt_shuttlecard(mObject.optString("st_shuttlecard"));
+				mStudent.setSt_shuttle(mObject.optString("st_shuttle"));
+				mStudent.setSt_graduated(mObject.optString("st_graduated"));
+				mStudent.setSt_photo(mObject.optString("st_photo"));
+				mStudent.setSt_name(mObject.optString("st_name"));
+				
+				
+				lists.add(mStudent);
+			}
+			return lists;
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+	/**
+	 * JSON解析用户表
+	 * @param data
+	 * @return
+	 */
+	public static List<User> parseJsonUser(String data){
+		List<User> lists = new ArrayList<User>();
+		
+		try {
+			JSONArray mArray = new JSONArray(data);
+			for (int i = 0; i < mArray.length(); i++) {
+				JSONObject mObject = mArray.optJSONObject(i);
+				User mUser = new User();
+				
+				mUser.setVid(mObject.optInt("vid"));
+				mUser.setVsf(mObject.optString("vsf"));
+				mUser.setVsfname(mObject.optString("vsfname"));
+				mUser.setUser(mObject.optString("user"));
+				mUser.setPassword(mObject.optString("password"));
+				mUser.setName(mObject.optString("name"));
+				mUser.setPhone(mObject.optString("phone"));
+				mUser.setRegisterdate(mObject.optString("registerdate"));
+				mUser.setState(mObject.optString("state"));
+				mUser.setIdentity(mObject.optString("identity"));
+				mUser.setEmail(mObject.optString("email"));
+				mUser.setAddress(mObject.optString("address"));
+				mUser.setAppointmenttime(mObject.optString("appointmenttime"));
+				mUser.setRemarks1(mObject.optString("remarks1"));
+				mUser.setRemarks2(mObject.optString("remarks2"));
+				mUser.setJifen(mObject.optInt("jifen"));
+				
+				lists.add(mUser);
+			}
+			return lists;
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+	/**
+	 * JSON解析教师表
+	 * @param data
+	 * @return
+	 */
+	public static List<Teacher> parseJsonTeacher(String data){
+		List<Teacher> lists = new ArrayList<Teacher>();
+		
+		try {
+			JSONArray mArray = new JSONArray(data);
+			for (int i = 0; i < mArray.length(); i++) {
+				JSONObject mObject = mArray.optJSONObject(i);
+				Teacher mTeacher = new Teacher();
+								
+				mTeacher.setT_id(mObject.optInt("t_id"));
+				mTeacher.setT_name(mObject.optString("t_name"));
+				mTeacher.setT_sex(mObject.optString("t_sex"));
+				mTeacher.setT_lv(mObject.optString("t_lv"));
+				mTeacher.setT_date(mObject.optString("t_date"));
+				mTeacher.setT_volk(mObject.optString("t_volk"));
+				mTeacher.setT_job(mObject.optString("t_job"));
+				mTeacher.setT_title(mObject.optString("t_title"));
+				mTeacher.setT_phone(mObject.optString("t_phone"));
+				mTeacher.setT_card(mObject.optString("t_card"));
+				mTeacher.setT_address(mObject.optString("t_address"));
+				mTeacher.setT_we(mObject.optString("t_we"));
+				mTeacher.setT_img(mObject.optString("t_img"));
+				mTeacher.setT_type(mObject.optString("t_type"));
+				mTeacher.setC_id(mObject.optString("c_id"));
+				
+				lists.add(mTeacher);
 			}
 			return lists;
 		} catch (JSONException e) {

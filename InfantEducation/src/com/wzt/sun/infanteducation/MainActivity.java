@@ -26,6 +26,7 @@ public class MainActivity extends FragmentActivity {
 	private FragmentManager fm;
 	// 五个Fragment界面
 	private Fragment[] fragments = new Fragment[5];
+	public static MainActivity instance = null;
 	
 	private SharedPreferences loginSp = null;
 	private boolean isLogin = false;
@@ -36,6 +37,7 @@ public class MainActivity extends FragmentActivity {
 		setContentView(R.layout.activity_main);
 		// 动画效果淡入淡出
 		overridePendingTransition(R.anim.alpha_in, R.anim.alpha_out);
+		instance = this;
 		isLogin();
 		initView();
 

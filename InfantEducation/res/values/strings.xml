@@ -91,5 +91,15 @@
     <string name="setting_user_title">账号设置</string>
     <string name="setting_stu_title">学生设置</string>
     <string name="activity_home_work_title">课时作业</string>
+    
+    <string name="logbook_date_text">日期</string>
+    <string name="logbook_am_text">签到时间</string>
+    <string name="logbook_pm_text">签退时间</string>
+    <string name="logbook_beizhu_text">备注</string>
+    
+    <string name="updata_psd_title">修改密码</string>
+    <string name="updata_psd_old">请输入原密码</string>
+    <string name="updata_psd_new">请输入新密码</string>
+    <string name="updata_psd_new_again">请再次输入新密码</string>
 
 </resources>

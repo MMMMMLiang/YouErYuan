@@ -50,9 +50,9 @@ public class DynamicActivity extends FragmentActivity {
 			intent.setClass(this, LeaveActivity.class);
 			startActivity(intent);
 			break;
-		// 考勤统计
+		// 评价老师
 		case R.id.dy_kaoqin_information:
-			intent.setClass(this, LogBookActivity.class);
+			intent.setClass(this, EvaluateActivity.class);
 			startActivity(intent);
 			break;
 

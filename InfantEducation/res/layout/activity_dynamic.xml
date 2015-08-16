@@ -116,7 +116,7 @@
             android:layout_centerVertical="true"
             android:layout_marginStart="10dp"
             android:layout_toEndOf="@+id/dy_image_kaoqin"
-            android:text="@string/dy_kaoqin"
+            android:text="@string/activity_evaluate"
             android:textSize="16sp" />
 
         <ImageView

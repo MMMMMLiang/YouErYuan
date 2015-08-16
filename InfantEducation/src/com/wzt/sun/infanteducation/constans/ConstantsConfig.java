@@ -15,10 +15,10 @@ public class ConstantsConfig {
 	public static final String SHAREDPREFERENCES_LOGIN = "prefs_login";
 	
 	// 身份1加载的功能模块
-	// "反馈园长","教学计划","教育咨询","今日食谱","课程安排","明星宝宝","评价图标","校园简介","学生动态"
+	// "反馈园长","教学计划","教育咨询","今日食谱","课程安排","明星宝宝","考勤统计","校园简介","学生动态"
 	public static final ArrayList<HashMap<String, Object>> loadId1Lists() {
 		ArrayList<HashMap<String, Object>> id1Lists = new ArrayList<HashMap<String, Object>>();
-		String texts[] = new String[] { "校园简介", "课程安排", "学生动态", "评价老师", "明星宝宝",
+		String texts[] = new String[] { "校园简介", "课程安排", "学生动态", "考勤统计", "明星宝宝",
 				"今日食谱", "教育教学", "课时作业", "反馈园长" };
 		int images[] = new int[] { R.drawable.gv_kg_xiaoyuanjianjie,
 				R.drawable.gv_kg_kechenganpai,
@@ -46,7 +46,7 @@ public class ConstantsConfig {
 	 */
 	public static final ArrayList<HashMap<String, Object>> loadMyMenu(){
 		ArrayList<HashMap<String, Object>> id1Lists = new ArrayList<HashMap<String, Object>>();
-		String texts[] = new String[] { "个人设置", "邀请家人", "使用说明", "意见反馈"};
+		String texts[] = new String[] { "个人设置", "修改密码", "使用说明", "意见反馈"};
 		int[] images = new int[] {R.drawable.icon_me_personal_settings,
 				R.drawable.icon_me_invite_family,
 				R.drawable.icon_me_use_help,

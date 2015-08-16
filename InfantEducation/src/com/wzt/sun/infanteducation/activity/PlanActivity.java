@@ -18,6 +18,7 @@ import com.wzt.sun.infanteducation.R;
 import com.wzt.sun.infanteducation.adapter.CommonAdapter;
 import com.wzt.sun.infanteducation.adapter.CommonViewHolder;
 import com.wzt.sun.infanteducation.bean.Homework;
+import com.wzt.sun.infanteducation.constans.ConstansUrl;
 import com.wzt.sun.infanteducation.utils.JsonParseUtils;
 
 import android.content.Intent;
@@ -66,6 +67,7 @@ public class PlanActivity extends BaseActivity implements OnRefreshListener2<Lis
 		setContentView(R.layout.activity_plan);
 		
 		initView();
+		loadData();
 	}
 	
 	public void initView(){
@@ -108,6 +110,8 @@ public class PlanActivity extends BaseActivity implements OnRefreshListener2<Lis
 	}
 	
 	public void loadData() {
+		classId = 100000;
+		url = ConstansUrl.GETHOMEWORK+classId;
 		executor.execute(new Runnable() {
 
 			@Override

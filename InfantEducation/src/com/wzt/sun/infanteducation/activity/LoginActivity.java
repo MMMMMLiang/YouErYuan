@@ -1,6 +1,7 @@
 package com.wzt.sun.infanteducation.activity;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import com.lidroid.xutils.HttpUtils;
 import com.lidroid.xutils.exception.HttpException;
@@ -11,8 +12,10 @@ import com.lidroid.xutils.http.client.HttpRequest.HttpMethod;
 import com.wzt.sun.infanteducation.BaseApp;
 import com.wzt.sun.infanteducation.MainActivity;
 import com.wzt.sun.infanteducation.R;
+import com.wzt.sun.infanteducation.bean.User;
 import com.wzt.sun.infanteducation.constans.ConstansUrl;
 import com.wzt.sun.infanteducation.constans.ConstantsConfig;
+import com.wzt.sun.infanteducation.utils.JsonParseUtils;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -31,10 +34,11 @@ public class LoginActivity extends Activity {
 	
 	private static ArrayList<String> lists;
 	
-	private String str;
 	private HttpUtils mHttpUtils;
+	private String log;
 	
 	private SharedPreferences loginSp = null;
+	private SharedPreferences userInfo = null;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -68,12 +72,14 @@ public class LoginActivity extends Activity {
 					@Override
 					public void onFailure(HttpException arg0, String arg1) {
 						// TODO Auto-generated method stub
-						BaseApp.getInstance().showToast("fail");
+						BaseApp.getInstance().showToast(arg1);
 					}
 
 					@Override
 					public void onSuccess(ResponseInfo<String> responseInfo) {
 						// TODO Auto-generated method stub
+						String str = responseInfo.result;
+						saveUserInfo(str);
 						BaseApp.getInstance().showToast("success");
 						//保存登录状态
 						loadLogin();
@@ -97,6 +103,44 @@ public class LoginActivity extends Activity {
 		loginSp = getSharedPreferences(ConstantsConfig.SHAREDPREFERENCES_LOGIN, MODE_PRIVATE);
 		Editor editor=loginSp.edit();
 		editor.putBoolean("isLogin", true);
+		editor.commit();
+	}
+	
+	/**
+	 * 保存用户信息
+	 */
+	private void saveUserInfo(String str){
+		List<User> users = JsonParseUtils.parseJsonUser(str);
+		userInfo = getSharedPreferences(ConstantsConfig.SHAREDPREFERENCES_LOGIN, MODE_PRIVATE);
+		Editor editor=userInfo.edit();
+		
+		editor.putInt("vid", users.get(0).getVid());
+		editor.putInt("jifen", users.get(0).getJifen());
+		log = users.get(0).getVsf();
+		editor.putString("vsf", log);
+		editor.putString("vsfname", users.get(0).getVsfname());
+		editor.putString("user", users.get(0).getUser());
+		editor.putString("password", users.get(0).getPassword());
+		editor.putString("name", users.get(0).getName());
+		editor.putString("phone", users.get(0).getPhone());
+		editor.putString("registerdate", users.get(0).getRegisterdate());
+		editor.putString("state", users.get(0).getState());
+		editor.putString("identity", users.get(0).getIdentity());
+		editor.putString("email", users.get(0).getEmail());
+		editor.putString("address", users.get(0).getAddress());
+		editor.putString("appointmenttime", users.get(0).getAppointmenttime());
+		editor.putString("remarks1", users.get(0).getRemarks1());
+		editor.putString("remarks2", users.get(0).getRemarks2());
+		if(log.equals("A")){
+			// 是家长
+			editor.putBoolean("isParent", true);
+			editor.putBoolean("isTeacher", false);
+		}else if (log.equals("B")) {
+			// 是老师
+			editor.putBoolean("isParent", false);
+			editor.putBoolean("isTeacher", true);
+		}
+		
 		editor.commit();
 	}
 	

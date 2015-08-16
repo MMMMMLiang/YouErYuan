@@ -34,7 +34,7 @@
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:layout_marginEnd="6dp"
-            android:src="@drawable/navigationbar_account_check_disable" />
+            android:src="@drawable/btn_right" />
     </RelativeLayout>
     
 

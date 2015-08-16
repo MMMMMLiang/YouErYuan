@@ -12,6 +12,7 @@ import com.wzt.sun.infanteducation.activity.EvaluateActivity;
 import com.wzt.sun.infanteducation.activity.FeedbackActivity;
 import com.wzt.sun.infanteducation.activity.FoodActivity;
 import com.wzt.sun.infanteducation.activity.IntroductionActivity;
+import com.wzt.sun.infanteducation.activity.LogBookActivity;
 import com.wzt.sun.infanteducation.activity.PlanActivity;
 import com.wzt.sun.infanteducation.activity.StarActivity;
 import com.wzt.sun.infanteducation.constans.ConstantsConfig;
@@ -242,7 +243,7 @@ public class KindergartenFragment extends DialogFragment implements
 				break;
 			case 3:
 				// 评价教师
-				mIntent.setClass(this.getActivity(), EvaluateActivity.class);
+				mIntent.setClass(this.getActivity(), LogBookActivity.class);
 				startActivity(mIntent);
 				break;
 			case 4:

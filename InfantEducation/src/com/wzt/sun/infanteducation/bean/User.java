@@ -1,85 +1,163 @@
 package com.wzt.sun.infanteducation.bean;
 
 public class User {
-	private int vip_id;
-	private String vip_user;
-	private String vip_password;
-	private String vip_name;
-	private String vip_phone;
-	private String vip_Register;
-	private String vip_State;
-	private String vip_identity;
-	private String vip_email;
-	private String vip_address;
+	
+	private int vid;
+	private String vsf;
+	private String vsfname;
+	private String user;
+	private String password;
+	private String name;
+	private String phone;
+	private String registerdate;
+	private String state;
+	private String identity;
+	private String email;
+	private String address;
+	private String appointmenttime;
+	private String remarks1;
+	private String remarks2;
+	private int jifen;
+	
 	public User() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public int getVip_id() {
-		return vip_id;
+
+	public int getVid() {
+		return vid;
 	}
-	public void setVip_id(int vip_id) {
-		this.vip_id = vip_id;
+
+	public void setVid(int vid) {
+		this.vid = vid;
 	}
-	public String getVip_user() {
-		return vip_user;
+
+	public String getVsf() {
+		return vsf;
 	}
-	public void setVip_user(String vip_user) {
-		this.vip_user = vip_user;
+
+	public void setVsf(String vsf) {
+		this.vsf = vsf;
 	}
-	public String getVip_password() {
-		return vip_password;
+
+	public String getVsfname() {
+		return vsfname;
 	}
-	public void setVip_password(String vip_password) {
-		this.vip_password = vip_password;
+
+	public void setVsfname(String vsfname) {
+		this.vsfname = vsfname;
 	}
-	public String getVip_name() {
-		return vip_name;
+
+	public String getUser() {
+		return user;
 	}
-	public void setVip_name(String vip_name) {
-		this.vip_name = vip_name;
+
+	public void setUser(String user) {
+		this.user = user;
 	}
-	public String getVip_phone() {
-		return vip_phone;
+
+	public String getPassword() {
+		return password;
 	}
-	public void setVip_phone(String vip_phone) {
-		this.vip_phone = vip_phone;
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
-	public String getVip_Register() {
-		return vip_Register;
+
+	public String getName() {
+		return name;
 	}
-	public void setVip_Register(String vip_Register) {
-		this.vip_Register = vip_Register;
+
+	public void setName(String name) {
+		this.name = name;
 	}
-	public String getVip_State() {
-		return vip_State;
+
+	public String getPhone() {
+		return phone;
 	}
-	public void setVip_State(String vip_State) {
-		this.vip_State = vip_State;
+
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
-	public String getVip_identity() {
-		return vip_identity;
+
+	public String getRegisterdate() {
+		return registerdate;
 	}
-	public void setVip_identity(String vip_identity) {
-		this.vip_identity = vip_identity;
+
+	public void setRegisterdate(String registerdate) {
+		this.registerdate = registerdate;
 	}
-	public String getVip_email() {
-		return vip_email;
+
+	public String getState() {
+		return state;
 	}
-	public void setVip_email(String vip_email) {
-		this.vip_email = vip_email;
+
+	public void setState(String state) {
+		this.state = state;
 	}
-	public String getVip_address() {
-		return vip_address;
+
+	public String getIdentity() {
+		return identity;
 	}
-	public void setVip_address(String vip_address) {
-		this.vip_address = vip_address;
+
+	public void setIdentity(String identity) {
+		this.identity = identity;
 	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public String getAppointmenttime() {
+		return appointmenttime;
+	}
+
+	public void setAppointmenttime(String appointmenttime) {
+		this.appointmenttime = appointmenttime;
+	}
+
+	public String getRemarks1() {
+		return remarks1;
+	}
+
+	public void setRemarks1(String remarks1) {
+		this.remarks1 = remarks1;
+	}
+
+	public String getRemarks2() {
+		return remarks2;
+	}
+
+	public void setRemarks2(String remarks2) {
+		this.remarks2 = remarks2;
+	}
+
+	public int getJifen() {
+		return jifen;
+	}
+
+	public void setJifen(int jifen) {
+		this.jifen = jifen;
+	}
+
 	@Override
 	public String toString() {
-		return "User [vip_id=" + vip_id + ", vip_user=" + vip_user + ", vip_password=" + vip_password + ", vip_name="
-				+ vip_name + ", vip_phone=" + vip_phone + ", vip_Register=" + vip_Register + ", vip_State=" + vip_State
-				+ ", vip_identity=" + vip_identity + ", vip_email=" + vip_email + ", vip_address=" + vip_address + "]";
+		return "User [vid=" + vid + ", vsf=" + vsf + ", vsfname=" + vsfname + ", user=" + user + ", password="
+				+ password + ", name=" + name + ", phone=" + phone + ", registerdate=" + registerdate + ", state="
+				+ state + ", identity=" + identity + ", email=" + email + ", address=" + address + ", appointmenttime="
+				+ appointmenttime + ", remarks1=" + remarks1 + ", remarks2=" + remarks2 + ", jifen=" + jifen + "]";
 	}
 	
 }

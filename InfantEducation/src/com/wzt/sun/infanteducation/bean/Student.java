@@ -1,151 +1,152 @@
 package com.wzt.sun.infanteducation.bean;
 
 public class Student {
-	private int St_id;
-	private String St_name;
-	private String St_sex;
-	private String St_volk;
-	private String St_birthday;
-	private String St_date;
-	private String St_card;
-	private String St_address;	
-	private String St_father;
-	private String St_fcard;
-	private String St_mother;
-	private String St_mcard;
-	private String St_health;
-	private String St_hremarks;
-	private String St_shuttlecard;
-	private String St_shuttle;
-	private int C_id;
-	private String St_graduated;
-	private String St_photo;
+	private int st_id;
+	private String st_name;
+	private String st_sex;
+	private String st_volk;
+	private String st_birthday;
+	private String st_date;
+	private String st_card;
+	private String st_address;	
+	private String st_father;
+	private String st_fcard;
+	private String st_mother;
+	private String st_mcard;
+	private String st_health;
+	private String st_hremarks;
+	private String st_shuttlecard;
+	private String st_shuttle;
+	private int c_id;
+	private String st_graduated;
+	private String st_photo;
 	public Student() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 	public int getSt_id() {
-		return St_id;
+		return st_id;
 	}
 	public void setSt_id(int st_id) {
-		St_id = st_id;
+		this.st_id = st_id;
 	}
 	public String getSt_name() {
-		return St_name;
+		return st_name;
 	}
 	public void setSt_name(String st_name) {
-		St_name = st_name;
+		this.st_name = st_name;
 	}
 	public String getSt_sex() {
-		return St_sex;
+		return st_sex;
 	}
 	public void setSt_sex(String st_sex) {
-		St_sex = st_sex;
+		this.st_sex = st_sex;
 	}
 	public String getSt_volk() {
-		return St_volk;
+		return st_volk;
 	}
 	public void setSt_volk(String st_volk) {
-		St_volk = st_volk;
+		this.st_volk = st_volk;
 	}
 	public String getSt_birthday() {
-		return St_birthday;
+		return st_birthday;
 	}
 	public void setSt_birthday(String st_birthday) {
-		St_birthday = st_birthday;
+		this.st_birthday = st_birthday;
 	}
 	public String getSt_date() {
-		return St_date;
+		return st_date;
 	}
 	public void setSt_date(String st_date) {
-		St_date = st_date;
+		this.st_date = st_date;
 	}
 	public String getSt_card() {
-		return St_card;
+		return st_card;
 	}
 	public void setSt_card(String st_card) {
-		St_card = st_card;
+		this.st_card = st_card;
 	}
 	public String getSt_address() {
-		return St_address;
+		return st_address;
 	}
 	public void setSt_address(String st_address) {
-		St_address = st_address;
+		this.st_address = st_address;
 	}
 	public String getSt_father() {
-		return St_father;
+		return st_father;
 	}
 	public void setSt_father(String st_father) {
-		St_father = st_father;
+		this.st_father = st_father;
 	}
 	public String getSt_fcard() {
-		return St_fcard;
+		return st_fcard;
 	}
 	public void setSt_fcard(String st_fcard) {
-		St_fcard = st_fcard;
+		this.st_fcard = st_fcard;
 	}
 	public String getSt_mother() {
-		return St_mother;
+		return st_mother;
 	}
 	public void setSt_mother(String st_mother) {
-		St_mother = st_mother;
+		this.st_mother = st_mother;
 	}
 	public String getSt_mcard() {
-		return St_mcard;
+		return st_mcard;
 	}
 	public void setSt_mcard(String st_mcard) {
-		St_mcard = st_mcard;
+		this.st_mcard = st_mcard;
 	}
 	public String getSt_health() {
-		return St_health;
+		return st_health;
 	}
 	public void setSt_health(String st_health) {
-		St_health = st_health;
+		this.st_health = st_health;
 	}
 	public String getSt_hremarks() {
-		return St_hremarks;
+		return st_hremarks;
 	}
 	public void setSt_hremarks(String st_hremarks) {
-		St_hremarks = st_hremarks;
+		this.st_hremarks = st_hremarks;
 	}
 	public String getSt_shuttlecard() {
-		return St_shuttlecard;
+		return st_shuttlecard;
 	}
 	public void setSt_shuttlecard(String st_shuttlecard) {
-		St_shuttlecard = st_shuttlecard;
+		this.st_shuttlecard = st_shuttlecard;
 	}
 	public String getSt_shuttle() {
-		return St_shuttle;
+		return st_shuttle;
 	}
 	public void setSt_shuttle(String st_shuttle) {
-		St_shuttle = st_shuttle;
+		this.st_shuttle = st_shuttle;
 	}
 	public int getC_id() {
-		return C_id;
+		return c_id;
 	}
 	public void setC_id(int c_id) {
-		C_id = c_id;
+		this.c_id = c_id;
 	}
 	public String getSt_graduated() {
-		return St_graduated;
+		return st_graduated;
 	}
 	public void setSt_graduated(String st_graduated) {
-		St_graduated = st_graduated;
+		this.st_graduated = st_graduated;
 	}
 	public String getSt_photo() {
-		return St_photo;
+		return st_photo;
 	}
 	public void setSt_photo(String st_photo) {
-		St_photo = st_photo;
+		this.st_photo = st_photo;
 	}
 	@Override
 	public String toString() {
-		return "Student [St_id=" + St_id + ", St_name=" + St_name + ", St_sex=" + St_sex + ", St_volk=" + St_volk
-				+ ", St_birthday=" + St_birthday + ", St_date=" + St_date + ", St_card=" + St_card + ", St_address="
-				+ St_address + ", St_father=" + St_father + ", St_fcard=" + St_fcard + ", St_mother=" + St_mother
-				+ ", St_mcard=" + St_mcard + ", St_health=" + St_health + ", St_hremarks=" + St_hremarks
-				+ ", St_shuttlecard=" + St_shuttlecard + ", St_shuttle=" + St_shuttle + ", C_id=" + C_id
-				+ ", St_graduated=" + St_graduated + ", St_photo=" + St_photo + "]";
+		return "Student [st_id=" + st_id + ", st_name=" + st_name + ", st_sex=" + st_sex + ", st_volk=" + st_volk
+				+ ", st_birthday=" + st_birthday + ", st_date=" + st_date + ", st_card=" + st_card + ", st_address="
+				+ st_address + ", st_father=" + st_father + ", st_fcard=" + st_fcard + ", st_mother=" + st_mother
+				+ ", st_mcard=" + st_mcard + ", st_health=" + st_health + ", st_hremarks=" + st_hremarks
+				+ ", st_shuttlecard=" + st_shuttlecard + ", st_shuttle=" + st_shuttle + ", c_id=" + c_id
+				+ ", st_graduated=" + st_graduated + ", st_photo=" + st_photo + "]";
 	}
+	
 	
 }

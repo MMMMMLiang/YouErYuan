@@ -54,7 +54,7 @@ public class HomeWorkInfoActivity extends BaseActivity {
 		title.setText(mHomework.getH_title());
 		date.setText(mHomework.getH_date());
 		info.setText(mHomework.getH_content());		
-		author.setText(mHomework.getH_authr());
+		author.setText(mHomework.getH_authr()+"");
 		
 	}
 }
