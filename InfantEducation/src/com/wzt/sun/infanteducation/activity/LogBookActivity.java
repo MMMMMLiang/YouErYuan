@@ -10,16 +10,20 @@ import com.lidroid.xutils.exception.HttpException;
 import com.lidroid.xutils.http.ResponseInfo;
 import com.lidroid.xutils.http.callback.RequestCallBack;
 import com.lidroid.xutils.http.client.HttpRequest.HttpMethod;
+import com.wzt.sun.infanteducation.BaseApp;
 import com.wzt.sun.infanteducation.R;
 import com.wzt.sun.infanteducation.adapter.CommonAdapter;
 import com.wzt.sun.infanteducation.adapter.CommonViewHolder;
 import com.wzt.sun.infanteducation.bean.Attendance;
 import com.wzt.sun.infanteducation.constans.ConstansUrl;
+import com.wzt.sun.infanteducation.constans.ConstantsConfig;
 import com.wzt.sun.infanteducation.utils.JsonParseUtils;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 import android.widget.ListView;
 
 public class LogBookActivity extends BaseActivity {
@@ -57,6 +61,7 @@ public class LogBookActivity extends BaseActivity {
 		lb_listView = (ListView) findViewById(R.id.logbook_listview);
 		lists = new ArrayList<Attendance>();
 		mHttpUtils = new HttpUtils();
+		stu_id = loadId();
 		loadData();
 		
 		adapter = new CommonAdapter<Attendance>(LogBookActivity.this, R.layout.activity_logbook_item, lists) {
@@ -74,7 +79,6 @@ public class LogBookActivity extends BaseActivity {
 	}
 	
 	public void loadData(){
-		stu_id = 99999;
 		url = ConstansUrl.GETSTUATTEND+stu_id;
 		executor.execute(new Runnable() {
 
@@ -99,6 +103,12 @@ public class LogBookActivity extends BaseActivity {
 			}
 			
 		});
+	}
+	
+	public int loadId(){
+		SharedPreferences stuOrTea = getSharedPreferences(ConstantsConfig.SHAREDPREFERENCES_USER, MODE_PRIVATE);
+		int id = stuOrTea.getInt("id", 0);
+		return id;
 	}
 
 }

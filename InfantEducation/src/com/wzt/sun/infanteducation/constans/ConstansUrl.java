@@ -63,4 +63,23 @@ public class ConstansUrl {
 	 */
 	public static final String POSTYIJIAN = "http://"+IP+"/SchoolManage/Feed/AddFb";
 
+	/**
+	 * 请求老师姓名的URL
+	 */
+	public static final String GETTEANAME = "http://"+IP+"/SchoolManage/Teacher/getTea?id=";
+	
+	/**
+	 * 发送评价老师的URL
+	 */
+	public static final String POSTTEANAME = "http://"+IP+"/SchoolManage/Ass/insert";
+	
+	/**
+	 * 获取学生信息的URL
+	 */
+	public static final String GETSTUDENTSINFO = "http://"+IP+"/SchoolManage/student/getStub?st_id=";
+	
+	/**
+	 * 获取教师信息的URL
+	 */
+	public static final String GETTEACHERSINFO = "http://"+IP+"/SchoolManage/Teacher/getTeabyid";
 }

@@ -8,7 +8,7 @@ import java.io.Serializable;
  *
  */
 public class Syllabus implements Serializable{
-	private String c_id;
+	private int c_id;
 	private String c_name;
 	private String sy_am;
 	private String sy_authr;
@@ -22,12 +22,15 @@ public class Syllabus implements Serializable{
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public String getC_id() {
+	
+	public int getC_id() {
 		return c_id;
 	}
-	public void setC_id(String c_id) {
+
+	public void setC_id(int c_id) {
 		this.c_id = c_id;
 	}
+
 	public String getC_name() {
 		return c_name;
 	}

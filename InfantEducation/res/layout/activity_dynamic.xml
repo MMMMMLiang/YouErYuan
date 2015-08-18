@@ -126,5 +126,71 @@
             android:layout_centerVertical="true"
             android:src="@drawable/btn_advance" />
     </RelativeLayout>
+    
+    <RelativeLayout
+        android:id="@+id/dy_tea_information"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:background="@drawable/btn_selector"
+        android:onClick="rlClick"
+        android:padding="6dp" >
+
+        <ImageView
+            android:id="@+id/dy_image_tea"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_alignParentStart="true"
+            android:src="@drawable/dy_stu" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@+id/dy_image_tea"
+            android:text="@string/dy_tea"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/btn_advance" />
+    </RelativeLayout>
+    
+    <RelativeLayout
+        android:id="@+id/dy_allstu_information"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:background="@drawable/btn_selector"
+        android:onClick="rlClick"
+        android:padding="6dp" >
+
+        <ImageView
+            android:id="@+id/dy_image_allstu"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_alignParentStart="true"
+            android:src="@drawable/dy_kaoqin" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@+id/dy_image_allstu"
+            android:text="@string/dy_allstu"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/btn_advance" />
+    </RelativeLayout>
 
 </LinearLayout>

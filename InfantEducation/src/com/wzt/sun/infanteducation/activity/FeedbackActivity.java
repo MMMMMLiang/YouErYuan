@@ -9,9 +9,12 @@ import com.lidroid.xutils.http.client.HttpRequest.HttpMethod;
 import com.wzt.sun.infanteducation.BaseApp;
 import com.wzt.sun.infanteducation.R;
 import com.wzt.sun.infanteducation.constans.ConstansUrl;
+import com.wzt.sun.infanteducation.constans.ConstantsConfig;
 import com.wzt.sun.infanteducation.view.CustomProgressDialog;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
@@ -41,6 +44,7 @@ public class FeedbackActivity extends BaseActivity {
 	public void initView(){
 		et = (EditText) findViewById(R.id.feed_et_text);
 		mHttpUtils = new HttpUtils();
+		stuId = loadId();
 	}
 
 	public void btnClick(View view) {
@@ -53,7 +57,6 @@ public class FeedbackActivity extends BaseActivity {
 		case R.id.feed_bar_btn:
 			startProgressDialog();
 			str = et.getText().toString();
-			stuId = 99999;
 			RequestParams params = new RequestParams();
 			params.addBodyParameter("F_content", str);
 			params.addBodyParameter("F_authr", stuId+"");
@@ -94,4 +97,10 @@ public class FeedbackActivity extends BaseActivity {
             progressDialog = null;
         }
     }
+	
+	public int loadId(){
+		SharedPreferences stuOrTea = getSharedPreferences(ConstantsConfig.SHAREDPREFERENCES_USER, MODE_PRIVATE);
+		int id = stuOrTea.getInt("id", 0);
+		return id;
+	}
 }

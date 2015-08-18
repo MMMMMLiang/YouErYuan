@@ -35,7 +35,7 @@ public class JsonParseUtils {
 				JSONObject mObject = mArray.optJSONObject(i);
 				Syllabus mSyllabus = new Syllabus();
 				
-				mSyllabus.setC_id(mObject.optString("c_id"));
+				mSyllabus.setC_id(mObject.optInt("c_id"));
 				mSyllabus.setC_name(mObject.optString("c_name"));
 				mSyllabus.setSy_am(mObject.optString("sy_am"));
 				mSyllabus.setSy_authr(mObject.optString("sy_authr"));
@@ -398,7 +398,7 @@ public class JsonParseUtils {
 				mTeacher.setT_we(mObject.optString("t_we"));
 				mTeacher.setT_img(mObject.optString("t_img"));
 				mTeacher.setT_type(mObject.optString("t_type"));
-				mTeacher.setC_id(mObject.optString("c_id"));
+				mTeacher.setC_id(mObject.optInt("c_id"));
 				
 				lists.add(mTeacher);
 			}

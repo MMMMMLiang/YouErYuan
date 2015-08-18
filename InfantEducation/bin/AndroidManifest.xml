@@ -62,6 +62,12 @@
         <activity android:name="com.wzt.sun.infanteducation.activity.SettingStuActivity"></activity>
         <activity android:name="com.wzt.sun.infanteducation.activity.HomeWorkInfoActivity"></activity>
         <activity android:name="com.wzt.sun.infanteducation.activity.UpdatePasswordActivity"></activity>
+        <activity android:name="com.wzt.sun.infanteducation.activity.NotificationUpdateActivity"></activity>
+        <activity android:name="com.wzt.sun.infanteducation.activity.AllStuInformationActivity"></activity>
+        <activity android:name="com.wzt.sun.infanteducation.activity.SettingTeaActivity"></activity>
+        <activity android:name="com.wzt.sun.infanteducation.activity.TeacherInformationActivity"></activity>
+        
+        <service android:name="DownloadService" ></service>
     </application>
 
 </manifest>

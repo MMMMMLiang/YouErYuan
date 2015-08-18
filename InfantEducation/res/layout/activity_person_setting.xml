@@ -84,5 +84,33 @@
         
     </RelativeLayout>
     
+    <RelativeLayout
+        android:id="@+id/perset_tea_setting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@color/white"
+        android:layout_marginTop="20dp" >
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_marginStart="10dp"
+            android:text="@string/setting_tea_title" />
+        
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/btn_advance" />
+        
+    </RelativeLayout>
+    
 
 </LinearLayout>

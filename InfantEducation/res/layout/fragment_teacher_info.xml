@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
-
+    
     <RelativeLayout
         android:id="@+id/stu_info_title"
         android:layout_width="match_parent"
@@ -10,7 +10,7 @@
         android:background="#2EB976" >
 
         <ImageView
-            android:id="@+id/titlebar_btn_stuback"
+            android:id="@+id/titlebar_btn_teaback"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
@@ -22,7 +22,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="@string/dy_stu"
+            android:text="@string/dy_tea"
             android:textColor="@color/white"
             android:textSize="24sp" />
     </RelativeLayout>
@@ -34,7 +34,7 @@
         android:layout_below="@id/stu_info_title" >
 
         <ImageView
-            android:id="@+id/stu_info_low1_image"
+            android:id="@+id/tea_info_low1_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
@@ -78,18 +78,23 @@
         <TextView
             style="@style/stu_info_style"
             android:layout_marginTop="9dp"
-            android:text="@string/stu_num" />
+            android:text="@string/tea_num" />
 
         <TextView
             style="@style/stu_info_style"
             android:layout_marginTop="10dp"
-            android:text="@string/stu_birthday" />
+            android:text="@string/tea_time" />
 
         <TextView
             style="@style/stu_info_style"
             android:layout_marginTop="10dp"
-            android:text="@string/stu_parents" />
+            android:text="@string/tea_lv" />
 
+        <TextView
+            style="@style/stu_info_style"
+            android:layout_marginTop="10dp"
+            android:text="@string/tea_address" />
+        
         <TextView
             style="@style/stu_info_style"
             android:layout_marginTop="10dp"
@@ -105,46 +110,52 @@
         android:orientation="vertical" >
 
         <TextView
-            android:id="@+id/stu_info_name"
+            android:id="@+id/tea_info_name"
             style="@style/stu_info_style"
             android:layout_marginTop="10dp" />
 
         <TextView
-            android:id="@+id/stu_info_sex"
+            android:id="@+id/tea_info_sex"
             style="@style/stu_info_style"
             android:layout_marginTop="9dp" />
         
         <TextView
-            android:id="@+id/stu_info_volk"
+            android:id="@+id/tea_info_volk"
             style="@style/stu_info_style"
             android:layout_marginTop="9dp" />
 
         <TextView
-            android:id="@+id/stu_info_class"
+            android:id="@+id/tea_info_class"
             style="@style/stu_info_style"
             android:layout_marginTop="9dp" />
 
         <TextView
-            android:id="@+id/stu_info_num"
+            android:id="@+id/tea_info_num"
             style="@style/stu_info_style"
             android:layout_marginTop="9dp" />
 
         <TextView
-            android:id="@+id/stu_info_birthday"
+            android:id="@+id/tea_info_birthday"
             style="@style/stu_info_style"
             android:layout_marginTop="10dp" />
 
         <TextView
-            android:id="@+id/stu_info_parents"
+            android:id="@+id/tea_info_parents"
+            style="@style/stu_info_style"
+            android:layout_marginTop="10dp" />
+        
+        <TextView
+            android:id="@+id/tea_info_address"
             style="@style/stu_info_style"
             android:layout_marginTop="10dp" />
 
         <TextView
-            android:id="@+id/stu_info_parentsphone"
+            android:id="@+id/tea_info_parentsphone"
             style="@style/stu_info_style"
             android:layout_marginTop="10dp" />
     </LinearLayout>
     
     </LinearLayout>
+    
 
 </RelativeLayout>

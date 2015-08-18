@@ -1,10 +1,13 @@
 package com.wzt.sun.infanteducation;
 
 import android.app.Application;
+import android.content.SharedPreferences;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.lidroid.xutils.bitmap.BitmapGlobalConfig;
 import com.lidroid.xutils.cache.MD5FileNameGenerator;
+import com.wzt.sun.infanteducation.constans.ConstantsConfig;
 import com.wzt.sun.infanteducation.netstate.NetChangeObserver;
 import com.wzt.sun.infanteducation.netstate.NetWorkUtil;
 import com.wzt.sun.infanteducation.netstate.NetworkStateReceiver;
@@ -13,7 +16,9 @@ import com.wzt.sun.infanteducation.utils.FileUtils;
 public class BaseApp extends Application {
 
 	private static BaseApp app;
-
+	
+	private boolean isDownload;
+	
 	public static BaseApp getInstance() {
 		return app;
 	}
@@ -23,10 +28,10 @@ public class BaseApp extends Application {
 		// TODO Auto-generated method stub
 		super.onCreate();
 		app = this;
+		isDownload = false;
 		checkNet();
 		imgGlobalconfig();
 		stopLog();
-
 	}
 
 	private void checkNet() {
@@ -90,5 +95,13 @@ public class BaseApp extends Application {
 	public void showToast(String msg) {
 		Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
 	}
+	
+	public boolean isDownload() {
+		return isDownload;
+	}
 
+	public void setDownload(boolean isDownload) {
+		this.isDownload = isDownload;
+	}
+	
 }

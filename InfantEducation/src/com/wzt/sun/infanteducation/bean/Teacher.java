@@ -15,7 +15,7 @@ public class Teacher {
 	private	String	t_we;//教师履历
 	private	String	t_img;//教师照片
 	private	String	t_type;//教师类型
-	private	String	c_id;//所属班级
+	private	int	c_id;//所属班级
 	public Teacher() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -104,10 +104,11 @@ public class Teacher {
 	public void setT_type(String t_type) {
 		this.t_type = t_type;
 	}
-	public String getC_id() {
+	
+	public int getC_id() {
 		return c_id;
 	}
-	public void setC_id(String c_id) {
+	public void setC_id(int c_id) {
 		this.c_id = c_id;
 	}
 	@Override

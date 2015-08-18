@@ -18,11 +18,13 @@ import com.lidroid.xutils.http.client.HttpRequest.HttpMethod;
 import com.wzt.sun.infanteducation.R;
 import com.wzt.sun.infanteducation.bean.Syllabus;
 import com.wzt.sun.infanteducation.constans.ConstansUrl;
+import com.wzt.sun.infanteducation.constans.ConstantsConfig;
 import com.wzt.sun.infanteducation.utils.JsonParseUtils;
 import com.wzt.sun.infanteducation.view.CalendarView;
 import com.wzt.sun.infanteducation.view.CalendarView.OnItemClickListener;
 import com.wzt.sun.infanteducation.view.CustomProgressDialog;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -54,7 +56,7 @@ public class CourseActivity extends BaseActivity implements OnItemClickListener{
 	private HttpUtils mHttpUtils;
 	
 	private String url = null;
-	private String classId = "100000";
+	private String classId;
 	private List<String> classLists;
 	
 	private TextView tv;
@@ -111,7 +113,7 @@ public class CourseActivity extends BaseActivity implements OnItemClickListener{
 	 */
 	public void initView() {
 		iv = (ImageView) findViewById(R.id.titlebar_course_btn_back);
-		
+		classId = loadC_id()+"";
 		format = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
 		lists = new ArrayList<Syllabus>();
 		mHttpUtils = new HttpUtils();
@@ -282,5 +284,11 @@ public class CourseActivity extends BaseActivity implements OnItemClickListener{
 			}
 		}
 	}
-
+	
+	public int loadC_id(){
+		SharedPreferences stuOrTea = getSharedPreferences(ConstantsConfig.SHAREDPREFERENCES_USER, MODE_PRIVATE);
+		int cId = stuOrTea.getInt("c_id", 0);
+		return cId;
+	}
+	
 }

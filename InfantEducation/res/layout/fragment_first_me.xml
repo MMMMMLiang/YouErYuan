@@ -3,13 +3,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#EAEAEA" >
-    
+
     <RelativeLayout
         android:id="@+id/fg_me_rl_bg"
         android:layout_width="match_parent"
         android:layout_height="170dp"
         android:background="@drawable/me_backgroung" >
-        
+
         <ImageView
             android:id="@+id/iv_usercenter_avatar"
             android:layout_width="120dp"
@@ -17,17 +17,41 @@
             android:layout_centerInParent="true"
             android:scaleType="fitXY"
             android:src="@drawable/avatar" />
-        
     </RelativeLayout>
-    
-    <ListView
-        android:id="@+id/fragment_me_lv"
+
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:listSelector="@android:color/transparent"
-        android:layout_below="@+id/fg_me_rl_bg"
-        android:divider="@null" >
-        
-    </ListView>
-    
+        android:layout_below="@+id/fg_me_rl_bg" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <com.wzt.sun.infanteducation.view.MyListView
+                android:id="@+id/fragment_me_lv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:divider="@null"
+                android:listSelector="@android:color/transparent" >
+            </com.wzt.sun.infanteducation.view.MyListView>
+
+            <Button
+                android:id="@+id/fragment_me_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/red"
+                android:gravity="center_horizontal"
+                android:paddingBottom="6dp"
+                android:paddingTop="6dp"
+                android:text="@string/fragment_me_out"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+        </LinearLayout>
+    </ScrollView>
+
 </RelativeLayout>

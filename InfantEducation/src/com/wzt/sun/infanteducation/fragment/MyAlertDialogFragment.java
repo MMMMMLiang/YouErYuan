@@ -1,5 +1,6 @@
 package com.wzt.sun.infanteducation.fragment;
 
+import com.wzt.sun.infanteducation.MainActivity;
 import com.wzt.sun.infanteducation.R;
 import com.wzt.sun.infanteducation.activity.LoginActivity;
 
@@ -37,6 +38,7 @@ public class MyAlertDialogFragment extends DialogFragment implements OnClickList
 		case R.id.alert_dialog_login:
 			Intent intent = new Intent(getActivity(), LoginActivity.class);
 			startActivity(intent);
+			MainActivity.instance.finish();
 			dismiss();
 			break;
 		case R.id.alert_dialog_dis:

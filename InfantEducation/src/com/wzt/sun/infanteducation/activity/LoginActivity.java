@@ -12,6 +12,8 @@ import com.lidroid.xutils.http.client.HttpRequest.HttpMethod;
 import com.wzt.sun.infanteducation.BaseApp;
 import com.wzt.sun.infanteducation.MainActivity;
 import com.wzt.sun.infanteducation.R;
+import com.wzt.sun.infanteducation.bean.Student;
+import com.wzt.sun.infanteducation.bean.Teacher;
 import com.wzt.sun.infanteducation.bean.User;
 import com.wzt.sun.infanteducation.constans.ConstansUrl;
 import com.wzt.sun.infanteducation.constans.ConstantsConfig;
@@ -22,6 +24,8 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -35,10 +39,29 @@ public class LoginActivity extends Activity {
 	private static ArrayList<String> lists;
 	
 	private HttpUtils mHttpUtils;
-	private String log;
+	private static String log;
+	private static String id;
 	
 	private SharedPreferences loginSp = null;
 	private SharedPreferences userInfo = null;
+	private SharedPreferences stuOrTea = null;
+	
+	private String userName;
+	private String passWord;
+	
+	private Handler mHandle = new Handler(){
+		@Override
+		public void handleMessage(Message msg) {
+			switch (msg.what) {
+			case 0x00001:
+				saveStuOrTea();
+				break;
+
+			default:
+				break;
+			}
+		}
+	};
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -55,15 +78,15 @@ public class LoginActivity extends Activity {
 	}
 	
 	public void btnClick(View view){
+		userName = et_login_username.getText().toString();
+		passWord = et_login_password.getText().toString();
 		switch (view.getId()) {
 		case R.id.btn_login_login:
 			//获取用户名、密码
-			String userName = et_login_username.getText().toString();
-			String passWord = et_login_password.getText().toString();
-			Log.i("TEST", userName+","+passWord);
 			if(TextUtils.isEmpty(userName) || TextUtils.isEmpty(passWord)){
 				BaseApp.getInstance().showToast("用户名、密码不能为空！");
 			}else {
+
 				RequestParams params = new RequestParams();
 				params.addQueryStringParameter("user", userName);
 				params.addQueryStringParameter("pwd", passWord);
@@ -79,15 +102,21 @@ public class LoginActivity extends Activity {
 					public void onSuccess(ResponseInfo<String> responseInfo) {
 						// TODO Auto-generated method stub
 						String str = responseInfo.result;
+						List<User> users = JsonParseUtils.parseJsonUser(str);
+						id = users.get(0).getRemarks2().toString();
 						saveUserInfo(str);
 						BaseApp.getInstance().showToast("success");
 						//保存登录状态
 						loadLogin();
+						mHandle.sendEmptyMessage(0x00001);
 						Intent intent = new Intent(LoginActivity.this, MainActivity.class);
 						startActivity(intent);
 						finish();
+
 					}
 				});
+
+
 			}
 			break;
 
@@ -130,7 +159,8 @@ public class LoginActivity extends Activity {
 		editor.putString("address", users.get(0).getAddress());
 		editor.putString("appointmenttime", users.get(0).getAppointmenttime());
 		editor.putString("remarks1", users.get(0).getRemarks1());
-		editor.putString("remarks2", users.get(0).getRemarks2());
+		String ids = users.get(0).getRemarks2();
+		editor.putString("remarks2", ids);
 		if(log.equals("A")){
 			// 是家长
 			editor.putBoolean("isParent", true);
@@ -140,6 +170,104 @@ public class LoginActivity extends Activity {
 			editor.putBoolean("isParent", false);
 			editor.putBoolean("isTeacher", true);
 		}
+		
+		editor.commit();
+	}
+	
+	/**
+	 * 保存学生或老师信息
+	 */
+	private void saveStuOrTea(){
+		if("A".equals(log)){
+			// 家长
+			mHttpUtils.send(HttpMethod.GET, ConstansUrl.GETSTUDENTSINFO+id, new RequestCallBack<String>() {
+
+				@Override
+				public void onFailure(HttpException arg0, String arg1) {
+					// TODO Auto-generated method stub
+				}
+
+				@Override
+				public void onSuccess(ResponseInfo<String> responseInfo) {
+					// TODO Auto-generated method stub
+					saveStuInfo(responseInfo.result);
+				}
+			});
+		}else if ("B".equals(log)) {
+			// 老师
+			mHttpUtils.send(HttpMethod.GET, ConstansUrl.GETSTUDENTSINFO+id, new RequestCallBack<String>() {
+
+				@Override
+				public void onFailure(HttpException arg0, String arg1) {
+					// TODO Auto-generated method stub
+				}
+
+				@Override
+				public void onSuccess(ResponseInfo<String> responseInfo) {
+					// TODO Auto-generated method stub
+					saveTeaInfo(responseInfo.result);
+				}
+			});
+		}
+		
+	}
+	
+	/**
+	 * 保存学生信息
+	 */
+	private void saveStuInfo(String str){
+		List<Student> stus = JsonParseUtils.parseJsonStudents(str);
+		stuOrTea = getSharedPreferences(ConstantsConfig.SHAREDPREFERENCES_USER, MODE_PRIVATE);
+		Editor editor=stuOrTea.edit();
+		editor.clear();
+		
+		editor.putInt("id", stus.get(0).getSt_id());
+		editor.putInt("c_id", stus.get(0).getC_id());
+		editor.putString("st_name", stus.get(0).getSt_name());
+		editor.putString("st_sex", stus.get(0).getSt_sex());
+		editor.putString("st_volk", stus.get(0).getSt_volk());
+		editor.putString("st_birthday", stus.get(0).getSt_birthday());
+		editor.putString("st_date", stus.get(0).getSt_date());
+		editor.putString("st_card", stus.get(0).getSt_card());
+		editor.putString("st_address", stus.get(0).getSt_address());
+		editor.putString("st_father", stus.get(0).getSt_father());
+		editor.putString("st_fcard", stus.get(0).getSt_fcard());
+		editor.putString("st_mother", stus.get(0).getSt_mother());
+		editor.putString("st_mcard", stus.get(0).getSt_mcard());
+		editor.putString("st_health", stus.get(0).getSt_health());
+		editor.putString("st_hremarks", stus.get(0).getSt_hremarks());
+		editor.putString("st_shuttlecard", stus.get(0).getSt_shuttlecard());
+		editor.putString("st_shuttle", stus.get(0).getSt_shuttle());
+		editor.putString("st_graduated", stus.get(0).getSt_graduated());
+		editor.putString("st_photo", stus.get(0).getSt_photo());
+		
+		editor.commit();
+	}
+	
+	/**
+	 * 保存教师信息
+	 */
+	private void saveTeaInfo(String str){
+		List<Teacher> teas = JsonParseUtils.parseJsonTeacher(str);
+		stuOrTea = getSharedPreferences(ConstantsConfig.SHAREDPREFERENCES_USER, MODE_PRIVATE);
+		Editor editor=stuOrTea.edit();
+		editor.clear();
+		
+		editor.putInt("id", teas.get(0).getT_id());
+		editor.putString("t_name", teas.get(0).getT_name());
+		editor.putString("t_sex", teas.get(0).getT_sex());
+		editor.putString("t_lv", teas.get(0).getT_lv());
+		editor.putString("t_date", teas.get(0).getT_date());
+		editor.putString("t_volk", teas.get(0).getT_volk());
+		editor.putString("t_job", teas.get(0).getT_job());
+		editor.putString("t_title", teas.get(0).getT_title());
+		editor.putString("t_phone", teas.get(0).getT_phone());
+		editor.putString("t_card", teas.get(0).getT_card());
+		editor.putString("t_address", teas.get(0).getT_address());
+		editor.putString("t_we", teas.get(0).getT_we());
+		editor.putString("t_img", teas.get(0).getT_img());
+		editor.putString("t_type", teas.get(0).getT_type());
+		editor.putInt("c_id", teas.get(0).getC_id());
 		
 		editor.commit();
 	}

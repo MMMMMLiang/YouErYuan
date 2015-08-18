@@ -14,14 +14,17 @@ import com.lidroid.xutils.exception.HttpException;
 import com.lidroid.xutils.http.ResponseInfo;
 import com.lidroid.xutils.http.callback.RequestCallBack;
 import com.lidroid.xutils.http.client.HttpRequest.HttpMethod;
+import com.wzt.sun.infanteducation.BaseApp;
 import com.wzt.sun.infanteducation.R;
 import com.wzt.sun.infanteducation.adapter.CommonAdapter;
 import com.wzt.sun.infanteducation.adapter.CommonViewHolder;
 import com.wzt.sun.infanteducation.bean.Homework;
 import com.wzt.sun.infanteducation.constans.ConstansUrl;
+import com.wzt.sun.infanteducation.constans.ConstantsConfig;
 import com.wzt.sun.infanteducation.utils.JsonParseUtils;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -77,7 +80,7 @@ public class PlanActivity extends BaseActivity implements OnRefreshListener2<Lis
 		ptrListView.setOnRefreshListener(this);
 		lists = new ArrayList<Homework>();
 		mHttpUtils = new HttpUtils();
-		
+		classId = loadId();
 		adapter = new CommonAdapter<Homework>(this, R.layout.fragment_inform_item, lists) {
 			
 			@Override
@@ -110,7 +113,6 @@ public class PlanActivity extends BaseActivity implements OnRefreshListener2<Lis
 	}
 	
 	public void loadData() {
-		classId = 100000;
 		url = ConstansUrl.GETHOMEWORK+classId;
 		executor.execute(new Runnable() {
 
@@ -151,5 +153,11 @@ public class PlanActivity extends BaseActivity implements OnRefreshListener2<Lis
 	public void onPullUpToRefresh(PullToRefreshBase<ListView> refreshView) {
 		// TODO Auto-generated method stub
 		
+	}
+	
+	public int loadId(){
+		SharedPreferences stuOrTea = getSharedPreferences(ConstantsConfig.SHAREDPREFERENCES_USER, MODE_PRIVATE);
+		int id = stuOrTea.getInt("id", 0);
+		return id;
 	}
 }

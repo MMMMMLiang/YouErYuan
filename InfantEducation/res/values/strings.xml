@@ -33,12 +33,14 @@
     <string name="activity_course">课程安排</string>
     <string name="activity_dynamic">学生动态</string>
     <string name="activity_evaluate">评价老师</string>
+    <string name="dy_allstu">花名册</string>
     <string name="activity_feed">反馈</string>
     <string name="activity_introduction">校园简介</string>
     <string name="activity_plan">课时作业</string>
     <string name="activity_star">明星宝宝</string>
     
     <string name="dy_stu">学生信息</string>
+    <string name="dy_tea">教师信息</string>
     <string name="dy_qingjia">请假申明</string>
     <string name="dy_kaoqin">考勤统计</string>
     
@@ -57,15 +59,20 @@
     <string name="fragment_paradise">这是乐园fragment</string>
     <string name="test_textview1">测试1</string>
     
-    <string name="stu_name">姓名：xxx</string>
-    <string name="stu_sex">性别：女</string>
-    <string name="stu_age">年龄：4岁</string>
-    <string name="stu_birthday">出生年月：xxxx-xx-xx</string>
-    <string name="stu_class">班级：小班</string>
-    <string name="stu_num">学号：xxxxxxx</string>
-    <string name="stu_parents">家长：xxx</string>
-    <string name="stu_parentsphone">联系电话：xxxxxxxxxxxxx</string>
-    <string name="stu_speciality">特长：xxxxxxxxxxxxxxxxxx</string>
+    <string name="stu_name">姓名：</string>
+    <string name="stu_sex">性别：</string>
+    <string name="stu_volk">民族：</string>
+    <string name="stu_age">年龄：</string>
+    <string name="stu_birthday">出生年月：</string>
+    <string name="tea_time">任教时间：</string>
+    <string name="stu_class">班级：</string>
+    <string name="stu_num">学号：</string>
+    <string name="tea_num">工号：</string>
+    <string name="stu_parents">家长：</string>
+    <string name="tea_lv">学历：</string>
+    <string name="stu_parentsphone">联系电话：</string>
+    <string name="tea_address">家庭住址：</string>
+    <string name="stu_speciality">特长：</string>
     
     <string name="title_interaction_info">通知</string>
     <string name="title_interaction_infos">通知通告</string>
@@ -90,6 +97,7 @@
     <string name="person_setting_title">个人设置</string>
     <string name="setting_user_title">账号设置</string>
     <string name="setting_stu_title">学生设置</string>
+    <string name="setting_tea_title">教师设置</string>
     <string name="activity_home_work_title">课时作业</string>
     
     <string name="logbook_date_text">日期</string>
@@ -101,5 +109,6 @@
     <string name="updata_psd_old">请输入原密码</string>
     <string name="updata_psd_new">请输入新密码</string>
     <string name="updata_psd_new_again">请再次输入新密码</string>
+    <string name="fragment_me_out">退出</string>
 
 </resources>
