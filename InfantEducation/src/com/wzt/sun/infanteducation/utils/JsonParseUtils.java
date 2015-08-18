@@ -8,6 +8,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.wzt.sun.infanteducation.bean.Attendance;
+import com.wzt.sun.infanteducation.bean.Classes;
 import com.wzt.sun.infanteducation.bean.Education;
 import com.wzt.sun.infanteducation.bean.Food;
 import com.wzt.sun.infanteducation.bean.Homework;
@@ -401,6 +402,40 @@ public class JsonParseUtils {
 				mTeacher.setC_id(mObject.optInt("c_id"));
 				
 				lists.add(mTeacher);
+			}
+			return lists;
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+	/**
+	 * JSON解析班级表
+	 * @param data
+	 * @return
+	 */
+	public static List<Classes> parseJsonClasses(String data){
+		List<Classes> lists = new ArrayList<Classes>();
+		
+		try {
+			JSONArray mArray = new JSONArray(data);
+			for (int i = 0; i < mArray.length(); i++) {
+				JSONObject mObject = mArray.optJSONObject(i);
+				Classes mClasses = new Classes();
+								
+				mClasses.setC_id(mObject.optInt("cid"));
+				mClasses.setC_name(mObject.optString("cname"));
+				mClasses.setS_id(mObject.optInt("sid"));
+				mClasses.setC_head(mObject.optString("chead"));
+				mClasses.setC_type(mObject.optString("ctype"));
+				mClasses.setC_count(mObject.optInt("ccount"));
+				mClasses.setC_phone1(mObject.optString("cphone1"));
+				mClasses.setS_phone2(mObject.optString("sphone2"));
+				mClasses.setC_remarks(mObject.optString("cremarks"));
+				
+				lists.add(mClasses);
 			}
 			return lists;
 		} catch (JSONException e) {

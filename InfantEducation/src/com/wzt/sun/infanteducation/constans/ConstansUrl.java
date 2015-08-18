@@ -81,5 +81,21 @@ public class ConstansUrl {
 	/**
 	 * 获取教师信息的URL
 	 */
-	public static final String GETTEACHERSINFO = "http://"+IP+"/SchoolManage/Teacher/getTeabyid";
+	public static final String GETTEACHERSINFO = "http://"+IP+"/SchoolManage/Teacher/getTeabyid?T_id=";
+	
+	/**
+	 * 获取花名册信息的URL
+	 */
+	public static final String GETALLSTU = "http://"+IP+"/SchoolManage/student/listjson?cid=";
+	
+	/**
+	 * 获取所有教师信息的URL
+	 */
+	public static final String GETALLTEA = "http://"+IP+"/SchoolManage/Teacher/getteaJ";
+	
+	/**
+	 * 获取所有班级信息的URL
+	 */
+	public static final String GETALLCLS = "http://"+IP+"/SchoolManage/Class/getClsJ";
+	
 }

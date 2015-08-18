@@ -1,20 +1,27 @@
 package com.wzt.sun.infanteducation.fragment;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import com.wzt.sun.infanteducation.BaseApp;
 import com.wzt.sun.infanteducation.R;
+import com.wzt.sun.infanteducation.activity.AllStuInformationActivity;
+import com.wzt.sun.infanteducation.activity.AllTeacherInfo;
 import com.wzt.sun.infanteducation.activity.ConsultActivity;
 import com.wzt.sun.infanteducation.activity.CourseActivity;
 import com.wzt.sun.infanteducation.activity.DynamicActivity;
+import com.wzt.sun.infanteducation.activity.EnterAndLeaveActivity;
 import com.wzt.sun.infanteducation.activity.EvaluateActivity;
 import com.wzt.sun.infanteducation.activity.FeedbackActivity;
 import com.wzt.sun.infanteducation.activity.FoodActivity;
+import com.wzt.sun.infanteducation.activity.HomeTogetherActivity;
 import com.wzt.sun.infanteducation.activity.IntroductionActivity;
+import com.wzt.sun.infanteducation.activity.LaterActivity;
 import com.wzt.sun.infanteducation.activity.LogBookActivity;
 import com.wzt.sun.infanteducation.activity.PlanActivity;
 import com.wzt.sun.infanteducation.activity.StarActivity;
+import com.wzt.sun.infanteducation.activity.WriteInfoActivity;
 import com.wzt.sun.infanteducation.constans.ConstantsConfig;
 
 import android.content.Context;
@@ -57,6 +64,7 @@ public class KindergartenFragment extends DialogFragment implements
 	
 	private SharedPreferences loginSp = null;
 	private boolean isLogin = false;
+	private boolean isLea = false;
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -71,6 +79,7 @@ public class KindergartenFragment extends DialogFragment implements
 	private void isLogin() {
 		loginSp = getActivity().getSharedPreferences(ConstantsConfig.SHAREDPREFERENCES_LOGIN, Context.MODE_PRIVATE);
 		isLogin = loginSp.getBoolean("isLogin", false);
+		isLea = loginSp.getBoolean("isLeader", false);
 	}
 
 	private void initView(View view) {
@@ -86,11 +95,18 @@ public class KindergartenFragment extends DialogFragment implements
 		mViewPager.setOnPageChangeListener(this);
 
 		smAdapter = new SimpleAdapter(getActivity(),
-				ConstantsConfig.loadId1Lists(), R.layout.kgf_girdview_item,
+				chooseLists(), R.layout.kgf_girdview_item,
 				new String[] { "itemImage", "itemText" }, new int[] {
 						R.id.kgf_gv_itemImage, R.id.kgf_gv_itemText });
 		mGridView.setAdapter(smAdapter);
 		mGridView.setOnItemClickListener(this);
+	}
+	
+	private ArrayList<HashMap<String, Object>> chooseLists(){
+		if(isLea){
+			return ConstantsConfig.loadId2Lists();
+		}
+		return ConstantsConfig.loadId1Lists();
 	}
 
 	private void init() {
@@ -220,61 +236,123 @@ public class KindergartenFragment extends DialogFragment implements
 	public void onItemClick(AdapterView<?> parent, View view, int position,
 			long id) {
 		//BaseApp.getInstance().showToast("你点击了" + position);
-		//判断登陆状态 
-		if(!isLogin){
-			dialogShow();
-		}else{
-			Intent mIntent = new Intent();
-			switch (position) {
-			case 0:
-				// 校园简介
-				mIntent.setClass(this.getActivity(), IntroductionActivity.class);
-				startActivity(mIntent);
-				break;
-			case 1:
-				// 课程安排
-				mIntent.setClass(this.getActivity(), CourseActivity.class);
-				startActivity(mIntent);
-				break;
-			case 2:
-				// 学生动态
-				mIntent.setClass(this.getActivity(), DynamicActivity.class);
-				startActivity(mIntent);
-				break;
-			case 3:
-				// 评价教师
-				mIntent.setClass(this.getActivity(), LogBookActivity.class);
-				startActivity(mIntent);
-				break;
-			case 4:
-				// 明星宝宝
-				mIntent.setClass(this.getActivity(), StarActivity.class);
-				startActivity(mIntent);
-				break;
-			case 5:
-				// 今日食谱
-				mIntent.setClass(getActivity(), FoodActivity.class);
-				startActivity(mIntent);
-				break;
-			case 6:
-				// 教育教学
-				mIntent.setClass(this.getActivity(), ConsultActivity.class);
-				startActivity(mIntent);
-				break;
-			case 7:
-				// 课时作业
-				mIntent.setClass(this.getActivity(), PlanActivity.class);
-				startActivity(mIntent);
-				break;
-			case 8:
-				// 反馈院长
-				mIntent.setClass(this.getActivity(), FeedbackActivity.class);
-				startActivity(mIntent);
-				break;
+		if(isLea){
+			//判断登陆状态 
+			if(!isLogin){
+				dialogShow();
+			}else{
+				Intent mIntent = new Intent();
+				/*"教师信息", "家园共建", "家长信", "花名册", "入校离校", "教学计划", "教育教学", "今日食谱", "通知公告"*/
+				switch (position) {
+				case 0:
+					// 教师信息
+					mIntent.setClass(this.getActivity(), AllTeacherInfo.class);
+					startActivity(mIntent);
+					break;
+				case 1:
+					// 家园共建
+					mIntent.setClass(this.getActivity(), HomeTogetherActivity.class);
+					startActivity(mIntent);
+					break;
+				case 2:
+					// 家长信
+					mIntent.setClass(this.getActivity(), LaterActivity.class);
+					startActivity(mIntent);
+					break;
+				case 3:
+					// 花名册
+					mIntent.setClass(this.getActivity(), AllStuInformationActivity.class);
+					startActivity(mIntent);
+					break;
+				case 4:
+					// 入校离校
+					mIntent.setClass(this.getActivity(), EnterAndLeaveActivity.class);
+					startActivity(mIntent);
+					break;
+				case 5:
+					// 今日食谱
+					mIntent.setClass(getActivity(), FoodActivity.class);
+					startActivity(mIntent);
+					break;
+				case 6:
+					// 教育教学
+					mIntent.setClass(this.getActivity(), ConsultActivity.class);
+					startActivity(mIntent);
+					break;
+				case 7:
+					// 教学计划
+					mIntent.setClass(this.getActivity(), PlanActivity.class);
+					startActivity(mIntent);
+					break;
+				case 8:
+					// 通知公告
+					mIntent.setClass(this.getActivity(), WriteInfoActivity.class);
+					startActivity(mIntent);
+					break;
 
-			default:
-				break;
+				default:
+					break;
+				}
 			}
+
+		}else {
+			//判断登陆状态 
+			if(!isLogin){
+				dialogShow();
+			}else{
+				Intent mIntent = new Intent();
+				switch (position) {
+				case 0:
+					// 校园简介
+					mIntent.setClass(this.getActivity(), IntroductionActivity.class);
+					startActivity(mIntent);
+					break;
+				case 1:
+					// 课程安排
+					mIntent.setClass(this.getActivity(), CourseActivity.class);
+					startActivity(mIntent);
+					break;
+				case 2:
+					// 学生动态
+					mIntent.setClass(this.getActivity(), DynamicActivity.class);
+					startActivity(mIntent);
+					break;
+				case 3:
+					// 评价教师
+					mIntent.setClass(this.getActivity(), LogBookActivity.class);
+					startActivity(mIntent);
+					break;
+				case 4:
+					// 明星宝宝
+					mIntent.setClass(this.getActivity(), StarActivity.class);
+					startActivity(mIntent);
+					break;
+				case 5:
+					// 今日食谱
+					mIntent.setClass(getActivity(), FoodActivity.class);
+					startActivity(mIntent);
+					break;
+				case 6:
+					// 教育教学
+					mIntent.setClass(this.getActivity(), ConsultActivity.class);
+					startActivity(mIntent);
+					break;
+				case 7:
+					// 课时作业
+					mIntent.setClass(this.getActivity(), PlanActivity.class);
+					startActivity(mIntent);
+					break;
+				case 8:
+					// 反馈院长
+					mIntent.setClass(this.getActivity(), FeedbackActivity.class);
+					startActivity(mIntent);
+					break;
+
+				default:
+					break;
+				}
+			}
+
 		}
 	}
 

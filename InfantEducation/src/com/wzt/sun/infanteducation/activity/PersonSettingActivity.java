@@ -20,6 +20,7 @@ public class PersonSettingActivity extends BaseActivity implements OnClickListen
 	private SharedPreferences userInfo = null;
 	private boolean isStu = false;
 	private boolean isTea = false;
+	private boolean isLea = false;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +40,7 @@ public class PersonSettingActivity extends BaseActivity implements OnClickListen
 		
 		isStu = userInfo.getBoolean("isParent", false);
 		isTea = userInfo.getBoolean("isTeacher", false);
+		isLea = userInfo.getBoolean("isLeader", false);
 		
 		choose();
 		iv.setOnClickListener(this);
@@ -53,6 +55,9 @@ public class PersonSettingActivity extends BaseActivity implements OnClickListen
 			rl_tea.setVisibility(View.GONE);
 		}else if (isStu == false && isTea == true) {
 			// 是老师
+			rl_stu.setVisibility(View.GONE);
+		}else if(isStu == false && isTea == false && isLea == true){
+			rl_tea.setVisibility(View.GONE);
 			rl_stu.setVisibility(View.GONE);
 		}
 	}

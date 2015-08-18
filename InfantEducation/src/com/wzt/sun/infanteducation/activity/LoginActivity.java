@@ -165,10 +165,17 @@ public class LoginActivity extends Activity {
 			// 是家长
 			editor.putBoolean("isParent", true);
 			editor.putBoolean("isTeacher", false);
+			editor.putBoolean("isLeader", false);
 		}else if (log.equals("B")) {
 			// 是老师
 			editor.putBoolean("isParent", false);
 			editor.putBoolean("isTeacher", true);
+			editor.putBoolean("isLeader", false);
+		}else if(log.equals("C")){
+			// 是园长
+			editor.putBoolean("isParent", false);
+			editor.putBoolean("isTeacher", false);
+			editor.putBoolean("isLeader", true);
 		}
 		
 		editor.commit();
@@ -195,7 +202,7 @@ public class LoginActivity extends Activity {
 			});
 		}else if ("B".equals(log)) {
 			// 老师
-			mHttpUtils.send(HttpMethod.GET, ConstansUrl.GETSTUDENTSINFO+id, new RequestCallBack<String>() {
+			mHttpUtils.send(HttpMethod.GET, ConstansUrl.GETTEACHERSINFO+id, new RequestCallBack<String>() {
 
 				@Override
 				public void onFailure(HttpException arg0, String arg1) {

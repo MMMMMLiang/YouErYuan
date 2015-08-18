@@ -2,6 +2,7 @@ package com.wzt.sun.infanteducation.fragment;
 
 import com.squareup.picasso.Picasso;
 import com.wzt.sun.infanteducation.BaseApp;
+import com.wzt.sun.infanteducation.MainActivity;
 import com.wzt.sun.infanteducation.R;
 import com.wzt.sun.infanteducation.activity.FeedbackActivity;
 import com.wzt.sun.infanteducation.activity.NotificationUpdateActivity;
@@ -15,13 +16,17 @@ import com.wzt.sun.infanteducation.view.MyListView;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
+import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ImageView;
 import android.widget.SimpleAdapter;
@@ -33,8 +38,12 @@ public class MeFragment extends Fragment implements OnItemClickListener{
 	//加载菜单
 	private MyListView mListView;
 	private SimpleAdapter adapter;
+	private Button btn;
 	
 	private BaseApp app;
+	
+	private SharedPreferences userInfo = null;
+	private SharedPreferences stuOrTea = null;
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater,
@@ -42,10 +51,13 @@ public class MeFragment extends Fragment implements OnItemClickListener{
 		// TODO Auto-generated method stub
 		View view = inflater.inflate(R.layout.fragment_first_me, null);
 		mListView = (MyListView) view.findViewById(R.id.fragment_me_lv);
+		btn = (Button) view.findViewById(R.id.fragment_me_btn);
 		adapter = new SimpleAdapter(getActivity(), ConstantsConfig.loadMyMenu(), R.layout.fragment_me_listview_item, 
 				new String[] { "itemImage", "itemText" }, new int[] {R.id.me_lv_item_image, R.id.me_lv_item_text});
 		mListView.setAdapter(adapter);
 		mListView.setOnItemClickListener(this);
+		userInfo = getActivity().getSharedPreferences(ConstantsConfig.SHAREDPREFERENCES_LOGIN, 0);
+		stuOrTea = getActivity().getSharedPreferences(ConstantsConfig.SHAREDPREFERENCES_USER, 0);
 		app = (BaseApp) getActivity().getApplication();
 		iv = (ImageView) view.findViewById(R.id.iv_usercenter_avatar);
 		
@@ -60,6 +72,20 @@ public class MeFragment extends Fragment implements OnItemClickListener{
 			}
 		});
 		Picasso.with(getActivity()).load(R.drawable.head_icon).transform(new CircleTransform()).into(iv);
+		btn.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+				Editor mEditor1 = userInfo.edit();
+				Editor mEditor2 = stuOrTea.edit();
+				mEditor1.clear();
+				mEditor2.clear();
+				mEditor1.commit();
+				mEditor2.commit();
+				dialogShow();
+			}
+		});
 		return view;
 	}
 
@@ -115,6 +141,11 @@ public class MeFragment extends Fragment implements OnItemClickListener{
 			}
 		});
 		builder.show();
+	}
+	
+	private void dialogShow() {
+		DialogFragment newFragment = new MyExitDialogFragment();
+		newFragment.show(getFragmentManager(), "exitDialog");
 	}
 
 }

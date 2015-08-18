@@ -200,7 +200,6 @@ public class EvaluateActivity extends BaseActivity{
 	public int loadC_id(){
 		SharedPreferences stuOrTea = getSharedPreferences(ConstantsConfig.SHAREDPREFERENCES_USER, MODE_PRIVATE);
 		int cId = stuOrTea.getInt("c_id", 0);
-		Log.i("AAAAAAAAAAAAAAAAAA", cId+"");
 		return cId;
 	}
 }

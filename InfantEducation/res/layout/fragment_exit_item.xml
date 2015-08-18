@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white" >
+    
+    <TextView
+        android:id="@+id/alert_exit_dialog_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#2EB976"
+        android:gravity="center"
+        android:scaleType="center"
+        android:text="@string/title_tishi"
+        android:textColor="@color/white"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/alert_exit_dialog_text2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/alert_exit_dialog_text"
+        android:gravity="center"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:scaleType="center"
+        android:text="@string/dialog_exit_text"
+        android:textColor="@color/black"
+        android:textSize="18sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/alert_exit_dialog_text2"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/exit_dialog_dis"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_selector"
+            android:onClick="btnClick"
+            android:text="@string/btn_dialog_dismiss" />
+
+        <Button
+            android:id="@+id/exit_dialog_exit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="2dp"
+            android:layout_marginStart="2dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_selector"
+            android:onClick="btnClick"
+            android:text="@string/btn_sure" />
+    </LinearLayout>
+
+</RelativeLayout>

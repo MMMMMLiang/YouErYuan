@@ -47,6 +47,7 @@
     <string name="btn_sure">确定</string>
     <string name="title_tishi">提示</string>
     <string name="dialog_text">您还没有登录!</string>
+    <string name="dialog_exit_text">确认退出?</string>
     <string name="btn_dialog_login">登录</string>
     <string name="btn_dialog_dismiss">取消</string>
     
@@ -92,6 +93,7 @@
     <string name="personal_info_title">个人信息</string>
     
     <string name="xuanzepingjiajiaoshi">选择评价的教师：</string>
+    <string name="xuanzebanji">选择班级：</string>
     <string name="shifoumanyi">请选择是否满意：</string>
     <string name="show_edu_info">查看详情</string>
     <string name="person_setting_title">个人设置</string>
@@ -110,5 +112,12 @@
     <string name="updata_psd_new">请输入新密码</string>
     <string name="updata_psd_new_again">请再次输入新密码</string>
     <string name="fragment_me_out">退出</string>
+    
+    <string name="allstu_info_title">花名册</string>
+    <string name="allstu_info_icon">头像</string>
+    <string name="allstu_info_name">姓名</string>
+    <string name="allstu_info_sex">性别</string>
+    <string name="allstu_info_id">学号</string>
+    <string name="alltea_info_id">工号</string>
 
 </resources>

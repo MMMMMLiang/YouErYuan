@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical"
+    android:orientation="horizontal" >
+    
+    <ImageView
+        android:id="@+id/allstu_item_icon"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:padding="4dp"
+        android:gravity="center_horizontal"
+        android:src="@drawable/ic_launcher" />
+    
+    <TextView
+        android:id="@+id/allstu_item_name"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:gravity="center_horizontal"
+        android:textColor="@color/black"
+        android:text="XXXXXX" />
+    
+    <TextView
+        android:id="@+id/allstu_item_sex"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:gravity="center_horizontal"
+        android:textColor="@color/black"
+        android:text="XXX" />
+    
+    <TextView
+        android:id="@+id/allstu_item_id"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:gravity="center_horizontal"
+        android:textColor="@color/black"
+        android:text="XXXX" />
+    
+
+</LinearLayout>
