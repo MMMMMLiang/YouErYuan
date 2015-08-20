@@ -1,7 +1,7 @@
 package com.wzt.sun.infanteducation.constans;
 
 public class ConstansUrl {
-	private static final String IP = "192.168.1.110:8080";
+	private static final String IP = "192.168.1.111:8080";
 
 	//登录的URL
 	public static final String loginUrl(){
