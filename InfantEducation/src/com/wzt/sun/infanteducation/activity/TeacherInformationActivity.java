@@ -11,6 +11,11 @@ import android.view.View.OnClickListener;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+/**
+ * 教师信息显示
+ * @author Administrator
+ *
+ */
 public class TeacherInformationActivity extends BaseActivity implements OnClickListener{
 	
 	private ImageView iv;

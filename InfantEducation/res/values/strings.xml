@@ -46,6 +46,7 @@
     
     <string name="btn_sure">确定</string>
     <string name="title_tishi">提示</string>
+    <string name="title_choose_class">请选择班级</string>
     <string name="dialog_text">您还没有登录!</string>
     <string name="dialog_exit_text">确认退出?</string>
     <string name="btn_dialog_login">登录</string>
@@ -119,5 +120,8 @@
     <string name="allstu_info_sex">性别</string>
     <string name="allstu_info_id">学号</string>
     <string name="alltea_info_id">工号</string>
+    
+    <string name="consult_info_title">详情</string>
+    <string name="choose_class_btn">选择班级</string>
 
 </resources>

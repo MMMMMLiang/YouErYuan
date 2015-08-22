@@ -10,6 +10,11 @@ import android.view.View.OnClickListener;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+/**
+ * 通知通告详情界面
+ * @author sun.ml
+ *
+ */
 public class InformInfoActivity extends BaseActivity {
 	
 	private Inform mInform;

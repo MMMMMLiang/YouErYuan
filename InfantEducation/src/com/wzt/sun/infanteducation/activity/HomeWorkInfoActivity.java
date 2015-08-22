@@ -10,6 +10,11 @@ import android.view.View.OnClickListener;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+/**
+ * 课时作业
+ * @author sun.ml
+ *
+ */
 public class HomeWorkInfoActivity extends BaseActivity {
 	
 	private ImageView iv;

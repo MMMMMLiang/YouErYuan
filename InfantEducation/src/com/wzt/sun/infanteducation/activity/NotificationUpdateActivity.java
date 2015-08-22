@@ -19,6 +19,11 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+/**
+ * 更新进度条显示界面
+ * @author sun.ml
+ *
+ */
 public class NotificationUpdateActivity extends Activity {
 	private Button btn_cancel;// btn_update,
 	private TextView tv_progress;

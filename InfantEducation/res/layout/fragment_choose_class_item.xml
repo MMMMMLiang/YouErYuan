@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white" >
+    
+    <TextView
+        android:id="@+id/cClass_item_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#2EB976"
+        android:gravity="center"
+        android:scaleType="center"
+        android:text="@string/title_choose_class"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
+    
+    <com.wzt.sun.infanteducation.view.MyListView 
+       android:id="@+id/cClass_listview"
+       android:layout_below="@id/cClass_item_title"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:listSelector="@color/transparent"
+       android:layout_marginStart="30dp"
+       android:layout_marginEnd="30dp" >
+        
+    </com.wzt.sun.infanteducation.view.MyListView>
+    
+
+</RelativeLayout>

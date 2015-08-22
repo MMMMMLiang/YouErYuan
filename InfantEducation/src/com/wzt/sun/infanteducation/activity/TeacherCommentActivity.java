@@ -1,9 +1,10 @@
 package com.wzt.sun.infanteducation.activity;
+
 /**
- * 教师个人信息设置
+ * 教师点评
  * @author sun.ml
  *
  */
-public class SettingTeaActivity extends BaseActivity {
+public class TeacherCommentActivity extends BaseActivity {
 
 }

@@ -26,6 +26,11 @@ import android.os.Message;
 import android.util.Log;
 import android.widget.ListView;
 
+/**
+ * 考勤记录查看
+ * @author sun.ml
+ *
+ */
 public class LogBookActivity extends BaseActivity {
 	private ListView lb_listView;
 	private List<Attendance> lists;

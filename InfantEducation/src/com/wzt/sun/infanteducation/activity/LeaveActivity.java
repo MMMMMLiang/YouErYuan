@@ -27,6 +27,11 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
 
+/**
+ * 请假界面
+ * @author sun.ml
+ *
+ */
 public class LeaveActivity extends Activity {
 	
 	private ImageView iv;

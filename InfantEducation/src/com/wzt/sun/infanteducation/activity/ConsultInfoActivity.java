@@ -20,6 +20,11 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+/**
+ * 教育教学详情界面
+ * @author sun.ml
+ *
+ */
 public class ConsultInfoActivity extends BaseActivity {
 	private String[] strs;
 	private ImageView iv;

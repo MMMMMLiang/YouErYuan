@@ -7,6 +7,11 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
 
+/**
+ * 通知通告列表(fragment)
+ * @author sun.ml
+ *
+ */
 public class InteractionFragmentActivity extends BaseActivity {
 	
 	private ImageView iv;

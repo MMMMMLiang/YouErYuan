@@ -34,6 +34,11 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
+/**
+ * 通知通告fragment
+ * @author sun.ml
+ *
+ */
 public class InformmFragment extends Fragment implements OnRefreshListener2<ListView>{
 	private PullToRefreshListView ptrListView;
 	private CommonAdapter<Inform> adapter;

@@ -18,6 +18,11 @@ import android.provider.MediaStore;
 import android.view.View;
 import android.widget.ImageView;
 
+/**
+ * 变换头像主界面
+ * @author sun.ml
+ *
+ */
 public class FaviconActivity extends BaseActivity {
 	
 	private ImageView headIcon;
@@ -86,5 +91,4 @@ public class FaviconActivity extends BaseActivity {
 			mHandle.sendEmptyMessage(0x0001);
 		}
 	}
-
 }

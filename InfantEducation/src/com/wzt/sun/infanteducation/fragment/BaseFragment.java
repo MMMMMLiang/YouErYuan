@@ -7,6 +7,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+/**
+ * app fragment基类 
+ * @author sun.ml
+ *
+ */
 public class BaseFragment extends Fragment {
 	public Activity activity;
 	

@@ -8,6 +8,11 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 
+/**
+ * 引导界面
+ * @author sun.ml
+ *
+ */
 public class GuideActivity extends BaseActivity {
 	private Handler mHandle = new Handler(){
 		

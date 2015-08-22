@@ -11,6 +11,11 @@ import android.view.View.OnClickListener;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+/**
+ * 学生信息显示
+ * @author sun.ml
+ *
+ */
 public class StudentInformationActivity extends BaseActivity implements OnClickListener{
 
 	private ImageView iv;

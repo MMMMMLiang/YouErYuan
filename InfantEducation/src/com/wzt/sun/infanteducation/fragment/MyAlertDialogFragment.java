@@ -14,6 +14,11 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Button;
 
+/**
+ * 提示未登录dialog
+ * @author sun.ml
+ *
+ */
 public class MyAlertDialogFragment extends DialogFragment implements OnClickListener{
 	private Button btn_login;
 	private Button btn_dis;

@@ -17,6 +17,11 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
 
+/**
+ * 修改密码设置
+ * @author Administrator
+ *
+ */
 public class UpdatePasswordActivity extends Activity {
 	
 	private EditText et_old_psd;

@@ -24,6 +24,11 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
 
+/**
+ * 园长查询所有教师信息
+ * @author sun.ml
+ *
+ */
 public class AllTeacherInfo extends BaseActivity {
 	
 	private MyListView mListView;

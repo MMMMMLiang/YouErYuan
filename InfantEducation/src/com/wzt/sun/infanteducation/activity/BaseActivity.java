@@ -4,6 +4,11 @@ import android.app.Activity;
 
 import com.wzt.sun.infanteducation.utils.AppManager;
 
+/**
+ * app activity父类
+ * @author sun.ml
+ *
+ */
 public class BaseActivity extends Activity {
 	
 	public void init(){

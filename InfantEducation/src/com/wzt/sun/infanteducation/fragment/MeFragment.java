@@ -2,7 +2,6 @@ package com.wzt.sun.infanteducation.fragment;
 
 import com.squareup.picasso.Picasso;
 import com.wzt.sun.infanteducation.BaseApp;
-import com.wzt.sun.infanteducation.MainActivity;
 import com.wzt.sun.infanteducation.R;
 import com.wzt.sun.infanteducation.activity.FeedbackActivity;
 import com.wzt.sun.infanteducation.activity.NotificationUpdateActivity;
@@ -10,6 +9,7 @@ import com.wzt.sun.infanteducation.activity.PersonSettingActivity;
 import com.wzt.sun.infanteducation.activity.PersonalInfoActivity;
 import com.wzt.sun.infanteducation.activity.UpdatePasswordActivity;
 import com.wzt.sun.infanteducation.constans.ConstantsConfig;
+import com.wzt.sun.infanteducation.utils.ACache;
 import com.wzt.sun.infanteducation.utils.CircleTransform;
 import com.wzt.sun.infanteducation.view.MyListView;
 
@@ -18,6 +18,12 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.PixelFormat;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.NinePatchDrawable;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
@@ -26,11 +32,16 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.SimpleAdapter;
 
+/**
+ * 我的fragment
+ * @author sun.ml
+ *
+ */
 public class MeFragment extends Fragment implements OnItemClickListener{
 	
 	private ImageView iv;
@@ -41,6 +52,7 @@ public class MeFragment extends Fragment implements OnItemClickListener{
 	private Button btn;
 	
 	private BaseApp app;
+	private ACache mACache;
 	
 	private SharedPreferences userInfo = null;
 	private SharedPreferences stuOrTea = null;
@@ -71,7 +83,10 @@ public class MeFragment extends Fragment implements OnItemClickListener{
 				startActivity(intent);
 			}
 		});
-		Picasso.with(getActivity()).load(R.drawable.head_icon).transform(new CircleTransform()).into(iv);
+		String iconUrl = stuOrTea.getString("photo", null);
+		Picasso.with(getActivity()).load(iconUrl).placeholder(R.drawable.avatar).error(R.drawable.avatar).transform(new CircleTransform()).into(iv);
+		Bitmap bm = drawable2Bitmap(iv.getDrawable());
+		saveBitmap(bm);
 		btn.setOnClickListener(new OnClickListener() {
 			
 			@Override
@@ -147,5 +162,35 @@ public class MeFragment extends Fragment implements OnItemClickListener{
 		DialogFragment newFragment = new MyExitDialogFragment();
 		newFragment.show(getFragmentManager(), "exitDialog");
 	}
+	
+	private void saveBitmap(Bitmap bm){
+		mACache = ACache.get(getActivity());
+		mACache.put("iconBitmap", bm, 2 * ACache.TIME_DAY);
+	}
+	
+	/**
+	 * Drawable 转 bitmap
+	 * @param drawable
+	 * @return
+	 */
+	private Bitmap drawable2Bitmap(Drawable drawable) {  
+        if (drawable instanceof BitmapDrawable) {  
+            return ((BitmapDrawable) drawable).getBitmap();  
+        } else if (drawable instanceof NinePatchDrawable) {  
+            Bitmap bitmap = Bitmap  
+                    .createBitmap(  
+                            drawable.getIntrinsicWidth(),  
+                            drawable.getIntrinsicHeight(),  
+                            drawable.getOpacity() != PixelFormat.OPAQUE ? Bitmap.Config.ARGB_8888  
+                                    : Bitmap.Config.RGB_565);  
+            Canvas canvas = new Canvas(bitmap);  
+            drawable.setBounds(0, 0, drawable.getIntrinsicWidth(),  
+                    drawable.getIntrinsicHeight());  
+            drawable.draw(canvas);  
+            return bitmap;  
+        } else {  
+            return null;  
+        }  
+    }  
 
 }

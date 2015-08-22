@@ -11,6 +11,11 @@ import android.view.View.OnClickListener;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
+/**
+ * 个人设置
+ * @author sun.ml
+ *
+ */
 public class PersonSettingActivity extends BaseActivity implements OnClickListener{
 	private ImageView iv;
 	private RelativeLayout rl_user;

@@ -1,6 +1,5 @@
 package com.wzt.sun.infanteducation.activity;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import com.lidroid.xutils.HttpUtils;
@@ -27,7 +26,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.EditText;
@@ -35,8 +33,6 @@ import android.widget.EditText;
 public class LoginActivity extends Activity {
 	private EditText et_login_username;
 	private EditText et_login_password;
-	
-	private static ArrayList<String> lists;
 	
 	private HttpUtils mHttpUtils;
 	private static String log;
@@ -246,7 +242,7 @@ public class LoginActivity extends Activity {
 		editor.putString("st_shuttlecard", stus.get(0).getSt_shuttlecard());
 		editor.putString("st_shuttle", stus.get(0).getSt_shuttle());
 		editor.putString("st_graduated", stus.get(0).getSt_graduated());
-		editor.putString("st_photo", stus.get(0).getSt_photo());
+		editor.putString("photo", stus.get(0).getSt_photo());
 		
 		editor.commit();
 	}
@@ -272,7 +268,7 @@ public class LoginActivity extends Activity {
 		editor.putString("t_card", teas.get(0).getT_card());
 		editor.putString("t_address", teas.get(0).getT_address());
 		editor.putString("t_we", teas.get(0).getT_we());
-		editor.putString("t_img", teas.get(0).getT_img());
+		editor.putString("photo", teas.get(0).getT_img());
 		editor.putString("t_type", teas.get(0).getT_type());
 		editor.putInt("c_id", teas.get(0).getC_id());
 		
@@ -282,7 +278,7 @@ public class LoginActivity extends Activity {
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		if (keyCode == KeyEvent.KEYCODE_BACK) {
-			lists.clear();
+			//lists.clear();
 			//点击返回键跳转到主界面
 			Intent intent=new Intent(this,MainActivity.class);
 			startActivity(intent);

@@ -8,6 +8,11 @@ import android.view.ViewGroup;
 
 import com.wzt.sun.infanteducation.R;
 
+/**
+ * 乐园fragment
+ * @author Administrator
+ *
+ */
 public class ParadiseFragment extends Fragment {
 	
 	@Override

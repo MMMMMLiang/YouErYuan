@@ -12,6 +12,11 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Button;
 
+/**
+ * 提示退出dialog
+ * @author Administrator
+ *
+ */
 public class MyExitDialogFragment extends DialogFragment implements OnClickListener{
 	private Button btn_exit;
 	private Button btn_dis;

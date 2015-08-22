@@ -24,6 +24,11 @@ import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
 import android.widget.LinearLayout;
 
+/**
+ * 欢迎界面
+ * @author sun.ml
+ *
+ */
 public class WelcomeActivity extends Activity implements OnPageChangeListener{
 	
 	//引导页面的图片显示

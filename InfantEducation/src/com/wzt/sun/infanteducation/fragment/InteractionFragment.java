@@ -8,6 +8,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+/**
+ * 互动fragment
+ * @author sun.ml
+ *
+ */
 public class InteractionFragment extends Fragment {
 
 	@Override
