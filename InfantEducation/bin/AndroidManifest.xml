@@ -71,6 +71,11 @@
         <activity android:name="com.wzt.sun.infanteducation.activity.HomeTogetherActivity"></activity>
         <activity android:name="com.wzt.sun.infanteducation.activity.LaterActivity"></activity>
         <activity android:name="com.wzt.sun.infanteducation.activity.WriteInfoActivity"></activity>
+        <activity android:name="com.wzt.sun.infanteducation.activity.TeacherCommentActivity"></activity>
+        <activity android:name="com.wzt.sun.infanteducation.activity.SchoolNewsActivity"></activity>
+        <activity android:name="com.wzt.sun.infanteducation.activity.PostMessageActivity"></activity>
+        <activity android:name="com.wzt.sun.infanteducation.activity.ExclusiveNewsActivity"></activity>
+        <activity android:name="com.wzt.sun.infanteducation.activity.BabyWorks"></activity>
         
         <service android:name="DownloadService" ></service>
     </application>
