@@ -98,4 +98,9 @@ public class ConstansUrl {
 	 */
 	public static final String GETALLCLS = "http://"+IP+"/SchoolManage/Class/getClsJ";
 	
+	/**
+	 * 根据班级id获取论坛信息的URL
+	 */
+	public static final String GETALLINTER = "http://"+IP+"/SchoolManage/Theme/getJthebyid?id=";
+	
 }

@@ -13,6 +13,7 @@ import com.wzt.sun.infanteducation.bean.Education;
 import com.wzt.sun.infanteducation.bean.Food;
 import com.wzt.sun.infanteducation.bean.Homework;
 import com.wzt.sun.infanteducation.bean.Inform;
+import com.wzt.sun.infanteducation.bean.ItemEntity;
 import com.wzt.sun.infanteducation.bean.Recipe;
 import com.wzt.sun.infanteducation.bean.StarBaby;
 import com.wzt.sun.infanteducation.bean.Student;
@@ -436,6 +437,42 @@ public class JsonParseUtils {
 				mClasses.setC_remarks(mObject.optString("cremarks"));
 				
 				lists.add(mClasses);
+			}
+			return lists;
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+	/**
+	 * JSON解析论坛表
+	 * @param data
+	 * @return
+	 */
+	public static List<ItemEntity> parseJsonInteraction(String data){
+		List<ItemEntity> lists = new ArrayList<ItemEntity>();
+		
+		try {
+			JSONArray mArray = new JSONArray(data);
+			for (int i = 0; i < mArray.length(); i++) {
+				JSONObject mObject = mArray.optJSONObject(i);
+				ItemEntity mItemEntity = new ItemEntity();
+								
+				mItemEntity.setTh_image(mObject.optString("img"));
+				mItemEntity.setTh_name(mObject.optString("name"));
+				mItemEntity.setTh_Vp(mObject.optString("th_Vp"));
+				mItemEntity.setTh_accessory(mObject.optString("th_accessory"));
+				mItemEntity.setTh_authr(mObject.optInt("th_authr"));
+				mItemEntity.setTh_classes(mObject.optInt("th_classes"));
+				mItemEntity.setTh_content(mObject.optString("th_content"));
+				mItemEntity.setTh_date(mObject.optString("th_date"));
+				mItemEntity.setTh_id(mObject.optInt("th_id"));
+				mItemEntity.setTh_num(mObject.optInt("th_num"));
+				mItemEntity.setTh_zan(mObject.optInt("th_zan"));
+				
+				lists.add(mItemEntity);
 			}
 			return lists;
 		} catch (JSONException e) {

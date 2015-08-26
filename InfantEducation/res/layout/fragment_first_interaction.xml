@@ -3,6 +3,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/appbg" >
+    
+    <com.handmark.pulltorefresh.library.PullToRefreshListView
+        android:id="@+id/fragment_first_interaction_ptr"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+        
+    </com.handmark.pulltorefresh.library.PullToRefreshListView>
 
 
 </RelativeLayout>

@@ -76,6 +76,7 @@
         <activity android:name="com.wzt.sun.infanteducation.activity.PostMessageActivity"></activity>
         <activity android:name="com.wzt.sun.infanteducation.activity.ExclusiveNewsActivity"></activity>
         <activity android:name="com.wzt.sun.infanteducation.activity.BabyWorks"></activity>
+        <activity android:name="com.wzt.sun.infanteducation.activity.ImagePagerActivity"></activity>
         
         <service android:name="DownloadService" ></service>
     </application>
