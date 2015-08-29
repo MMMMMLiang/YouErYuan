@@ -36,7 +36,7 @@ public class LoginActivity extends Activity {
 	
 	private HttpUtils mHttpUtils;
 	private static String log;
-	private static String id;
+	private static int id;
 	
 	private SharedPreferences loginSp = null;
 	private SharedPreferences userInfo = null;
@@ -99,7 +99,7 @@ public class LoginActivity extends Activity {
 						// TODO Auto-generated method stub
 						String str = responseInfo.result;
 						List<User> users = JsonParseUtils.parseJsonUser(str);
-						id = users.get(0).getRemarks2().toString();
+						id = users.get(0).getNum();
 						saveUserInfo(str);
 						BaseApp.getInstance().showToast("success");
 						//保存登录状态
@@ -139,35 +139,22 @@ public class LoginActivity extends Activity {
 		userInfo = getSharedPreferences(ConstantsConfig.SHAREDPREFERENCES_LOGIN, MODE_PRIVATE);
 		Editor editor=userInfo.edit();
 		
-		editor.putInt("vid", users.get(0).getVid());
-		editor.putInt("jifen", users.get(0).getJifen());
-		log = users.get(0).getVsf();
-		editor.putString("vsf", log);
-		editor.putString("vsfname", users.get(0).getVsfname());
 		editor.putString("user", users.get(0).getUser());
-		editor.putString("password", users.get(0).getPassword());
-		editor.putString("name", users.get(0).getName());
-		editor.putString("phone", users.get(0).getPhone());
-		editor.putString("registerdate", users.get(0).getRegisterdate());
-		editor.putString("state", users.get(0).getState());
-		editor.putString("identity", users.get(0).getIdentity());
-		editor.putString("email", users.get(0).getEmail());
-		editor.putString("address", users.get(0).getAddress());
-		editor.putString("appointmenttime", users.get(0).getAppointmenttime());
-		editor.putString("remarks1", users.get(0).getRemarks1());
-		String ids = users.get(0).getRemarks2();
-		editor.putString("remarks2", ids);
-		if(log.equals("A")){
+		log = users.get(0).getState();
+		editor.putString("state", log);
+		int ids = users.get(0).getNum();
+		editor.putInt("num", ids);
+		if(log.equals("D")){
 			// 是家长
 			editor.putBoolean("isParent", true);
 			editor.putBoolean("isTeacher", false);
 			editor.putBoolean("isLeader", false);
-		}else if (log.equals("B")) {
+		}else if (log.equals("C")) {
 			// 是老师
 			editor.putBoolean("isParent", false);
 			editor.putBoolean("isTeacher", true);
 			editor.putBoolean("isLeader", false);
-		}else if(log.equals("C")){
+		}else if(log.equals("B")){
 			// 是园长
 			editor.putBoolean("isParent", false);
 			editor.putBoolean("isTeacher", false);
@@ -181,7 +168,7 @@ public class LoginActivity extends Activity {
 	 * 保存学生或老师信息
 	 */
 	private void saveStuOrTea(){
-		if("A".equals(log)){
+		if("D".equals(log)){
 			// 家长
 			mHttpUtils.send(HttpMethod.GET, ConstansUrl.GETSTUDENTSINFO+id, new RequestCallBack<String>() {
 
@@ -196,7 +183,7 @@ public class LoginActivity extends Activity {
 					saveStuInfo(responseInfo.result);
 				}
 			});
-		}else if ("B".equals(log)) {
+		}else if ("C".equals(log)) {
 			// 老师
 			mHttpUtils.send(HttpMethod.GET, ConstansUrl.GETTEACHERSINFO+id, new RequestCallBack<String>() {
 

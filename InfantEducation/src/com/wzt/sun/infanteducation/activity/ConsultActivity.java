@@ -62,7 +62,7 @@ public class ConsultActivity extends BaseActivity {
 	
 	public void initView(){
 		mCache = ACache.get(this);
-		iv = (ImageView) findViewById(R.id.titlebar_consult_btn_back);
+		//iv = (ImageView) findViewById(R.id.titlebar_consult_btn_back);
 		gv = (GridView) findViewById(R.id.consult_edu_gridview);
 		mHttpUtils = new HttpUtils();
 		

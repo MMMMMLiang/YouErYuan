@@ -40,7 +40,7 @@ public class ConstantsConfig {
 	// "校园简介", "课程安排", "学生动态", "考勤统计", "明星宝宝", "今日食谱", "教育教学", "课时作业", "反馈园长"
 	public static final ArrayList<HashMap<String, Object>> loadId2Lists() {
 		ArrayList<HashMap<String, Object>> id1Lists = new ArrayList<HashMap<String, Object>>();
-		String texts[] = new String[] { "校园简介", "乐园风采", "宝宝作品", "老师点评", "明星宝贝", "今日食谱", "花名册", "教学计划", "考勤请假" };
+		String texts[] = new String[] { "校园简介", "乐园风采", "宝宝作品", "老师点评", "明星宝贝", "今日食谱", "我的班级", "教学计划", "考勤请假" };
 		int images[] = new int[] { R.drawable.gv_kg_xiaoyuanjianjie, R.drawable.gv_kg_kechenganpai,
 				R.drawable.gv_kg_xueshengdongtai, R.drawable.gv_kg_pingjiatubiao, R.drawable.gv_kg_mingxingbaobao,
 				R.drawable.gv_kg_jinrishipu, R.drawable.gv_kg_jiaoyucicun, R.drawable.gv_kg_jiaoxuejihua,

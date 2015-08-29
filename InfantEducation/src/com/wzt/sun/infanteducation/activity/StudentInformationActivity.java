@@ -26,8 +26,6 @@ public class StudentInformationActivity extends BaseActivity implements OnClickL
 	private TextView tv_class;
 	private TextView tv_id;
 	private TextView tv_birthday;
-	private TextView tv_parents;
-	private TextView tv_parentsphone;
 	
 	private String name;
 	private String sex;
@@ -35,8 +33,6 @@ public class StudentInformationActivity extends BaseActivity implements OnClickL
 	private int mClass;
 	private int id;
 	private String birthday;
-	private String parents;
-	private String parentsphone;
 	
 	private SharedPreferences stuOrTea = null;
 
@@ -59,8 +55,6 @@ public class StudentInformationActivity extends BaseActivity implements OnClickL
 		tv_class = (TextView) findViewById(R.id.stu_info_class);
 		tv_id = (TextView) findViewById(R.id.stu_info_num);
 		tv_birthday = (TextView) findViewById(R.id.stu_info_birthday);
-		tv_parents = (TextView) findViewById(R.id.stu_info_parents);
-		tv_parentsphone = (TextView) findViewById(R.id.stu_info_parentsphone);
 		
 		stuOrTea = getSharedPreferences(ConstantsConfig.SHAREDPREFERENCES_USER, MODE_PRIVATE);
 		iv.setOnClickListener(this);
@@ -74,8 +68,6 @@ public class StudentInformationActivity extends BaseActivity implements OnClickL
 		mClass = stuOrTea.getInt("c_id", 0);
 		id = stuOrTea.getInt("id", 0);
 		birthday = stuOrTea.getString("st_birthday", null);
-		parents = stuOrTea.getString("st_father", null);
-		parentsphone = stuOrTea.getString("st_fcard", null);
 		
 		tv_name.setText(name);
 		tv_sex.setText(sex);
@@ -83,8 +75,6 @@ public class StudentInformationActivity extends BaseActivity implements OnClickL
 		tv_class.setText(mClass+"");
 		tv_id.setText(id+"");
 		tv_birthday.setText(birthday);
-		tv_parents.setText(parents);
-		tv_parentsphone.setText(parentsphone);
 	}
 
 	@Override

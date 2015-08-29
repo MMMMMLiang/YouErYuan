@@ -345,22 +345,9 @@ public class JsonParseUtils {
 				JSONObject mObject = mArray.optJSONObject(i);
 				User mUser = new User();
 				
-				mUser.setVid(mObject.optInt("vid"));
-				mUser.setVsf(mObject.optString("vsf"));
-				mUser.setVsfname(mObject.optString("vsfname"));
-				mUser.setUser(mObject.optString("user"));
-				mUser.setPassword(mObject.optString("password"));
-				mUser.setName(mObject.optString("name"));
-				mUser.setPhone(mObject.optString("phone"));
-				mUser.setRegisterdate(mObject.optString("registerdate"));
+				mUser.setNum(mObject.optInt("num"));
 				mUser.setState(mObject.optString("state"));
-				mUser.setIdentity(mObject.optString("identity"));
-				mUser.setEmail(mObject.optString("email"));
-				mUser.setAddress(mObject.optString("address"));
-				mUser.setAppointmenttime(mObject.optString("appointmenttime"));
-				mUser.setRemarks1(mObject.optString("remarks1"));
-				mUser.setRemarks2(mObject.optString("remarks2"));
-				mUser.setJifen(mObject.optInt("jifen"));
+				mUser.setUser(mObject.optString("user"));
 				
 				lists.add(mUser);
 			}

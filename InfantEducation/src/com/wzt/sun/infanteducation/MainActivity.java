@@ -1,5 +1,7 @@
 package com.wzt.sun.infanteducation;
 
+import com.wzt.sun.infanteducation.activity.AddInteractionActivity;
+import com.wzt.sun.infanteducation.activity.PublishActivity;
 import com.wzt.sun.infanteducation.constans.ConstantsConfig;
 import com.wzt.sun.infanteducation.fragment.InformmFragment;
 import com.wzt.sun.infanteducation.fragment.InteractionFragment;
@@ -10,6 +12,7 @@ import com.wzt.sun.infanteducation.fragment.ParadiseFragment;
 import com.wzt.sun.infanteducation.netstate.NetworkStateReceiver;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
@@ -18,6 +21,8 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.ImageView;
 
 public class MainActivity extends FragmentActivity {
 	// 第一次点击返回键的时间
@@ -27,9 +32,11 @@ public class MainActivity extends FragmentActivity {
 	// 五个Fragment界面
 	private Fragment[] fragments = new Fragment[5];
 	public static MainActivity instance = null;
+	private ImageView iv_add;
 	
 	private SharedPreferences loginSp = null;
 	private boolean isLogin = false;
+	private boolean isTea = false;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -49,10 +56,21 @@ public class MainActivity extends FragmentActivity {
 	private void initView() {
 		fm = getSupportFragmentManager();
 		FragmentTransaction ft = fm.beginTransaction();
+		iv_add = (ImageView) findViewById(R.id.main_title_add);
+		iv_add.setVisibility(View.GONE);
 		KindergartenFragment kindergartendFragment = new KindergartenFragment();
 		fragments[0] = kindergartendFragment;
 		ft.add(R.id.linear_container, kindergartendFragment);
 		ft.commit();
+		iv_add.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View view) {
+				// TODO Auto-generated method stub
+				Intent mIntent = new Intent(MainActivity.this, PublishActivity.class);
+				startActivity(mIntent);
+			}
+		});
 
 	}
 
@@ -64,26 +82,33 @@ public class MainActivity extends FragmentActivity {
 			switch (view.getId()) {
 			case R.id.bottom_rb_kindergarten:
 				// 幼儿园
+				iv_add.setVisibility(View.GONE);
 				showFragment(0);
 				hideOtherFragment(0);
 				break;
 			case R.id.bottom_rb_inform:
 				// 通知
+				iv_add.setVisibility(View.GONE);
 				showFragment(1);
 				hideOtherFragment(1);
 				break;
 			case R.id.bottom_rb_interaction:
 				// 互动
+				if(isTea){
+					iv_add.setVisibility(View.VISIBLE);
+				}
 				showFragment(2);
 				hideOtherFragment(2);
 				break;
 			case R.id.bottom_rb_paradise:
 				// 乐园
+				iv_add.setVisibility(View.GONE);
 				showFragment(3);
 				hideOtherFragment(3);
 				break;
 				// 我
 			case R.id.bottom_rb_me:
+				iv_add.setVisibility(View.GONE);
 				showFragment(4);
 				hideOtherFragment(4);
 				break;
@@ -174,6 +199,9 @@ public class MainActivity extends FragmentActivity {
 	private void isLogin() {
 		loginSp = this.getSharedPreferences(ConstantsConfig.SHAREDPREFERENCES_LOGIN, Context.MODE_PRIVATE);
 		isLogin = loginSp.getBoolean("isLogin", false);
+		loginSp.getBoolean("isLeader", false);
+		isTea = loginSp.getBoolean("isTeacher", false);
+		loginSp.getBoolean("isParent", false);
 	}
 	
 	private void dialogShow() {
@@ -195,5 +223,6 @@ public class MainActivity extends FragmentActivity {
 					.getInstance());
 		}
 	}
+	
 }
 	

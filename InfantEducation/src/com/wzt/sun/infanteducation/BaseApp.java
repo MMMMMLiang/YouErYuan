@@ -7,7 +7,7 @@ import android.widget.Toast;
 
 import com.lidroid.xutils.bitmap.BitmapGlobalConfig;
 import com.lidroid.xutils.cache.MD5FileNameGenerator;
-import com.wzt.sun.infanteducation.constans.ConstantsConfig;
+import com.wzt.sun.infanteducation.constans.CustomConstants;
 import com.wzt.sun.infanteducation.netstate.NetChangeObserver;
 import com.wzt.sun.infanteducation.netstate.NetWorkUtil;
 import com.wzt.sun.infanteducation.netstate.NetworkStateReceiver;
@@ -32,6 +32,7 @@ public class BaseApp extends Application {
 		checkNet();
 		imgGlobalconfig();
 		stopLog();
+		removeTempFromPref();
 	}
 
 	private void checkNet() {
@@ -104,4 +105,10 @@ public class BaseApp extends Application {
 		this.isDownload = isDownload;
 	}
 	
+	private void removeTempFromPref()
+	{
+		SharedPreferences sp = getSharedPreferences(
+				CustomConstants.APPLICATION_NAME, MODE_PRIVATE);
+		sp.edit().remove(CustomConstants.PREF_TEMP_IMAGES).commit();
+	}
 }

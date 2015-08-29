@@ -1,15 +1,14 @@
 package com.wzt.sun.infanteducation.activity;
 
+import com.squareup.picasso.Picasso;
 import com.wzt.sun.infanteducation.R;
+import com.wzt.sun.infanteducation.constans.ConstansUrl;
 import com.wzt.sun.infanteducation.constans.ConstantsConfig;
-import com.wzt.sun.infanteducation.utils.ACache;
+import com.wzt.sun.infanteducation.utils.CircleTransform;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Bitmap;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
@@ -26,26 +25,16 @@ public class PersonalInfoActivity extends BaseActivity {
 	private ImageView img_head;
 	private TextView text_name;
 	private TextView text_sex;
+	private TextView text_lv;
+	private TextView text_date;
+	private TextView text_volk;
+	private TextView text_job;
 	private TextView text_phone;
+	private TextView text_address;
+	private String url;
+	private String spfUrl;
 	private SharedPreferences loginSp = null;
-	private ACache mACache;
-	
-	private Handler mHamdle = new Handler(){
-		@Override
-		public void handleMessage(Message msg) {
-
-			switch (msg.what) {
-			case 0x0006:
-				Bitmap bm = mACache.getAsBitmap("iconBitmap");
-				img_head.setImageBitmap(bm); 
-				break;
-
-			default:
-				break;
-			}
-			
-		}
-	};
+	private SharedPreferences stuOrTea = null;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +44,12 @@ public class PersonalInfoActivity extends BaseActivity {
 		
 		btn_goBack = (ImageView) findViewById(R.id.titlebar_personal_info_btnback);
 		img_head = (ImageView) findViewById(R.id.iv_usercenter_head);
-		
+		stuOrTea = getSharedPreferences(ConstantsConfig.SHAREDPREFERENCES_USER, MODE_PRIVATE);
+		spfUrl = stuOrTea.getString("photo", null);
+		Intent mIntent = getIntent();
+		if(mIntent != null){
+			url = mIntent.getStringExtra("headUrl");
+		}
 		initView();
 		loadData();
 		btn_goBack.setOnClickListener(new OnClickListener() {
@@ -71,26 +65,36 @@ public class PersonalInfoActivity extends BaseActivity {
 	
 	public void initView() {
 		
-		text_name = (TextView) findViewById(R.id.personal_t_name);
-		text_sex = (TextView) findViewById(R.id.personal_t_sex);
-		text_phone = (TextView) findViewById(R.id.personal_t_phone);
+		text_name = (TextView) findViewById(R.id.people_t_name);
+		text_sex = (TextView) findViewById(R.id.people_t_sex);
+		text_lv = (TextView) findViewById(R.id.people_t_lv);
+		text_date = (TextView) findViewById(R.id.people_t_date);
+		text_volk = (TextView) findViewById(R.id.people_t_volk);
+		text_job = (TextView) findViewById(R.id.people_t_job);
+		text_phone = (TextView) findViewById(R.id.people_t_phone);
+		text_address = (TextView) findViewById(R.id.people_t_address);
 	}
 	
 	public void loadData() {
-		loginSp = getSharedPreferences(ConstantsConfig.SHAREDPREFERENCES_LOGIN, MODE_PRIVATE);
-		String name = loginSp.getString("name", null);
-		String email = loginSp.getString("email", null);
-		String phone = loginSp.getString("phone", null);
-		text_name.setText("姓        名："+name);
-		text_sex.setText("邮        箱："+email);
-		text_phone.setText("联系方式："+phone);
-		mACache = ACache.get(this);
-		new Thread(){
-			public void run() {
-				
-				mHamdle.sendEmptyMessage(0x0006);
-			};
-		}.start();
+		loginSp = getSharedPreferences(ConstantsConfig.SHAREDPREFERENCES_USER, MODE_PRIVATE);
+		String name = loginSp.getString("t_name", null);
+		String sex = loginSp.getString("t_address", null);
+		String lv = loginSp.getString("t_lv", null);
+		String date = loginSp.getString("t_date", null);
+		String volk = loginSp.getString("t_volk", null);
+		String job = loginSp.getString("t_job", null);
+		String phone = loginSp.getString("t_phone", null);
+		String address = loginSp.getString("t_address", null);
+		text_name.setText(name);
+		text_sex.setText(sex);
+		text_lv.setText(lv);
+		text_date.setText(date);
+		text_volk.setText(volk);
+		text_job.setText(job);
+		text_phone.setText(phone);
+		text_address.setText(address);
+		Picasso.with(this).load(ConstansUrl.getHeadnUrl(spfUrl)).placeholder(R.drawable.avatar).error(R.drawable.avatar).transform(new CircleTransform()).into(img_head);
+		
 		
 	}
 	
@@ -99,7 +103,8 @@ public class PersonalInfoActivity extends BaseActivity {
 		case R.id.iv_usercenter_head:
 			
 			Intent intent = new Intent(this, FaviconActivity.class);
-			startActivity(intent);
+			intent.putExtra("headUrl", url);
+			startActivityForResult(intent, 0);
 			
 			break;
 
@@ -107,5 +112,15 @@ public class PersonalInfoActivity extends BaseActivity {
 			break;
 		}
 	}
-
+	
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		// TODO Auto-generated method stub
+		super.onActivityResult(requestCode, resultCode, data);
+		if(requestCode == 0 && resultCode == 1){
+			Bundle bundle = data.getExtras();
+	        String imgUrl = bundle.getString("imgUrl");
+	        Picasso.with(this).load(ConstansUrl.getHeadnUrl(imgUrl)).placeholder(R.drawable.avatar).error(R.drawable.avatar).transform(new CircleTransform()).into(img_head);
+		}
+	}
 }

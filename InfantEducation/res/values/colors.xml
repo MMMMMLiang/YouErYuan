@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="apptitle">#2EB976</color>
     <color name="appbg">#EAEAEA</color>
     <color name="white">#ffffff</color>
     <!--白色 -->
@@ -296,5 +297,13 @@
      <color name="transparent">#00000000</color>
     <!-- 我的背景 -->
      <color name="mybackground">#EEF2FB</color>
+     
+    <color name="light_gray">#99a4b7</color>
+    <color name="deep_gray">#394257</color>
+    <color name="border_gray">#d9dfe5</color>
+    <color name="bg_gray">#e1e1e1</color>
+    <color name="btn_gray">#d1d1d1</color>
+    <color name="glass_gall">#c2ebef</color>
+    <color name="light_blue">#87d0f2</color>
     
 </resources>

@@ -34,7 +34,7 @@
             android:layout_marginTop="4dp"
             android:layout_toEndOf="@id/ffii_iv_head"
             android:text="11111"
-            android:textSize="18sp" />
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/ffii_tv_date"
@@ -42,11 +42,11 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/ffii_tv_name"
             android:layout_marginStart="6dp"
-            android:layout_marginTop="6dp"
+            android:layout_marginTop="4dp"
             android:layout_toEndOf="@id/ffii_iv_head"
             android:text="2015-08-24"
             android:textColor="@color/gray"
-            android:textSize="16sp" />
+            android:textSize="14sp" />
     </RelativeLayout>
 
     <LinearLayout
@@ -68,13 +68,16 @@
         <com.wzt.sun.infanteducation.view.NoScrollGridView
             android:id="@+id/ffii_tv_gridview"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginStart="10dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:columnWidth="70dp"
+            android:paddingStart="40dp"
+            android:paddingEnd="40dp"
+            android:stretchMode="columnWidth"
             android:layout_marginTop="6dp"
-            android:layout_gravity="center"
-            android:horizontalSpacing="10dp"
+            android:horizontalSpacing="3dp"
             android:numColumns="3"
-            android:verticalSpacing="10dp" >
+            android:verticalSpacing="3dp" >
             
         </com.wzt.sun.infanteducation.view.NoScrollGridView>
         

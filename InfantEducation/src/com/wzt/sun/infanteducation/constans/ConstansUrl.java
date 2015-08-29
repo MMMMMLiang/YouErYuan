@@ -1,13 +1,27 @@
 package com.wzt.sun.infanteducation.constans;
 
 public class ConstansUrl {
-	private static final String IP = "192.168.1.110:8080";
+	private static final String IP = "192.168.1.105:8080";
 
 	//登录的URL
 	public static final String loginUrl(){
-		String url = "http://"+IP+"/SchoolManage/vipuser/login";
+		String url = "http://"+IP+"/SchoolManage/admin/LoginApp";
 		return url;
 	}
+	
+	/**
+	 * 请求头像的URL
+	 */
+	public static final String getHeadnUrl(String str){
+		String url = "http://"+IP+str;
+		return url;
+	}
+	
+	/**
+	 * 上传头像的URL
+	 */
+	public static final String POSTHEAD = "http://"+IP+"/SchoolManage/Teacher/updatephoto";
+	
 	/**
 	 * 请求学生信息的URL
 	 */
@@ -102,5 +116,12 @@ public class ConstansUrl {
 	 * 根据班级id获取论坛信息的URL
 	 */
 	public static final String GETALLINTER = "http://"+IP+"/SchoolManage/Theme/getJthebyid?id=";
+	
+	/**
+	 * 根据帖子id点赞的URL
+	 */
+	public static final String GETDIANZAN(int id, String ij){
+		return "http://"+IP+"/SchoolManage/Theme/dianzan?id="+id+"&ij="+ij;
+	}
 	
 }

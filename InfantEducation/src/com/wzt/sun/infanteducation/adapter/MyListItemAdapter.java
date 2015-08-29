@@ -3,16 +3,24 @@ package com.wzt.sun.infanteducation.adapter;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.lidroid.xutils.HttpUtils;
+import com.lidroid.xutils.exception.HttpException;
+import com.lidroid.xutils.http.ResponseInfo;
+import com.lidroid.xutils.http.callback.RequestCallBack;
+import com.lidroid.xutils.http.client.HttpRequest.HttpMethod;
 import com.squareup.picasso.Picasso;
+import com.wzt.sun.infanteducation.BaseApp;
 import com.wzt.sun.infanteducation.R;
 import com.wzt.sun.infanteducation.activity.ImagePagerActivity;
 import com.wzt.sun.infanteducation.bean.ItemEntity;
+import com.wzt.sun.infanteducation.constans.ConstansUrl;
 import com.wzt.sun.infanteducation.view.NoScrollGridView;
 import com.wzt.sun.infanteducation.view.PraiseView;
 import com.wzt.sun.infanteducation.view.PraiseView.OnPraisCheckedListener;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,6 +35,9 @@ public class MyListItemAdapter extends BaseAdapter implements OnPraisCheckedList
 	private List<ItemEntity> items;
 	private int index = 0;
 	private ViewHolder viewHolder = null;
+	private int th_id;
+	private String url;
+	private HttpUtils mHttpUtils;
 
 	public MyListItemAdapter(Context mContext, List<ItemEntity> items) {
 		super();
@@ -78,6 +89,8 @@ public class MyListItemAdapter extends BaseAdapter implements OnPraisCheckedList
 		viewHolder.tv_zan.setText(items.get(position).getTh_zan()+"");
 		viewHolder.tv_num.setText(items.get(position).getTh_num()+"");
 		index = items.get(position).getTh_zan();
+		//Log.i("INDEX:", index+"");
+		th_id = items.get(position).getTh_id();
 		final ArrayList<String> imageUrls = getList(items.get(position).getTh_accessory());
 		if (imageUrls == null || imageUrls.size() == 0) { // 没有图片资源就隐藏GridView
 			viewHolder.ns_gridview.setVisibility(View.GONE);
@@ -130,24 +143,6 @@ public class MyListItemAdapter extends BaseAdapter implements OnPraisCheckedList
 		mContext.startActivity(intent);
 	}
 
-	/*@Override
-	public void onClick(View view) {
-		// TODO Auto-generated method stub
-		ViewHolder mHolder = new ViewHolder();
-		mHolder.tv_zan = (TextView) view.findViewById(R.id.ffii_tv_zan);
-		if(isCheck){
-			isCheck = false;
-			String str = index-1+"";
-			mHolder.tv_zan.setText(index-1+"");
-			Log.i("STR", str);
-		}else {
-			isCheck = true;
-			String str = index+1+"";
-			mHolder.tv_zan.setText(index+1+"");
-			Log.i("STR", str);
-		}
-	}*/
-
 	@Override
 	public void onPraisChecked(boolean isChecked) {
 		// TODO Auto-generated method stub
@@ -156,14 +151,35 @@ public class MyListItemAdapter extends BaseAdapter implements OnPraisCheckedList
 			String str = index+1+"";
 			index += 1;
 			viewHolder.tv_zan.setText(str);
-			//Log.i("STR", str);
+			loadData("a");
+			//Log.i("STR:", str);
 		}else {
 			isChecked = true;
 			String str = index-1+"";
 			index -= 1;
 			viewHolder.tv_zan.setText(str);
+			loadData("b");
 			//Log.i("STR", str);
 		}
+	}
+	
+	private void loadData(String ij){
+		mHttpUtils = new HttpUtils();
+		url = ConstansUrl.GETDIANZAN(th_id, ij);
+		mHttpUtils.send(HttpMethod.GET, url, new RequestCallBack<String>() {
+
+			@Override
+			public void onFailure(HttpException arg0, String arg1) {
+				// TODO Auto-generated method stub
+				BaseApp.getInstance().showToast(arg1);
+			}
+
+			@Override
+			public void onSuccess(ResponseInfo<String> response) {
+				// TODO Auto-generated method stub
+				BaseApp.getInstance().showToast(response.result);
+			}
+		});
 	}
 	
 }

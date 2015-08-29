@@ -8,6 +8,7 @@ import com.wzt.sun.infanteducation.activity.NotificationUpdateActivity;
 import com.wzt.sun.infanteducation.activity.PersonSettingActivity;
 import com.wzt.sun.infanteducation.activity.PersonalInfoActivity;
 import com.wzt.sun.infanteducation.activity.UpdatePasswordActivity;
+import com.wzt.sun.infanteducation.constans.ConstansUrl;
 import com.wzt.sun.infanteducation.constans.ConstantsConfig;
 import com.wzt.sun.infanteducation.utils.ACache;
 import com.wzt.sun.infanteducation.utils.CircleTransform;
@@ -53,6 +54,8 @@ public class MeFragment extends Fragment implements OnItemClickListener{
 	
 	private BaseApp app;
 	private ACache mACache;
+	private Bitmap bm;
+	private String iconUrl;
 	
 	private SharedPreferences userInfo = null;
 	private SharedPreferences stuOrTea = null;
@@ -73,19 +76,19 @@ public class MeFragment extends Fragment implements OnItemClickListener{
 		app = (BaseApp) getActivity().getApplication();
 		iv = (ImageView) view.findViewById(R.id.iv_usercenter_avatar);
 		
-		
+		iconUrl = ConstansUrl.getHeadnUrl(stuOrTea.getString("photo", null));
 		iv.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View arg0) {
 				// TODO Auto-generated method stub
 				Intent intent = new Intent(getActivity(), PersonalInfoActivity.class);
-				startActivity(intent);
+				intent.putExtra("headUrl", iconUrl);
+				startActivityForResult(intent, 3);
 			}
 		});
-		String iconUrl = stuOrTea.getString("photo", null);
 		Picasso.with(getActivity()).load(iconUrl).placeholder(R.drawable.avatar).error(R.drawable.avatar).transform(new CircleTransform()).into(iv);
-		Bitmap bm = drawable2Bitmap(iv.getDrawable());
+		bm = drawable2Bitmap(iv.getDrawable());
 		saveBitmap(bm);
 		btn.setOnClickListener(new OnClickListener() {
 			
@@ -192,5 +195,18 @@ public class MeFragment extends Fragment implements OnItemClickListener{
             return null;  
         }  
     }  
-
+	
+	@Override
+	public void onStart() {
+		// TODO Auto-generated method stub
+		super.onStart();
+	}
+	
+	@Override
+	public void onResume() {
+		super.onResume();
+		iconUrl = ConstansUrl.getHeadnUrl(stuOrTea.getString("photo", null));
+		Picasso.with(getActivity()).load(iconUrl).placeholder(R.drawable.avatar).error(R.drawable.avatar).transform(new CircleTransform()).into(iv);
+	}
+	
 }

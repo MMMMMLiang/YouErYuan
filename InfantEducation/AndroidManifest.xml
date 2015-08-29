@@ -77,6 +77,12 @@
         <activity android:name="com.wzt.sun.infanteducation.activity.ExclusiveNewsActivity"></activity>
         <activity android:name="com.wzt.sun.infanteducation.activity.BabyWorks"></activity>
         <activity android:name="com.wzt.sun.infanteducation.activity.ImagePagerActivity"></activity>
+        <activity android:name="com.wzt.sun.infanteducation.activity.AddInteractionActivity"></activity>
+        
+        <activity android:name="com.wzt.sun.infanteducation.activity.ImageBucketChooseActivity"></activity>
+        <activity android:name="com.wzt.sun.infanteducation.activity.ImageChooseActivity"></activity>
+        <activity android:name="com.wzt.sun.infanteducation.activity.ImageZoomActivity"></activity>
+        <activity android:name="com.wzt.sun.infanteducation.activity.PublishActivity"></activity>
         
         <service android:name="DownloadService" ></service>
     </application>

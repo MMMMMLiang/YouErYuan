@@ -6,12 +6,13 @@
     <RelativeLayout
         android:id="@+id/favicon_head"
         android:layout_width="match_parent"
-        android:layout_height="320dp" >
+        android:layout_height="300dp" >
     
     <ImageView
         android:id="@+id/favicon_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:scaleType="fitXY"
         android:src="@drawable/ic_launcher"
         android:layout_centerInParent="true" />
     
