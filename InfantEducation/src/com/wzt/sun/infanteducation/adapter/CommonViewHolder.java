@@ -159,12 +159,38 @@ public class CommonViewHolder {
     }
     
     /**
+     * 为ImageView设置图片
+     * @param context
+     * @param imageViewId
+     * @param url
+     */
+    public void setImageForGridView(Context context, int imageViewId, String url) {
+    	 ImageView imageView = ViewFinder.findViewById(mContentView, imageViewId);
+    	 if(imageView != null){
+    		 Picasso.with(context).load(url).resize(150, 150).centerCrop().into(imageView);
+    	 }
+    }
+    
+    /**
      * 为ImageView设置圆形图片
      * @param context
      * @param imageViewId
      * @param url
      */
     public void setCircleImageForView(Context context, int imageViewId, String url) {
+    	 ImageView imageView = ViewFinder.findViewById(mContentView, imageViewId);
+    	 if(imageView != null){
+    		 Picasso.with(context).load(url).resize(120, 120).centerCrop().placeholder(R.drawable.message_placeholder_picture).error(R.drawable.message_placeholder_picture).transform(new CircleTransform()).into(imageView);
+    	 }
+    }
+    
+    /**
+     * 为StarImageView设置圆形图片
+     * @param context
+     * @param imageViewId
+     * @param url
+     */
+    public void setCircleImageForViewToStar(Context context, int imageViewId, String url) {
     	 ImageView imageView = ViewFinder.findViewById(mContentView, imageViewId);
     	 if(imageView != null){
     		 Picasso.with(context).load(url).resize(120, 120).centerCrop().placeholder(R.drawable.message_placeholder_picture).error(R.drawable.message_placeholder_picture).transform(new CircleTransform()).into(imageView);

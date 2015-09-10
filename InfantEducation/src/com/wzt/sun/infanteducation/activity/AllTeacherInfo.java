@@ -17,12 +17,16 @@ import com.wzt.sun.infanteducation.constans.ConstansUrl;
 import com.wzt.sun.infanteducation.utils.JsonParseUtils;
 import com.wzt.sun.infanteducation.view.MyListView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ImageView;
+import android.widget.ListView;
 
 /**
  * 园长查询所有教师信息
@@ -31,7 +35,7 @@ import android.widget.ImageView;
  */
 public class AllTeacherInfo extends BaseActivity {
 	
-	private MyListView mListView;
+	private ListView mListView;
 	private List<Teacher> lists;
 	private CommonAdapter<Teacher> adapter;
 	private ImageView iv;
@@ -57,7 +61,7 @@ public class AllTeacherInfo extends BaseActivity {
 	}
 	
 	public void initView(){
-		mListView = (MyListView) findViewById(R.id.all_tea_listview);
+		mListView = (ListView) findViewById(R.id.all_tea_listview);
 		lists = new ArrayList<Teacher>();
 		mHttpUtils = new HttpUtils();
 		
@@ -73,6 +77,19 @@ public class AllTeacherInfo extends BaseActivity {
 			}
 		};
 		mListView.setAdapter(adapter);
+		mListView.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View arg1, int position, long arg3) {
+				// TODO Auto-generated method stub
+				Intent mIntent = new Intent(AllTeacherInfo.this, PersonalInfoActivity.class);
+				Teacher mTeacher = lists.get(position);
+				Bundle bundle = new Bundle();
+	            bundle.putSerializable("ISLEA", mTeacher);
+	            mIntent.putExtras(bundle);
+	            startActivity(mIntent);
+			}
+		});
 		
 		iv = (ImageView) findViewById(R.id.titlebar_alltea_btn_back);
 		iv.setOnClickListener(new OnClickListener() {

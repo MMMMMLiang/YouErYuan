@@ -33,8 +33,186 @@
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:layout_marginEnd="6dp"
+            android:onClick="ivClick"
             android:src="@drawable/btn_right" />
     </RelativeLayout>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal" >
+    
+    <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="6dp"
+                android:gravity="center"
+                android:text="民        族："
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="6dp"
+                android:gravity="center"
+                android:text="出生日期："
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="6dp"
+                android:gravity="center"
+                android:text="健康状况："
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="6dp"
+                android:gravity="center"
+                android:text="爸爸电话："
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="6dp"
+                android:gravity="center"
+                android:text="妈妈电话："
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="6dp"
+                android:gravity="center"
+                android:text="家庭住址："
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+        </LinearLayout>
+        
+    <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical" >
+
+            <EditText
+                android:id="@+id/people_stu_volk"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="6dp"
+                android:gravity="start"
+                android:text="性        别："
+                android:labelFor="@+id/people_stu_volk"
+                android:background="@null"
+                android:inputType="text"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/people_stu_birthday"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="6dp"
+                android:gravity="start"
+                android:text="民        族："
+                android:labelFor="@+id/people_stu_birthday"
+                android:background="@null"
+                android:inputType="text"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/people_stu_hea"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="6dp"
+                android:gravity="start"
+                android:text="学        历："
+                android:labelFor="@+id/people_stu_hea"
+                android:background="@null"
+                android:inputType="text"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/people_stu_fphone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="6dp"
+                android:gravity="start"
+                android:text="任教时间："
+                android:labelFor="@+id/people_stu_fphone"
+                android:background="@null"
+                android:inputType="date"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/people_stu_mphone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="6dp"
+                android:gravity="start"
+                android:text="行政职务："
+                android:labelFor="@+id/people_stu_mphone"
+                android:background="@null"
+                android:inputType="text"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/people_stu_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="6dp"
+                android:gravity="start"
+                android:text="家庭住址："
+                android:labelFor="@+id/people_st_address"
+                android:background="@null"
+                android:inputType="text"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+        </LinearLayout>
+        </LinearLayout>
     
 
 </LinearLayout>

@@ -9,9 +9,13 @@ import com.lidroid.xutils.http.client.HttpRequest.HttpMethod;
 import com.wzt.sun.infanteducation.BaseApp;
 import com.wzt.sun.infanteducation.MainActivity;
 import com.wzt.sun.infanteducation.R;
+import com.wzt.sun.infanteducation.constans.ConstansUrl;
+import com.wzt.sun.infanteducation.constans.ConstantsConfig;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -28,7 +32,10 @@ public class UpdatePasswordActivity extends Activity {
 	private EditText et_new_psd;
 	private EditText et_new_psd_again;
 	private HttpUtils mHttpUtils;
+	private int id;
 	private String url;
+	private SharedPreferences userInfo = null;
+	private SharedPreferences stuOrTea = null;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +47,9 @@ public class UpdatePasswordActivity extends Activity {
 	}
 	
 	public void initView(){
+		userInfo = getSharedPreferences(ConstantsConfig.SHAREDPREFERENCES_LOGIN, MODE_PRIVATE);
+		stuOrTea = getSharedPreferences(ConstantsConfig.SHAREDPREFERENCES_USER, 0);
+		id = userInfo.getInt("id", 0);
 		et_old_psd = (EditText) findViewById(R.id.et_updata_password_old);
 		et_new_psd = (EditText) findViewById(R.id.et_updata_password_new);
 		et_new_psd_again = (EditText) findViewById(R.id.et_updata_password_new_again);
@@ -59,26 +69,33 @@ public class UpdatePasswordActivity extends Activity {
 			String oldPsd = et_old_psd.getText().toString();
 			String newPsd = et_new_psd.getText().toString();
 			String newPsdAga = et_new_psd_again.getText().toString();
-			
 			if(TextUtils.isEmpty(newPsdAga) || TextUtils.isEmpty(newPsd) || TextUtils.isEmpty(oldPsd)){
 				BaseApp.getInstance().showToast("密码不能为空");
 			}else if (!newPsd.equals(newPsdAga)) {
 				BaseApp.getInstance().showToast("两次密码输入不一致");
 			}else {
 				RequestParams params = new RequestParams();
-				params.addQueryStringParameter("user", oldPsd);
-				params.addQueryStringParameter("pwd", newPsd);
+				params.addBodyParameter("id", id+"");
+				params.addBodyParameter("oldpwd", oldPsd);
+				params.addBodyParameter("pwd", newPsd);
+				url = ConstansUrl.POSTMIMA;
 				mHttpUtils.send(HttpMethod.POST, url, params, new RequestCallBack<String>() {
 
 					@Override
 					public void onFailure(HttpException arg0, String arg1) {
 						// TODO Auto-generated method stub
-						
+						BaseApp.getInstance().showToast("修改失败！");
 					}
 
 					@Override
 					public void onSuccess(ResponseInfo<String> arg0) {
 						BaseApp.getInstance().showToast("修改成功");
+						Editor mEditor1 = userInfo.edit();
+						Editor mEditor2 = stuOrTea.edit();
+						mEditor1.clear();
+						mEditor2.clear();
+						mEditor1.commit();
+						mEditor2.commit();
 						Intent mIntent = new Intent(UpdatePasswordActivity.this, LoginActivity.class);
 						startActivity(mIntent);
 						UpdatePasswordActivity.this.finish();

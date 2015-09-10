@@ -26,6 +26,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.EditText;
@@ -91,24 +92,34 @@ public class LoginActivity extends Activity {
 					@Override
 					public void onFailure(HttpException arg0, String arg1) {
 						// TODO Auto-generated method stub
-						BaseApp.getInstance().showToast(arg1);
+						BaseApp.getInstance().showToast("连接超时！请再试一次！");
 					}
 
 					@Override
 					public void onSuccess(ResponseInfo<String> responseInfo) {
 						// TODO Auto-generated method stub
 						String str = responseInfo.result;
-						List<User> users = JsonParseUtils.parseJsonUser(str);
-						id = users.get(0).getNum();
-						saveUserInfo(str);
-						BaseApp.getInstance().showToast("success");
-						//保存登录状态
-						loadLogin();
-						mHandle.sendEmptyMessage(0x00001);
-						Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-						startActivity(intent);
-						finish();
+						if(str.equals(null)){
+							BaseApp.getInstance().showToast("与服务器连接失败！");
+						}else {
 
+							List<User> users = JsonParseUtils.parseJsonUser(str);
+							id = users.get(0).getNum();
+							String ids = id+"";
+							if(ids.equals("0")){
+								BaseApp.getInstance().showToast("登录失败！账号密码错误！");
+								return;
+							}else {
+								saveUserInfo(str);
+								BaseApp.getInstance().showToast("登陆成功！");
+								//保存登录状态
+								loadLogin();
+								mHandle.sendEmptyMessage(0x00001);
+								Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+								startActivity(intent);
+								finish();
+							}
+						}
 					}
 				});
 
@@ -144,6 +155,8 @@ public class LoginActivity extends Activity {
 		editor.putString("state", log);
 		int ids = users.get(0).getNum();
 		editor.putInt("num", ids);
+		int uid = users.get(0).getId();
+		editor.putInt("id", uid);
 		if(log.equals("D")){
 			// 是家长
 			editor.putBoolean("isParent", true);
@@ -198,6 +211,21 @@ public class LoginActivity extends Activity {
 					saveTeaInfo(responseInfo.result);
 				}
 			});
+		}else {
+			// 园长
+			mHttpUtils.send(HttpMethod.GET, ConstansUrl.GETTEACHERSINFO+id, new RequestCallBack<String>() {
+
+				@Override
+				public void onFailure(HttpException arg0, String arg1) {
+					// TODO Auto-generated method stub
+				}
+
+				@Override
+				public void onSuccess(ResponseInfo<String> responseInfo) {
+					// TODO Auto-generated method stub
+					saveTeaInfo(responseInfo.result);
+				}
+			});
 		}
 		
 	}
@@ -230,6 +258,7 @@ public class LoginActivity extends Activity {
 		editor.putString("st_shuttle", stus.get(0).getSt_shuttle());
 		editor.putString("st_graduated", stus.get(0).getSt_graduated());
 		editor.putString("photo", stus.get(0).getSt_photo());
+		editor.putInt("s_id", stus.get(0).getS_id());
 		
 		editor.commit();
 	}

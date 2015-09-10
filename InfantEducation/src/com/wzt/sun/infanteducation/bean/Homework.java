@@ -3,6 +3,7 @@ package com.wzt.sun.infanteducation.bean;
 import java.io.Serializable;
 
 public class Homework implements Serializable{
+	private static final long serialVersionUID = 111111115;
 	private int h_id; 
 	private String h_title;
 	private int h_authr;

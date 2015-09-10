@@ -78,7 +78,7 @@ public class StarActivity extends BaseActivity {
 			@Override
 			protected void fillItemData(CommonViewHolder viewHolder, int position, StarBaby item) {
 				// TODO Auto-generated method stub
-				viewHolder.setCircleImageForView(StarActivity.this, R.id.star_item_icon1, item.getSb_img());
+				viewHolder.setCircleImageForViewToStar(StarActivity.this, R.id.star_item_icon1, item.getSb_img());
 				viewHolder.setTextForTextView(R.id.star_item_text, item.getSb_content());
 			}
 		};

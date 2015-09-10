@@ -20,6 +20,13 @@ public class Student {
 	private int c_id;
 	private String st_graduated;
 	private String st_photo;
+	private int s_id;
+	public int getS_id() {
+		return s_id;
+	}
+	public void setS_id(int s_id) {
+		this.s_id = s_id;
+	}
 	public Student() {
 		super();
 		// TODO Auto-generated constructor stub

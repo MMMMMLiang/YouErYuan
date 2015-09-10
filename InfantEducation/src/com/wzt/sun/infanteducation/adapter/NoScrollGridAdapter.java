@@ -60,7 +60,10 @@ public class NoScrollGridAdapter extends BaseAdapter {
 		}else {
 			viewHolder = (ViewHolder) convertView.getTag();
 		}
-		Picasso.with(mContext).load(imageUrls.get(position)).placeholder(R.drawable.message_placeholder_picture).error(R.drawable.message_placeholder_picture).into(viewHolder.imageView);
+		if(imageUrls.size() != 0){
+			Picasso.with(mContext).load(imageUrls.get(position)).placeholder(R.drawable.message_placeholder_picture).error(R.drawable.message_placeholder_picture).into(viewHolder.imageView);
+			return convertView;
+		}
 		return convertView;
 	}
 	

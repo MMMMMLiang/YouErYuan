@@ -146,9 +146,10 @@ public class ImageChooseActivity extends Activity
 			@Override
 			public void onClick(View v)
 			{
-				Intent intent = new Intent(ImageChooseActivity.this,
+				/*Intent intent = new Intent(ImageChooseActivity.this,
 						PublishActivity.class);
-				startActivity(intent);
+				startActivity(intent);*/
+				ImageChooseActivity.this.finish();
 			}
 		});
 

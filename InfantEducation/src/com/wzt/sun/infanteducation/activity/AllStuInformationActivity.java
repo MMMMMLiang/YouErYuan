@@ -20,6 +20,7 @@ import com.wzt.sun.infanteducation.fragment.MyClassDialogFragment;
 import com.wzt.sun.infanteducation.fragment.MyClassDialogFragment.FaCallBack;
 import com.wzt.sun.infanteducation.utils.JsonParseUtils;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
@@ -28,6 +29,8 @@ import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -88,13 +91,23 @@ public class AllStuInformationActivity extends FragmentActivity implements FaCal
 			@Override
 			protected void fillItemData(CommonViewHolder viewHolder, int position, Student item) {
 				viewHolder.setImageForFoodView(AllStuInformationActivity.this, R.id.allstu_item_icon,
-						item.getSt_photo());
+						ConstansUrl.getHeadnUrl(item.getSt_photo()));
 				viewHolder.setTextForTextView(R.id.allstu_item_name, item.getSt_name());
 				viewHolder.setTextForTextView(R.id.allstu_item_sex, item.getSt_sex());
 				viewHolder.setTextForTextView(R.id.allstu_item_id, item.getSt_id() + "");
 			}
 		};
 		mListView.setAdapter(adapter);
+		mListView.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View arg1, int position, long arg3) {
+				// TODO Auto-generated method stub
+				Intent mIntent = new Intent(AllStuInformationActivity.this, StudentInformationActivity.class);
+				mIntent.putExtra("STUIDFORMALL", lists.get(position).getSt_id());
+				startActivity(mIntent);
+			}
+		});
 		iv.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -140,6 +153,7 @@ public class AllStuInformationActivity extends FragmentActivity implements FaCal
 				lists.clear();
 				String data = response.result;
 				List<Student> stus = JsonParseUtils.parseJsonStudents(data);
+				String url = stus.get(0).getSt_photo();
 				lists.addAll(stus);
 				mHandle.sendEmptyMessage(0x0015);
 			}

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:id="@+id/post_row1"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#2EB976" >
+
+        <ImageView
+            android:id="@+id/titlebar_post_btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="6dp"
+            android:onClick="btnClick"
+            android:src="@drawable/btn_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/post_message"
+            android:textColor="@color/white"
+            android:textSize="24sp" />
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/post_et_title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/post_row1"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/bg_edittext"
+        android:hint="请输入标题..."
+        android:padding="5dip"
+        android:singleLine="true"
+        android:textColorHint="@color/gray"
+        android:textSize="16dip" />
+    
+    <EditText
+        android:id="@+id/post_et_data"
+        android:layout_width="fill_parent"
+        android:layout_height="170dp"
+        android:layout_below="@id/post_et_title"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/bg_edittext"
+        android:hint="请输入内容..."
+        android:padding="5dip"
+        android:singleLine="true"
+        android:enabled="true"
+        android:gravity="top"
+        android:inputType="textMultiLine"
+        android:textColorHint="@color/gray"
+        android:maxLines="10"
+        android:textSize="16dip" />
+    
+    <Button
+        android:id="@+id/post_et_btn"
+        android:layout_below="@id/post_et_data"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_shape"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:textSize="16sp"
+        android:onClick="btnClick"
+        android:textColor="@color/white"
+        android:text="发送" />
+
+</RelativeLayout>

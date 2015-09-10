@@ -6,16 +6,17 @@ import java.util.List;
 
 import com.wzt.sun.infanteducation.BaseApp;
 import com.wzt.sun.infanteducation.R;
+import com.wzt.sun.infanteducation.activity.AddLogBookActivity;
+import com.wzt.sun.infanteducation.activity.AllPlanActivity;
 import com.wzt.sun.infanteducation.activity.AllStuInformationActivity;
 import com.wzt.sun.infanteducation.activity.AllTeacherInfo;
-import com.wzt.sun.infanteducation.activity.BabyWorks;
+import com.wzt.sun.infanteducation.activity.BabyWorksActivity;
 import com.wzt.sun.infanteducation.activity.CourseActivity;
 import com.wzt.sun.infanteducation.activity.ExclusiveNewsActivity;
 import com.wzt.sun.infanteducation.activity.FeedbackActivity;
 import com.wzt.sun.infanteducation.activity.FoodActivity;
 import com.wzt.sun.infanteducation.activity.IntroductionActivity;
 import com.wzt.sun.infanteducation.activity.LaterActivity;
-import com.wzt.sun.infanteducation.activity.LogBookActivity;
 import com.wzt.sun.infanteducation.activity.PlanActivity;
 import com.wzt.sun.infanteducation.activity.PostMessageActivity;
 import com.wzt.sun.infanteducation.activity.SchoolNewsActivity;
@@ -246,12 +247,13 @@ public class KindergartenFragment extends DialogFragment implements
 	public void onItemClick(AdapterView<?> parent, View view, int position,
 			long id) {
 		//BaseApp.getInstance().showToast("你点击了" + position);
-		if(isLea){
-			//是园长
-			//判断登陆状态 
-			if(!isLogin){
-				dialogShow();
-			}else{
+		if(!isLogin){
+			dialogShow();
+		}else{
+			if(isLea){
+				//是园长
+				//判断登陆状态 
+
 				Intent mIntent = new Intent();
 				/*"乐园风采", "宝贝作品", "教师信息", "幼儿信息", "明星宝贝", "今日食谱", "信息发布", "教学计划", "家长信"*/
 				switch (position) {
@@ -262,7 +264,7 @@ public class KindergartenFragment extends DialogFragment implements
 					break;
 				case 1:
 					// 宝贝作品
-					mIntent.setClass(this.getActivity(), BabyWorks.class);
+					mIntent.setClass(this.getActivity(), BabyWorksActivity.class);
 					startActivity(mIntent);
 					break;
 				case 2:
@@ -288,11 +290,12 @@ public class KindergartenFragment extends DialogFragment implements
 				case 6:
 					// 信息发布
 					mIntent.setClass(this.getActivity(), PostMessageActivity.class);
+					mIntent.putExtra("ISPOST", 1);
 					startActivity(mIntent);
 					break;
 				case 7:
 					// 教学计划
-					mIntent.setClass(this.getActivity(), PlanActivity.class);
+					mIntent.setClass(this.getActivity(), AllPlanActivity.class);
 					startActivity(mIntent);
 					break;
 				case 8:
@@ -304,14 +307,12 @@ public class KindergartenFragment extends DialogFragment implements
 				default:
 					break;
 				}
-			}
 
-		}else if (isTea) {
-			// 是教师
-			//判断登陆状态 
-			if(!isLogin){
-				dialogShow();
-			}else{
+
+			}else if (isTea) {
+				// 是教师
+				//判断登陆状态 
+
 				/*"校园简介", "乐园风采", "宝宝作品", "老师点评", "明星宝贝", "今日食谱", "花名册", "教学计划", "考勤请假"*/
 				Intent mIntent = new Intent();
 				switch (position) {
@@ -327,7 +328,7 @@ public class KindergartenFragment extends DialogFragment implements
 					break;
 				case 2:
 					// 宝宝作品
-					mIntent.setClass(this.getActivity(), BabyWorks.class);
+					mIntent.setClass(this.getActivity(), BabyWorksActivity.class);
 					startActivity(mIntent);
 					break;
 				case 3:
@@ -353,25 +354,24 @@ public class KindergartenFragment extends DialogFragment implements
 				case 7:
 					// 教学计划
 					mIntent.setClass(this.getActivity(), CourseActivity.class);
+					mIntent.putExtra("ALLCOURSE", 2);
 					startActivity(mIntent);
 					break;
 				case 8:
 					// 考勤请假
-					mIntent.setClass(this.getActivity(), LogBookActivity.class);
+					mIntent.setClass(this.getActivity(), AddLogBookActivity.class);
 					startActivity(mIntent);
 					break;
 
 				default:
 					break;
 				}
-			}
 
-		}else if (isStu) {
-			//是家长
-			//判断登陆状态 
-			if(!isLogin){
-				dialogShow();
-			}else{
+
+			}else if (isStu) {
+				//是家长
+				//判断登陆状态 
+
 				/*"校园简介", "乐园风采", "宝宝作品", "老师点评", "明星宝贝", "今日食谱", "课时安排", "活动专区", "园长信箱"*/
 				Intent mIntent = new Intent();
 				switch (position) {
@@ -387,7 +387,7 @@ public class KindergartenFragment extends DialogFragment implements
 					break;
 				case 2:
 					// 宝宝作品
-					mIntent.setClass(this.getActivity(), BabyWorks.class);
+					mIntent.setClass(this.getActivity(), BabyWorksActivity.class);
 					startActivity(mIntent);
 					break;
 				case 3:
@@ -418,6 +418,7 @@ public class KindergartenFragment extends DialogFragment implements
 				case 8:
 					// 园长信箱
 					mIntent.setClass(this.getActivity(), FeedbackActivity.class);
+					mIntent.putExtra("BIAOSHI", 2);
 					startActivity(mIntent);
 					break;
 

@@ -92,11 +92,13 @@ public class MyListItemAdapter extends BaseAdapter implements OnPraisCheckedList
 		//Log.i("INDEX:", index+"");
 		th_id = items.get(position).getTh_id();
 		final ArrayList<String> imageUrls = getList(items.get(position).getTh_accessory());
-		if (imageUrls == null || imageUrls.size() == 0) { // 没有图片资源就隐藏GridView
+		Log.i("QQQQQQQQQQQQ", imageUrls.toString());
+		if (imageUrls.toString().equals("[]") || imageUrls.size() == 0) { // 没有图片资源就隐藏GridView
 			viewHolder.ns_gridview.setVisibility(View.GONE);
 		} else {
 			viewHolder.ns_gridview.setAdapter(new NoScrollGridAdapter(mContext, imageUrls));
 		}
+
 		viewHolder.ns_gridview.setOnItemClickListener(new OnItemClickListener() {
 
 			@Override
@@ -107,6 +109,7 @@ public class MyListItemAdapter extends BaseAdapter implements OnPraisCheckedList
 		});
 		viewHolder.pv_zan.setOnPraisCheckedListener(this);
 		return convertView;
+
 	}
 	
 	private class ViewHolder {
@@ -177,7 +180,7 @@ public class MyListItemAdapter extends BaseAdapter implements OnPraisCheckedList
 			@Override
 			public void onSuccess(ResponseInfo<String> response) {
 				// TODO Auto-generated method stub
-				BaseApp.getInstance().showToast(response.result);
+				//BaseApp.getInstance().showToast(response.result);
 			}
 		});
 	}

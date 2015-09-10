@@ -151,6 +151,7 @@ public class PublishActivity extends Activity
 					intent.putExtra(IntentConstants.EXTRA_IMAGE_LIST,
 							(Serializable) mDataList);
 					intent.putExtra(IntentConstants.EXTRA_CURRENT_IMG_POSITION, position);
+					PublishActivity.this.finish();
 					startActivity(intent);
 				}
 			}

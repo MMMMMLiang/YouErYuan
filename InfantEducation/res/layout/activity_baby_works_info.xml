@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+    <RelativeLayout
+        android:id="@+id/baby_works_info_title"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#2EB976" >
+
+        <ImageView
+            android:id="@+id/titlebar_babyworks_info_btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="6dp"
+            android:src="@drawable/btn_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/school_news_info"
+            android:textColor="@color/white"
+            android:textSize="24sp" />
+    </RelativeLayout>
+    
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/baby_works_info_title"
+        android:scrollbars="vertical" >
+        
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+    <ImageView
+        android:id="@+id/bworks_info_iv"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:src="@drawable/ic_launcher" />
+    
+    <TextView
+        android:id="@+id/bworks_info_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bworks_info_iv"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:text="aaaaaaaaaaaaa"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+    
+    <TextView
+        android:id="@+id/bworks_info_remark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bworks_info_title"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:text="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+    
+    <LinearLayout
+        android:id="@+id/bworks_info_ll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/bworks_info_remark"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="10dp"
+        android:orientation="horizontal" >
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="指导老师："
+            android:textColor="@color/black" />
+        
+        <TextView
+            android:id="@+id/bworks_info_teacher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:textSize="16sp"
+            android:text="王老师"
+            android:textColor="@color/black" />
+        
+    </LinearLayout>
+    
+    <TextView
+            android:id="@+id/bworks_info_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/bworks_info_ll"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="4dp"
+            android:textSize="16sp"
+            android:text="2015-09-01"
+            android:textColor="@color/gray" />
+    
+    </RelativeLayout>
+    
+    </ScrollView>
+    
+
+</RelativeLayout>

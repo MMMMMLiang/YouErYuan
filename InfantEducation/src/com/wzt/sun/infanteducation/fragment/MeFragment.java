@@ -4,9 +4,12 @@ import com.squareup.picasso.Picasso;
 import com.wzt.sun.infanteducation.BaseApp;
 import com.wzt.sun.infanteducation.R;
 import com.wzt.sun.infanteducation.activity.FeedbackActivity;
+import com.wzt.sun.infanteducation.activity.LeaveActivity;
 import com.wzt.sun.infanteducation.activity.NotificationUpdateActivity;
 import com.wzt.sun.infanteducation.activity.PersonSettingActivity;
 import com.wzt.sun.infanteducation.activity.PersonalInfoActivity;
+import com.wzt.sun.infanteducation.activity.PostMessageActivity;
+import com.wzt.sun.infanteducation.activity.StudentInformationActivity;
 import com.wzt.sun.infanteducation.activity.UpdatePasswordActivity;
 import com.wzt.sun.infanteducation.constans.ConstansUrl;
 import com.wzt.sun.infanteducation.constans.ConstantsConfig;
@@ -56,9 +59,14 @@ public class MeFragment extends Fragment implements OnItemClickListener{
 	private ACache mACache;
 	private Bitmap bm;
 	private String iconUrl;
+	private int id;
 	
 	private SharedPreferences userInfo = null;
 	private SharedPreferences stuOrTea = null;
+	
+	private boolean isStu;
+	private boolean isTea;
+	private boolean isLea;
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater,
@@ -67,12 +75,21 @@ public class MeFragment extends Fragment implements OnItemClickListener{
 		View view = inflater.inflate(R.layout.fragment_first_me, null);
 		mListView = (MyListView) view.findViewById(R.id.fragment_me_lv);
 		btn = (Button) view.findViewById(R.id.fragment_me_btn);
-		adapter = new SimpleAdapter(getActivity(), ConstantsConfig.loadMyMenu(), R.layout.fragment_me_listview_item, 
-				new String[] { "itemImage", "itemText" }, new int[] {R.id.me_lv_item_image, R.id.me_lv_item_text});
-		mListView.setAdapter(adapter);
-		mListView.setOnItemClickListener(this);
 		userInfo = getActivity().getSharedPreferences(ConstantsConfig.SHAREDPREFERENCES_LOGIN, 0);
 		stuOrTea = getActivity().getSharedPreferences(ConstantsConfig.SHAREDPREFERENCES_USER, 0);
+		id = stuOrTea.getInt("id", 0);
+		isStu = userInfo.getBoolean("isParent", false);
+		isTea = userInfo.getBoolean("isTeacher", false);
+		isLea = userInfo.getBoolean("isLeader", false);
+		if(isTea){
+			adapter = new SimpleAdapter(getActivity(), ConstantsConfig.loadMyMenuToTea(), R.layout.fragment_me_listview_item, 
+					new String[] { "itemImage", "itemText" }, new int[] {R.id.me_lv_item_image, R.id.me_lv_item_text});
+		}else {
+			adapter = new SimpleAdapter(getActivity(), ConstantsConfig.loadMyMenu(), R.layout.fragment_me_listview_item, 
+					new String[] { "itemImage", "itemText" }, new int[] {R.id.me_lv_item_image, R.id.me_lv_item_text});
+		}
+		mListView.setAdapter(adapter);
+		mListView.setOnItemClickListener(this);
 		app = (BaseApp) getActivity().getApplication();
 		iv = (ImageView) view.findViewById(R.id.iv_usercenter_avatar);
 		
@@ -82,9 +99,18 @@ public class MeFragment extends Fragment implements OnItemClickListener{
 			@Override
 			public void onClick(View arg0) {
 				// TODO Auto-generated method stub
-				Intent intent = new Intent(getActivity(), PersonalInfoActivity.class);
-				intent.putExtra("headUrl", iconUrl);
-				startActivityForResult(intent, 3);
+				Intent intent = new Intent();
+				if(isTea){
+					intent.setClass(getActivity(), PersonalInfoActivity.class);
+					intent.putExtra("ISTEA", 1);
+					intent.putExtra("headUrl", iconUrl);
+				}else if (isStu) {
+					intent.setClass(getActivity(), StudentInformationActivity.class);
+					intent.putExtra("STUID", id);
+				}else {
+					
+				}
+				startActivity(intent);
 			}
 		});
 		Picasso.with(getActivity()).load(iconUrl).placeholder(R.drawable.avatar).error(R.drawable.avatar).transform(new CircleTransform()).into(iv);
@@ -116,18 +142,29 @@ public class MeFragment extends Fragment implements OnItemClickListener{
 			startActivity(mIntent);
 			break;
 		case 1:
+			if(isTea){
+				mIntent.setClass(getActivity(), PostMessageActivity.class);
+				mIntent.putExtra("ISPOST", 2);
+				startActivity(mIntent);
+			}else {
+				mIntent.setClass(getActivity(), LeaveActivity.class);
+				startActivity(mIntent);
+			}
+			break;
+		case 2:
 			mIntent.setClass(getActivity(), UpdatePasswordActivity.class);
 			startActivity(mIntent);
 			break;
-		case 2:
+		case 3:
 			mIntent.setClass(getActivity(), PersonSettingActivity.class);
 			startActivity(mIntent);
 			break;
-		case 3:
+		case 4:
 			mIntent.setClass(getActivity(), FeedbackActivity.class);
+			mIntent.putExtra("BIAOSHI", 1);
 			startActivity(mIntent);
 			break;
-		case 4:
+		case 5:
 			showUpdateDialog();
 			break;
 

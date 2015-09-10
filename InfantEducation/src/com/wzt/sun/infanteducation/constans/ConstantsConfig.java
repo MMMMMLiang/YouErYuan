@@ -83,8 +83,28 @@ public class ConstantsConfig {
 	 */
 	public static final ArrayList<HashMap<String, Object>> loadMyMenu() {
 		ArrayList<HashMap<String, Object>> id1Lists = new ArrayList<HashMap<String, Object>>();
-		String texts[] = new String[] { "个人设置", "修改密码", "使用说明", "意见反馈", "检查更新" };
-		int[] images = new int[] { R.drawable.icon_me_personal_settings, R.drawable.icon_me_invite_family,
+		String texts[] = new String[] { "个人设置", "请假申明", "修改密码", "使用说明", "意见反馈", "检查更新" };
+		int[] images = new int[] { R.drawable.icon_me_personal_settings, R.drawable.me_fragment_leave, R.drawable.icon_me_invite_family,
+				R.drawable.icon_me_use_help, R.drawable.icon_me_return_message, R.drawable.setting_update };
+
+		for (int i = 0; i < texts.length; i++) {
+			HashMap<String, Object> map = new HashMap<String, Object>();
+			map.put("itemImage", images[i]);
+			map.put("itemText", texts[i]);
+			id1Lists.add(map);
+		}
+		return id1Lists;
+	}
+	
+	/**
+	 * MeFragment添加菜单(教师)
+	 * 
+	 * @return
+	 */
+	public static final ArrayList<HashMap<String, Object>> loadMyMenuToTea() {
+		ArrayList<HashMap<String, Object>> id1Lists = new ArrayList<HashMap<String, Object>>();
+		String texts[] = new String[] { "个人设置", "班级通告", "修改密码", "使用说明", "意见反馈", "检查更新" };
+		int[] images = new int[] { R.drawable.icon_me_personal_settings, R.drawable.me_fragment_leave, R.drawable.icon_me_invite_family,
 				R.drawable.icon_me_use_help, R.drawable.icon_me_return_message, R.drawable.setting_update };
 
 		for (int i = 0; i < texts.length; i++) {

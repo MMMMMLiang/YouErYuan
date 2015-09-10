@@ -8,18 +8,22 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.wzt.sun.infanteducation.bean.Attendance;
+import com.wzt.sun.infanteducation.bean.BabyWork;
 import com.wzt.sun.infanteducation.bean.Classes;
 import com.wzt.sun.infanteducation.bean.Education;
 import com.wzt.sun.infanteducation.bean.Food;
 import com.wzt.sun.infanteducation.bean.Homework;
 import com.wzt.sun.infanteducation.bean.Inform;
 import com.wzt.sun.infanteducation.bean.ItemEntity;
+import com.wzt.sun.infanteducation.bean.Later;
+import com.wzt.sun.infanteducation.bean.News;
 import com.wzt.sun.infanteducation.bean.Recipe;
 import com.wzt.sun.infanteducation.bean.StarBaby;
 import com.wzt.sun.infanteducation.bean.Student;
 import com.wzt.sun.infanteducation.bean.Syllabus;
 import com.wzt.sun.infanteducation.bean.Teacher;
 import com.wzt.sun.infanteducation.bean.User;
+import com.wzt.sun.infanteducation.constans.ConstansUrl;
 
 public class JsonParseUtils {
 	
@@ -108,8 +112,7 @@ public class JsonParseUtils {
 				mStarBaby.setSb_content(mObject.optString("sb_content"));
 				mStarBaby.setSb_date(mObject.optString("sb_date"));
 				mStarBaby.setSb_id(mObject.optString("sb_id"));
-				mStarBaby.setSb_img(mObject.optString("sb_img"));
-				
+				mStarBaby.setSb_img(ConstansUrl.getHeadnUrl(mObject.optString("sb_img")));
 				lists.add(mStarBaby);
 			}
 			return lists;
@@ -319,6 +322,7 @@ public class JsonParseUtils {
 				mStudent.setSt_graduated(mObject.optString("st_graduated"));
 				mStudent.setSt_photo(mObject.optString("st_photo"));
 				mStudent.setSt_name(mObject.optString("st_name"));
+				mStudent.setS_id(mObject.optInt("s_id"));
 				
 				
 				lists.add(mStudent);
@@ -348,6 +352,7 @@ public class JsonParseUtils {
 				mUser.setNum(mObject.optInt("num"));
 				mUser.setState(mObject.optString("state"));
 				mUser.setUser(mObject.optString("user"));
+				mUser.setId(mObject.optInt("id"));
 				
 				lists.add(mUser);
 			}
@@ -460,6 +465,98 @@ public class JsonParseUtils {
 				mItemEntity.setTh_zan(mObject.optInt("th_zan"));
 				
 				lists.add(mItemEntity);
+			}
+			return lists;
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+	/**
+	 * JSON解析乐园风采
+	 * @param data
+	 * @return
+	 */
+	public static List<News> parseJsonSchoolNews(String data){
+		List<News> lists = new ArrayList<News>();
+		
+		try {
+			JSONArray mArray = new JSONArray(data);
+			for (int i = 0; i < mArray.length(); i++) {
+				JSONObject mObject = mArray.optJSONObject(i);
+				News mNews = new News();
+								
+				mNews.setN_content(mObject.optString("n_content"));
+				mNews.setN_ctitle(mObject.optString("n_ctitle"));
+				mNews.setN_date(mObject.optString("n_date"));
+				mNews.setN_title(mObject.optString("n_title"));
+				mNews.setN_img(mObject.optString("n_img"));
+				mNews.setN_id(mObject.optInt("n_id"));
+				
+				lists.add(mNews);
+			}
+			return lists;
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+	/**
+	 * JSON解析宝宝作品
+	 * @param data
+	 * @return
+	 */
+	public static List<BabyWork> parseJsonBabyWorks(String data){
+		List<BabyWork> lists = new ArrayList<BabyWork>();
+		
+		try {
+			JSONArray mArray = new JSONArray(data);
+			for (int i = 0; i < mArray.length(); i++) {
+				JSONObject mObject = mArray.optJSONObject(i);
+				BabyWork mBabyWork = new BabyWork();
+								
+				mBabyWork.setW_date(mObject.optString("w_date"));
+				mBabyWork.setW_title(mObject.optString("w_title"));
+				mBabyWork.setW_teacher(mObject.optString("w_teacher"));
+				mBabyWork.setW_remark(mObject.optString("w_remark"));
+				mBabyWork.setW_img(mObject.optString("w_img"));
+				mBabyWork.setW_id(mObject.optInt("w_id"));
+				
+				lists.add(mBabyWork);
+			}
+			return lists;
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+	/**
+	 * JSON解析宝宝作品
+	 * @param data
+	 * @return
+	 */
+	public static List<Later> parseJsonLaters(String data){
+		List<Later> lists = new ArrayList<Later>();
+		
+		try {
+			JSONArray mArray = new JSONArray(data);
+			for (int i = 0; i < mArray.length(); i++) {
+				JSONObject mObject = mArray.optJSONObject(i);
+				Later mLater = new Later();
+						
+				mLater.setF_authr(mObject.optString("f_authr"));
+				mLater.setF_content(mObject.optString("f_content"));
+				mLater.setF_date(mObject.optString("f_date"));
+				mLater.setF_id(mObject.optInt("f_id"));
+				mLater.setS_id(mObject.optInt("s_id"));
+				
+				lists.add(mLater);
 			}
 			return lists;
 		} catch (JSONException e) {

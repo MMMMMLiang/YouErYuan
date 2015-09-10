@@ -46,6 +46,7 @@
     
     <string name="btn_sure">确定</string>
     <string name="title_tishi">提示</string>
+    <string name="title_xiangxi">详细信息</string>
     <string name="title_choose_class">请选择班级</string>
     <string name="dialog_text">您还没有登录!</string>
     <string name="dialog_exit_text">确认退出?</string>
@@ -75,6 +76,10 @@
     <string name="stu_parentsphone">联系电话：</string>
     <string name="tea_address">家庭住址：</string>
     <string name="stu_speciality">特长：</string>
+    <string name="stu_hea">健康状况：</string>
+    <string name="stu_mother">妈妈：</string>
+    <string name="stu_father">爸爸：</string>
+    <string name="stu_call">CALL</string>
     
     <string name="title_interaction_info">通知</string>
     <string name="title_interaction_infos">通知通告</string>
@@ -114,7 +119,7 @@
     <string name="updata_psd_new_again">请再次输入新密码</string>
     <string name="fragment_me_out">退出</string>
     
-    <string name="allstu_info_title">花名册</string>
+    <string name="allstu_info_title">我的班级</string>
     <string name="allstu_info_icon">头像</string>
     <string name="allstu_info_name">姓名</string>
     <string name="allstu_info_sex">性别</string>
@@ -136,5 +141,14 @@
     <string name="publish_empty_text">想说什么…</string>
     <string name="take_photo">拍照</string>
     <string name="select_from_local">从相册中选取</string>
+    <string name="school_news_title">乐园风采</string>
+    <string name="school_news_info">详情</string>
+    <string name="baby_works_title">宝宝作品</string>
+    <string name="add_lb">考勤</string>
+    <string name="parents_later">家长信</string>
+    <string name="post_message">发布通知</string>
+    <string name="teacher_comment_title">教师点评</string>
+    <string name="title_enter">输入内容</string>
+    
 
 </resources>

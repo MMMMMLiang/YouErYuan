@@ -24,10 +24,12 @@ import com.wzt.sun.infanteducation.view.CalendarView;
 import com.wzt.sun.infanteducation.view.CalendarView.OnItemClickListener;
 import com.wzt.sun.infanteducation.view.CustomProgressDialog;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
@@ -66,6 +68,7 @@ public class CourseActivity extends BaseActivity implements OnItemClickListener{
 	
 	private String dinjiDateAm;
 	private String dinjiDatePm;
+	private int index;
 	
 	private String todayClassInfo;
 	private SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
@@ -104,6 +107,7 @@ public class CourseActivity extends BaseActivity implements OnItemClickListener{
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_course);
+		
 		initView();
 		loadData();
 	}
@@ -114,6 +118,7 @@ public class CourseActivity extends BaseActivity implements OnItemClickListener{
 	public void initView() {
 		iv = (ImageView) findViewById(R.id.titlebar_course_btn_back);
 		classId = loadC_id()+"";
+		//Log.i("SSAAAAAAAAAAAAAAAA", classId+"");
 		format = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
 		lists = new ArrayList<Syllabus>();
 		mHttpUtils = new HttpUtils();
@@ -286,8 +291,22 @@ public class CourseActivity extends BaseActivity implements OnItemClickListener{
 	}
 	
 	public int loadC_id(){
-		SharedPreferences stuOrTea = getSharedPreferences(ConstantsConfig.SHAREDPREFERENCES_USER, MODE_PRIVATE);
-		int cId = stuOrTea.getInt("c_id", 0);
+		int cId = 0;
+		Intent mIntent = getIntent();
+		Bundle mBundle = mIntent.getExtras();
+		index = mBundle.getInt("ALLCOURSE");
+		//Log.i("AAAAAAAAAAAAAAAAAA", index+"");
+		if(index == 1){
+			Intent intent = getIntent();
+			Bundle bundle = intent.getExtras();
+			cId = bundle.getInt("CID");
+			//Log.i("AZAAAAAAAAAAAAAAAA", cId+"");
+			return cId;
+		}else {
+			SharedPreferences stuOrTea = getSharedPreferences(ConstantsConfig.SHAREDPREFERENCES_USER, MODE_PRIVATE);
+			cId = stuOrTea.getInt("c_id", 0);
+			
+		}
 		return cId;
 	}
 	

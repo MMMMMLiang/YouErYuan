@@ -1,6 +1,5 @@
 package com.wzt.sun.infanteducation;
 
-import com.wzt.sun.infanteducation.activity.AddInteractionActivity;
 import com.wzt.sun.infanteducation.activity.PublishActivity;
 import com.wzt.sun.infanteducation.constans.ConstantsConfig;
 import com.wzt.sun.infanteducation.fragment.InformmFragment;

@@ -90,9 +90,10 @@ public class ImageBucketChooseActivity extends Activity
 			@Override
 			public void onClick(View v)
 			{
-				Intent intent = new Intent(ImageBucketChooseActivity.this,
+				/*Intent intent = new Intent(ImageBucketChooseActivity.this,
 						PublishActivity.class);
-				startActivity(intent);
+				startActivity(intent);*/
+				ImageBucketChooseActivity.this.finish();
 			}
 		});
 	}

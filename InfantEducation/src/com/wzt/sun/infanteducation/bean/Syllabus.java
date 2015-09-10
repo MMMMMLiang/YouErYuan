@@ -8,6 +8,7 @@ import java.io.Serializable;
  *
  */
 public class Syllabus implements Serializable{
+	private static final long serialVersionUID = 111111113;
 	private int c_id;
 	private String c_name;
 	private String sy_am;

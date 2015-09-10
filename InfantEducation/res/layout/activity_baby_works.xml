@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+    <RelativeLayout
+        android:id="@+id/baby_works_title"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#2EB976" >
+
+        <ImageView
+            android:id="@+id/titlebar_babyworks_btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="6dp"
+            android:src="@drawable/btn_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/baby_works_title"
+            android:textColor="@color/white"
+            android:textSize="24sp" />
+    </RelativeLayout>
+    
+    <GridView
+        android:id="@+id/baby_works_gridview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/baby_works_title"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:columnWidth="100dp"
+        android:stretchMode="columnWidth"
+        android:gravity="center"
+        android:horizontalSpacing="6dp"
+        android:listSelector="@color/transparent"
+        android:numColumns="3"
+        android:verticalSpacing="6dp" >
+        
+    </GridView>
+    
+
+</RelativeLayout>

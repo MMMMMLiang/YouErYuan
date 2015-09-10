@@ -4,7 +4,16 @@ public class User {
 	private String user;
 	private int num;
 	private String state;
+	private int id;
 	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
 	public User() {
 		super();
 		// TODO Auto-generated constructor stub

@@ -51,6 +51,7 @@ public class PersonSettingActivity extends BaseActivity implements OnClickListen
 		iv.setOnClickListener(this);
 		rl_user.setOnClickListener(this);
 		rl_stu.setOnClickListener(this);
+		rl_tea.setOnClickListener(this);
 		
 	}
 	

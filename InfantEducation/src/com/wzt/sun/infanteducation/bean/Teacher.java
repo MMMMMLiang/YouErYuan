@@ -1,6 +1,10 @@
 package com.wzt.sun.infanteducation.bean;
 
-public class Teacher {
+import java.io.Serializable;
+
+public class Teacher implements Serializable{
+	
+	private static final long serialVersionUID = 1L;
 	private int t_id;//教师唯一标示(主键)
 	private	String t_name;//教师姓名
 	private	String	t_sex;//教师性别

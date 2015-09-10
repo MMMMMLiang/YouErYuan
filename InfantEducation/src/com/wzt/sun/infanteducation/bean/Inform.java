@@ -8,7 +8,7 @@ import java.io.Serializable;
  *
  */
 public class Inform implements Serializable{
-
+	private static final long serialVersionUID = 111111114;
 	private int n_author;
 	private String n_content;
 	private String n_date;

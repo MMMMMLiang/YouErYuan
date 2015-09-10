@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.wzt.sun.infanteducation"
-    android:versionCode="3"
+    android:versionCode="4"
     android:versionName="1.0" >
 
     <uses-sdk
@@ -13,7 +13,8 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
     <uses-permission android:name="android.permission.INTERNET" /> 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    
     <application
         android:name="com.wzt.sun.infanteducation.BaseApp"
         android:allowBackup="true"
@@ -75,7 +76,7 @@
         <activity android:name="com.wzt.sun.infanteducation.activity.SchoolNewsActivity"></activity>
         <activity android:name="com.wzt.sun.infanteducation.activity.PostMessageActivity"></activity>
         <activity android:name="com.wzt.sun.infanteducation.activity.ExclusiveNewsActivity"></activity>
-        <activity android:name="com.wzt.sun.infanteducation.activity.BabyWorks"></activity>
+        <activity android:name="com.wzt.sun.infanteducation.activity.BabyWorksActivity"></activity>
         <activity android:name="com.wzt.sun.infanteducation.activity.ImagePagerActivity"></activity>
         <activity android:name="com.wzt.sun.infanteducation.activity.AddInteractionActivity"></activity>
         
@@ -83,6 +84,10 @@
         <activity android:name="com.wzt.sun.infanteducation.activity.ImageChooseActivity"></activity>
         <activity android:name="com.wzt.sun.infanteducation.activity.ImageZoomActivity"></activity>
         <activity android:name="com.wzt.sun.infanteducation.activity.PublishActivity"></activity>
+        <activity android:name="com.wzt.sun.infanteducation.activity.SchoolNewsInfoActivity"></activity>
+        <activity android:name="com.wzt.sun.infanteducation.activity.BabyWorksInfoActivity"></activity>
+        <activity android:name="com.wzt.sun.infanteducation.activity.AddLogBookActivity"></activity>
+        <activity android:name="com.wzt.sun.infanteducation.activity.AllPlanActivity"></activity>
         
         <service android:name="DownloadService" ></service>
     </application>

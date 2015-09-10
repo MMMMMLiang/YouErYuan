@@ -7,6 +7,7 @@ import java.util.Map;
 
 import com.lidroid.xutils.HttpUtils;
 import com.lidroid.xutils.exception.HttpException;
+import com.lidroid.xutils.http.RequestParams;
 import com.lidroid.xutils.http.ResponseInfo;
 import com.lidroid.xutils.http.callback.RequestCallBack;
 import com.lidroid.xutils.http.client.HttpRequest.HttpMethod;
@@ -14,14 +15,17 @@ import com.wzt.sun.infanteducation.BaseApp;
 import com.wzt.sun.infanteducation.R;
 import com.wzt.sun.infanteducation.bean.Classes;
 import com.wzt.sun.infanteducation.constans.ConstansUrl;
+import com.wzt.sun.infanteducation.constans.ConstantsConfig;
 import com.wzt.sun.infanteducation.utils.JsonParseUtils;
 import com.wzt.sun.infanteducation.view.MyListView;
 
 import android.app.Activity;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.app.DialogFragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,6 +45,8 @@ public class MyClassDialogFragment extends DialogFragment implements OnItemClick
 	private List<Classes> claLists;
 	
 	private FaCallBack callback;
+	private SharedPreferences userInfo = null;
+	private int s_id;
 	
 	private Handler mHandle = new Handler(){
 		@Override
@@ -58,6 +64,9 @@ public class MyClassDialogFragment extends DialogFragment implements OnItemClick
 		
 		mListView = (MyListView) view.findViewById(R.id.cClass_listview);
 		mHttpUtils = new HttpUtils();
+		userInfo = getActivity().getSharedPreferences(ConstantsConfig.SHAREDPREFERENCES_LOGIN, 0);
+		s_id = userInfo.getInt("num", 0);
+		//Log.i("AAAAAAAAAAAAAAAAAAA", s_id+"");
 		lists = new ArrayList<String>();
 		claLists = new ArrayList<Classes>();
 		clists = new ArrayList<String>();
@@ -70,7 +79,9 @@ public class MyClassDialogFragment extends DialogFragment implements OnItemClick
 	}
 	
 	private void initStr() {
-		mHttpUtils.send(HttpMethod.GET, ConstansUrl.GETALLCLS, new RequestCallBack<String>() {
+		RequestParams params = new RequestParams();
+		params.addBodyParameter("S_id", s_id+"");
+		mHttpUtils.send(HttpMethod.POST, ConstansUrl.GETALLCLS, params, new RequestCallBack<String>() {
 
 			@Override
 			public void onFailure(HttpException arg0, String arg1) {
@@ -81,8 +92,11 @@ public class MyClassDialogFragment extends DialogFragment implements OnItemClick
 			@Override
 			public void onSuccess(ResponseInfo<String> response) {
 				// TODO Auto-generated method stub
+				lists.clear();
 				String data = response.result;
+				//Log.i("ABAAAAAAAAAAAAAAAAA", data+"");
 				List<Classes> clss = JsonParseUtils.parseJsonClasses(data);
+				//Log.i("ACAAAAAAAAAAAAAAAAA", clss.toString());
 				claLists.addAll(clss);
 				//lists.add("全部");
 				for (int i = 0; i < claLists.size(); i++) {

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white" >
+    
+    <TextView
+        android:id="@+id/alert_enter_dialog_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#2EB976"
+        android:gravity="center"
+        android:scaleType="center"
+        android:text="@string/title_enter"
+        android:textColor="@color/white"
+        android:textSize="24sp" />
+
+    <EditText
+        android:id="@+id/alert_enter_dialog_text2"
+        android:layout_width="fill_parent"
+        android:layout_height="170dp"
+        android:layout_below="@id/alert_enter_dialog_text"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/bg_edittext"
+        android:hint="请输入内容..."
+        android:padding="5dip"
+        android:singleLine="true"
+        android:enabled="true"
+        android:gravity="top"
+        android:inputType="textMultiLine"
+        android:textColorHint="@color/gray"
+        android:maxLines="10"
+        android:textSize="16dip" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/alert_enter_dialog_text2"
+        android:layout_marginTop="4dp"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/enter_dialog_dis"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="2dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_selector"
+            android:onClick="btnClick"
+            android:text="@string/btn_dialog_dismiss" />
+
+        <Button
+            android:id="@+id/enter_dialog_exit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="2dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_selector"
+            android:onClick="btnClick"
+            android:text="@string/btn_sure" />
+    </LinearLayout>
+    
+
+</RelativeLayout>

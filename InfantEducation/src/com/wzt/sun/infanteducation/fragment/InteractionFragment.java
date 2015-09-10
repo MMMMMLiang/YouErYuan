@@ -85,6 +85,7 @@ public class InteractionFragment extends Fragment {
 			@Override
 			public void onSuccess(ResponseInfo<String> response) {
 				String data = response.result;
+				lists.clear();
 				List<ItemEntity> itemEntitys = JsonParseUtils.parseJsonInteraction(data);
 				lists.addAll(itemEntitys);
 				mHandle.sendEmptyMessage(0x0023);
